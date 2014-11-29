@@ -1,0 +1,39 @@
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android" 
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:background="@color/_White">
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" 
+         android:src="@drawable/logo"
+         android:contentDescription="@string/app_name"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"/>
+	 <Button
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/sendemail"
+	    android:textColor="@color/_White"
+	    android:background="#14af4a"
+	    android:textSize="24sp"
+	    android:layout_alignParentRight="true"
+	    android:id="@+id/sendemail"
+	    android:padding="5dp"
+	    android:layout_margin="5dp"
+	android:visibility="invisible"
+	  />
+	 <Button
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Sync to server"
+	    android:textColor="@color/_White"
+	    android:background="#14af4a"
+	    android:textSize="24sp"
+	    android:layout_alignParentRight="true"
+	   	android:layout_below="@+id/sendemail"
+	    android:id="@+id/synchtoserver"
+	    android:layout_margin="5dp"
+	    android:padding="5dp"
+	    android:visibility="invisible"/>
+</RelativeLayout>

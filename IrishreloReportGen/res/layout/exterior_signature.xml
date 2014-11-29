@@ -1,0 +1,749 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    android:background="#e8e8e8">
+    <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:id="@+id/head_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/head_btn"
+	    android:layout_above="@+id/navwraper"
+	    android:id="@+id/bodywrper">
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="10dp">
+		<RelativeLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="#14af4a"
+			android:id="@+id/type_insp_sec"
+			android:layout_marginBottom="36dp"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp">
+			<TextView
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:text="@string/exterior_title"
+		      	android:textSize="24sp"
+		      	android:textColor="#ffffff"
+		      	android:layout_gravity="left|center_vertical"
+		      	android:textStyle="bold"
+		      	android:textAllCaps="true"
+		      	android:onClick="btntxtonClick"/>
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:background="@drawable/interior_heading_icon"
+		      	android:layout_alignParentRight="true"
+		      	android:layout_centerVertical="true"
+		      	android:contentDescription="@string/addnew_rep"/>
+		 </RelativeLayout>
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_margin="10dp">
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:background="@drawable/bullets_black"
+		     	android:layout_centerVertical="true"
+		     	android:contentDescription="@string/typeof_insplbl"
+		     	android:id="@+id/typeof_insplbl1"
+		     	android:layout_marginRight="10dp"/>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/Signed_by"
+		     	android:textSize="24sp"
+		     	android:textColor="#000000"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_toRightOf="@+id/typeof_insplbl1"/>
+			
+				
+		  </RelativeLayout>
+		 <!-- Check-in completed start -->
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/check_in_complete"
+		     	android:textSize="20sp"
+		     	android:textColor="#000000"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"/>
+		 <!-- Occupier start -->
+		<LinearLayout 
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:orientation="vertical"
+		     android:id="@+id/checkinsignpart">
+			 <RelativeLayout
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:orientation="vertical"
+		    	android:layout_marginTop="5dp"
+		    	android:layout_marginBottom="5dp"  >
+				<TextView
+				    android:id="@+id/exterior_occupier_sign"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/exterior_occupier_title"
+			     	android:textSize="18sp"
+			     	android:textColor="#000000"
+			     	android:layout_alignParentLeft="true"
+			     	android:layout_marginBottom="10dp"
+			     	
+			     	/>
+				<EditText
+				    android:id="@+id/exterior_occupier_sign_editText"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/exterior_occupier_title"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="5dp"
+			     	android:padding="@dimen/m_5dp"
+				    android:layout_marginLeft="5dp"
+				    android:layout_marginRight="5dp"
+			     	android:background="#ffffff"
+			     	android:layout_alignLeft="@+id/exterior_occupier_sign"
+			     	android:layout_below= "@+id/exterior_occupier_sign"
+			     	android:layout_toLeftOf= "@+id/exterior_occupier_sign_imageView"
+			     	
+			     	/>
+				<ImageView
+				    android:id="@+id/exterior_occupier_sign_imageView"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:adjustViewBounds="true"  
+					android:maxWidth="50dp"  
+					android:maxHeight="50dp"  
+					android:scaleType="fitCenter"
+				    android:layout_marginLeft="10dp"
+				    android:src="@drawable/pen_signature" 
+				    android:contentDescription="@string/image_view_content_desc"
+				    android:layout_alignParentRight="true"
+				    android:layout_alignBottom="@+id/exterior_occupier_sign_editText"
+				    android:onClick="getSign"/>
+			</RelativeLayout>
+			 <!-- Occupier end -->
+			 <!-- Landlord start -->
+			  <RelativeLayout
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:orientation="vertical"
+		    	android:layout_marginTop="5dp"
+		    	android:layout_marginBottom="5dp"  >
+				<TextView
+				    android:id="@+id/exterior_landlord_sign"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/exterior_landlord_title"
+			     	android:textSize="18sp"
+			     	android:textColor="#000000"
+			     	android:layout_alignParentLeft="true"
+			     	android:layout_marginBottom="10dp"		     	
+			     	/>
+				<EditText
+				    android:id="@+id/exterior_landlord_sign_editText"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/exterior_landlord_title"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="5dp"
+			     	android:padding="@dimen/m_5dp"
+				    android:layout_marginLeft="5dp"
+				    android:layout_marginRight="5dp"
+			     	android:background="#ffffff"
+			     	android:layout_alignLeft="@+id/exterior_landlord_sign"
+			     	android:layout_below= "@+id/exterior_landlord_sign"
+			     	android:layout_toLeftOf= "@+id/exterior_landlord_sign_imageView"/>
+				<ImageView
+				    android:id="@+id/exterior_landlord_sign_imageView"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:adjustViewBounds="true"  
+					android:maxWidth="50dp"  
+					android:maxHeight="50dp"  
+					android:scaleType="fitCenter"
+				    android:layout_marginLeft="10dp"
+				    android:src="@drawable/pen_signature" 
+				    android:contentDescription="@string/image_view_content_desc"
+				    android:layout_alignParentRight="true"
+				    android:layout_alignBottom="@+id/exterior_landlord_sign_editText"
+				    android:onClick="getSign"/>
+				</RelativeLayout>
+		 <!-- landlord end -->
+		
+		 <!-- Irish Relocations Services start -->
+		 
+			 <RelativeLayout
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:orientation="vertical"
+		    	android:layout_marginTop="5dp"
+		    	android:layout_marginBottom="5dp"  >
+				<TextView
+				    android:id="@+id/exterior_irs_sign"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/exterior_irs_title"
+			     	android:textSize="18sp"
+			     	android:textColor="#000000"
+			     	android:layout_alignParentLeft="true"
+			     	android:layout_marginBottom="10dp"
+			     	
+			     	/>
+				<EditText
+				    android:id="@+id/exterior_irs_sign_editText"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/exterior_irs_title"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="5dp"
+			     	android:padding="@dimen/m_5dp"
+				    android:layout_marginLeft="5dp"
+				    android:layout_marginRight="5dp"
+			     	android:background="#ffffff"
+			     	android:layout_alignLeft="@+id/exterior_irs_sign"
+			     	android:layout_below= "@+id/exterior_irs_sign"
+			     	android:layout_toLeftOf= "@+id/exterior_irs_sign_imageView"/>
+				<ImageView
+				    android:id="@+id/exterior_irs_sign_imageView"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:adjustViewBounds="true"  
+					android:maxWidth="50dp"  
+					android:maxHeight="50dp"  
+					android:scaleType="fitCenter"
+				    android:layout_marginLeft="10dp"
+				    android:src="@drawable/pen_signature" 
+				    android:contentDescription="@string/image_view_content_desc"
+				    android:layout_alignParentRight="true"
+				    android:layout_alignBottom="@+id/exterior_irs_sign_editText"
+				    android:onClick="getSign"/>
+				</RelativeLayout>
+			 <!-- Irish Relocations Services ends-->
+			 <!-- date start -->
+			 <RelativeLayout
+		    	android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:orientation="vertical"
+		    	android:layout_marginTop="5dp"
+		    	android:layout_marginBottom="5dp"  >
+				<TextView
+				    android:id="@+id/exterior_date_sign"
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/date"
+			     	android:textSize="18sp"
+			     	android:textColor="#000000"
+			     	android:layout_alignParentLeft="true"
+			     	android:layout_marginBottom="10dp"
+			     	
+			     	/>
+			<RelativeLayout 
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:layout_marginBottom="10dp"
+			     	android:layout_below="@+id/exterior_date_sign">
+				<EditText
+					    android:layout_width="match_parent"
+				     	android:layout_height="wrap_content"
+				     	android:textSize="18sp"
+				     	android:hint="@string/date"
+				     	android:layout_gravity="center_vertical"
+				     	android:id="@+id/checkin_sign_dt"
+				     	android:background="#ffffff" 
+				        android:cursorVisible="false" 
+				        android:focusable="false" 
+				        android:focusableInTouchMode="false"
+				        android:onClick="onElementClick"
+			     		android:clickable="true"
+			     		android:padding="@dimen/m_5dp"
+			     />
+				    <ImageView 
+				        android:layout_width="wrap_content"
+			     		android:layout_height="wrap_content"
+			     		android:src="@drawable/calendar_black"
+			     		android:minHeight="42dp"
+			     		android:layout_alignParentRight="true"
+			     		android:layout_centerVertical="true"
+			     		android:id="@+id/checkin_sign_icon"
+			     		android:contentDescription="@string/deptdt"
+			     		android:clickable="true"
+			     		android:onClick="onElementClick"
+			     		/>
+				</RelativeLayout>
+				</RelativeLayout>
+		 <!-- date end -->
+		</LinearLayout>
+		
+		 <!-- Check-in completed ends -->
+		  <!-- Pre-departure check completed start -->
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/pre_departure_complete"
+		     	android:textSize="20sp"
+		     	android:textColor="#000000"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"/>
+		 <!-- Occupier start -->
+		<LinearLayout 
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:orientation="vertical"
+	     android:id="@+id/predepartsignpart">		 
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_pre_departure_occupier_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_occupier_title"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/exterior_pre_departure_occupier_sign_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_occupier_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="#ffffff"
+		     	android:layout_alignLeft="@+id/exterior_pre_departure_occupier_sign"
+		     	android:layout_below= "@+id/exterior_pre_departure_occupier_sign"
+		     	android:layout_toLeftOf= "@+id/exterior_pre_departure_occupier_sign_imageView"
+		     	android:onClick="onElementClick"/>
+			<ImageView
+			    android:id="@+id/exterior_pre_departure_occupier_sign_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="50dp"  
+				android:maxHeight="50dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/pen_signature" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/exterior_pre_departure_occupier_sign_editText"
+			    android:onClick="getSign"
+			    />
+		</RelativeLayout>
+		 <!-- Occupier end -->
+		 <!-- Landlord start -->
+		  <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_pre_departure_landlord_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_landlord_title"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/exterior_pre_departure_landlord_sign_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_landlord_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="#ffffff"
+		     	android:layout_alignLeft="@+id/exterior_pre_departure_landlord_sign"
+		     	android:layout_below= "@+id/exterior_pre_departure_landlord_sign"
+		     	android:layout_toLeftOf= "@+id/exterior_pre_departure_landlord_sign_imageView"
+		     	android:onClick="onElementClick"/>
+			<ImageView
+			    android:id="@+id/exterior_pre_departure_landlord_sign_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="50dp"  
+				android:maxHeight="50dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/pen_signature" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/exterior_pre_departure_landlord_sign_editText"
+			    android:onClick="getSign"
+			    />
+			</RelativeLayout>
+		 <!-- landlord end -->
+		 <!-- Irish Relocations Services start -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_pre_departure_irs_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_irs_title"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/exterior_pre_departure_irs_sign_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_irs_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="#ffffff"
+		     	android:layout_alignLeft="@+id/exterior_pre_departure_irs_sign"
+		     	android:layout_below= "@+id/exterior_pre_departure_irs_sign"
+		     	android:layout_toLeftOf= "@+id/exterior_pre_departure_irs_sign_imageView"
+		     	android:onClick="onElementClick"/>
+			<ImageView
+			    android:id="@+id/exterior_pre_departure_irs_sign_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="50dp"  
+				android:maxHeight="50dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/pen_signature" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/exterior_pre_departure_irs_sign_editText"
+			    android:onClick="getSign"
+			    />
+			</RelativeLayout>
+		 <!-- Irish Relocations Services ends-->
+		 <!-- date start -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_pre_departure_date_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/date"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+		<RelativeLayout 
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:layout_marginBottom="10dp"
+		     	android:layout_below="@+id/exterior_pre_departure_date_sign">
+			<EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/date"
+			     	android:layout_gravity="center_vertical"
+			     	android:id="@+id/pre_departure_sign_dt"
+			     	android:background="#ffffff" 
+			        android:cursorVisible="false" 
+			        android:focusable="false" 
+			        android:focusableInTouchMode="false"
+			        android:onClick="onElementClick"
+		     		android:clickable="true"
+		     		android:padding="@dimen/m_5dp"
+		     />
+			    <ImageView 
+			        android:layout_width="wrap_content"
+		     		android:layout_height="wrap_content"
+		     		android:src="@drawable/calendar_black"
+		     		android:layout_alignParentRight="true"
+		     		android:layout_centerVertical="true"
+		     		android:minHeight="42dp"
+		     		android:id="@+id/pre_departure_sign_icon"
+		     		android:contentDescription="@string/deptdt"
+		     		android:onClick="onElementClick"
+		     		android:clickable="true"/>
+			</RelativeLayout>
+			</RelativeLayout>
+			
+		 <!-- date end -->
+		  </LinearLayout>
+		 <!-- Pre-departure check completed ends -->
+		 
+		 
+		 
+		
+		   <!-- departure check completed start -->
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/departure_complete"
+		     	android:textSize="20sp"
+		     	android:textColor="#000000"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"/>
+		 <!-- Occupier start -->
+		  <LinearLayout 
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:orientation="vertical"
+		     android:id="@+id/departsignpart">
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_departure_occupier_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_occupier_title"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/exterior_departure_occupier_sign_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_occupier_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="#ffffff"
+		     	android:layout_alignLeft="@+id/exterior_departure_occupier_sign"
+		     	android:layout_below= "@+id/exterior_departure_occupier_sign"
+		     	android:layout_toLeftOf= "@+id/exterior_departure_occupier_sign_imageView"
+		     	android:onClick="onElementClick"/>
+			<ImageView
+			    android:id="@+id/exterior_departure_occupier_sign_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="50dp"  
+				android:maxHeight="50dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/pen_signature" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/exterior_departure_occupier_sign_editText"
+			    android:onClick="getSign"
+			    />
+		</RelativeLayout>
+		 <!-- Occupier end -->
+		 <!-- Landlord start -->
+		  <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_departure_landlord_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_landlord_title"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/exterior_departure_landlord_sign_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_landlord_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="#ffffff"
+		     	android:layout_alignLeft="@+id/exterior_departure_landlord_sign"
+		     	android:layout_below= "@+id/exterior_departure_landlord_sign"
+		     	android:layout_toLeftOf= "@+id/exterior_departure_landlord_sign_imageView"
+		     	android:onClick="onElementClick"/>
+			<ImageView
+			    android:id="@+id/exterior_departure_landlord_sign_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="50dp"  
+				android:maxHeight="50dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/pen_signature" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/exterior_departure_landlord_sign_editText"
+			    android:onClick="getSign"
+			    />
+			</RelativeLayout>
+		 <!-- landlord end -->
+		 <!-- Irish Relocations Services start -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_departure_irs_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_irs_title"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/exterior_departure_irs_sign_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_irs_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="#ffffff"
+		     	android:layout_alignLeft="@+id/exterior_departure_irs_sign"
+		     	android:layout_below= "@+id/exterior_departure_irs_sign"
+		     	android:layout_toLeftOf= "@+id/exterior_departure_irs_sign_imageView"
+		     	android:onClick="onElementClick"/>
+			<ImageView
+			    android:id="@+id/exterior_departure_irs_sign_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="50dp"  
+				android:maxHeight="50dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/pen_signature" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/exterior_departure_irs_sign_editText"
+			    android:onClick="getSign"
+			    />
+			</RelativeLayout>
+		 <!-- Irish Relocations Services ends-->
+		 <!-- date start -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/exterior_departure_date_sign"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/date"
+		     	android:textSize="18sp"
+		     	android:textColor="#000000"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+		<RelativeLayout 
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:layout_marginBottom="10dp"
+		     	android:layout_below="@+id/exterior_departure_date_sign">
+			<EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/date"
+			     	android:layout_gravity="center_vertical"
+			     	android:id="@+id/departure_sign_dt"
+			     	android:background="#ffffff" 
+			        android:cursorVisible="false" 
+			        android:focusable="false" 
+			        android:focusableInTouchMode="false"
+			        android:onClick="onElementClick"
+		     		android:clickable="true"
+		     		android:padding="@dimen/m_5dp"
+		     />
+			    <ImageView 
+			        android:layout_width="wrap_content"
+		     		android:layout_height="wrap_content"
+		     		android:src="@drawable/calendar_black"
+		     		android:layout_alignParentRight="true"
+		     		android:layout_centerVertical="true"
+		     		android:id="@+id/departure_sign_icon"
+		     		android:minHeight="42dp"
+		     		android:contentDescription="@string/deptdt"
+		     		android:onClick="onElementClick"
+		     		android:clickable="true"/>
+			</RelativeLayout>
+			</RelativeLayout>
+		 <!-- date end -->
+		 </LinearLayout>
+		 <!-- departure check completed ends -->
+		</LinearLayout>		
+	</ScrollView>
+	
+	
+	<include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+</RelativeLayout>

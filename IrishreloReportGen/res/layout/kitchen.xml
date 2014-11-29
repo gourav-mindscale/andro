@@ -1,0 +1,3768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    android:background="@color/_GRAY">
+    <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/head_btn"
+	    android:layout_above="@+id/navwraper"
+	    android:id="@+id/bodywrper"
+	    >
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="@dimen/m_10dp">
+		<RelativeLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/_GREEN"
+			android:id="@+id/type_insp_sec"
+			android:layout_marginBottom="@dimen/m_36dp"
+			android:paddingLeft="@dimen/m_10dp"
+			android:paddingRight="@dimen/m_10dp">
+			<TextView
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:text="@string/interior_title"
+		      	android:textSize="@dimen/m_24sp"
+		      	android:textColor="@color/_White"
+		      	android:layout_gravity="left|center_vertical"
+		      	android:textStyle="bold"
+		      	android:textAllCaps="true"
+		      	android:onClick="btntxtonClick"/>
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:background="@drawable/interior_heading_icon"
+		      	android:layout_alignParentRight="true"
+		      	android:layout_centerVertical="true"
+		      	android:contentDescription="@string/addnew_rep"/>
+		 </RelativeLayout>
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_margin="@dimen/m_10dp">
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:background="@drawable/bullets_black"
+		     	android:layout_centerVertical="true"
+		     	android:contentDescription="@string/typeof_insplbl"
+		     	android:id="@+id/typeof_insplbl"
+		     	android:layout_marginRight="@dimen/m_10dp"/>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/kitchen_title"
+		     	android:textSize="@dimen/m_24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_toRightOf="@+id/typeof_insplbl"/>
+			
+				
+		  </RelativeLayout>
+		 
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/interior_check_in_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+		 
+		 <!-- kitchen check in layout starts  -->
+		 
+		    <!-- flooring starts -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_flooring"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_flooring_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/flooring_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/kitchen_check_in_flooring_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/flooring_title"
+			       android:layout_below= "@+id/kitchen_check_in_flooring_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_flooring_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_flooring_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/kitchen_check_in_flooring_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_flooring_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- flooring end -->
+		<!-- countertops and cabinets layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_countertops_or_cabinets"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_countertops_or_cabinets_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/countertops_or_cabinets_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/kitchen_check_in_countertops_or_cabinets_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/countertops_or_cabinets_title"
+			       android:layout_below= "@+id/kitchen_check_in_countertops_or_cabinets_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_countertops_or_cabinets_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_countertops_or_cabinets_imageView"
+			       android:visibility="gone"
+			        />
+
+			<ImageView
+			    android:id="@+id/kitchen_check_in_countertops_or_cabinets_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_countertops_or_cabinets_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- countertops and cabinets layout ends  -->
+		<!-- paint and paperwall layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kichen_check_in_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kichen_check_in_paint_or_paperwall_or_ceiling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			<EditText
+			       android:id="@+id/kitchen_check_in_paint_or_paperwall_or_ceiling_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/paint_paper_walls_celling_title"
+		     	   android:layout_below= "@+id/kichen_check_in_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_alignLeft="@+id/kichen_check_in_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_paint_or_paperwall_or_ceiling_imageView"
+			        android:visibility="gone"/>
+			<ImageView  
+			   android:id="@+id/kitchen_check_in_paint_or_paperwall_or_ceiling_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_paint_or_paperwall_or_ceiling_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- paperwall or celling layout ends  -->
+		<!-- skirting boards and radiator layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_skirting_boards_or_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/skirting_boards_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_skirting_boards_or_radiator_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/skirting_boards_radiator_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_skirting_boards_or_radiator_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_skirting_boards_or_radiator_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_skirting_boards_or_radiator_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_skirting_boards_or_radiator_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_skirting_boards_or_radiator_editText"
+			     android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!--skirting boards and radiator layout ends  -->
+		<!-- Doors locks keys handles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_doors_or_locks_or_keys_or_handles_shades"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_shades_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_locks_keys_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/doors_locks_keys_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_shades_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_shades_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_doors_or_locks_or_keys_or_handles_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- Doors locks keys handles layout ends  -->
+		<!-- windows locks keys layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/handle_door_finish_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/handle_door_finish_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   
+			    
+			    
+			  
+			   android:id="@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_windows_or_locks_or_keys_or_handles_editText"
+			  
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- windows locks keys layout ends  -->
+			
+			<!-- lights or bulb or shades  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/light_bulb_shades_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/light_bulb_shades_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_lighting_or_bulbs_or_sheds_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- lights or bulb or shades  layout ends  -->
+		<!-- oven and grill  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_oven_or_hob_or_grill"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_check_in_oven_or_hob_or_grill_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/oven_hob_grill_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_oven_or_hob_or_grill_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/oven_hob_grill_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_oven_or_hob_or_grill_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_oven_or_hob_or_grill_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_oven_or_hob_or_grill_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			   
+			   android:id="@+id/kitchen_check_in_oven_or_hob_or_grill_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_oven_or_hob_or_grill_editText"
+		       android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- oven and grill layout ends  -->
+			
+			<!-- dishwasher  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_dishwasher"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_dishwasher_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/dishwasher_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+				   android:id="@+id/kitchen_check_in_dishwasher_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/dishwasher_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_dishwasher_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_dishwasher_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_dishwasher_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_dishwasher_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_dishwasher_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- dishwasher  layout ends  -->
+			<!-- Microwave layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_microwave"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_microwave_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/microwave_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_microwave_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/microwave_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_microwave_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_microwave_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_microwave_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_microwave_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_microwave_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Microwave layout ends  -->
+			
+			<!-- Extractor fan and light layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_extractor_or_fan_and_light"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_extractor_or_fan_and_light_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/extractor_or_fan_light_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_extractor_or_fan_and_light_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/extractor_or_fan_light_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_extractor_or_fan_and_light_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_extractor_or_fan_and_light_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_extractor_or_fan_and_light_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_extractor_or_fan_and_light_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_extractor_or_fan_and_light_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Extractor fan and light  layout ends  -->
+			
+			<!-- Fridge or freezer layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			
+			    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_fridge_or_freezer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			    
+			<TextView
+			    android:id="@+id/kitchen_check_in_fridge_or_freezer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/fridge_or_freezer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText	     	
+		     	   android:id="@+id/kitchen_check_in_fridge_or_freezer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/fridge_or_freezer_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_fridge_or_freezer_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_fridge_or_freezer_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_fridge_or_freezer_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			    
+			    android:id="@+id/kitchen_check_in_fridge_or_freezer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_fridge_or_freezer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Fridge or freezer  layout ends  -->
+			
+			<!-- washing machine or dryer layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			
+			    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_washing_machine_or_dryer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			<TextView
+			    android:id="@+id/kitchen_check_in_washing_machine_or_dryer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/washing_machine_dryer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_washing_machine_or_dryer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/washing_machine_dryer_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_washing_machine_or_dryer_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_washing_machine_or_dryer_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_washing_machine_or_dryer_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_check_in_washing_machine_or_dryer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_washing_machine_or_dryer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- washing machine or dryer layout ends  -->
+			
+			<!-- instruction manal layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_instruction_manuals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_instruction_manuals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/instruction_manual_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_instruction_manuals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/instruction_manual_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_instruction_manuals_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_instruction_manuals_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_instruction_manuals_imageView" 
+			       android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_check_in_instruction_manuals_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_instruction_manuals_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Instruction manual  layout ends  -->
+			
+			
+			<!-- Furniture layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			
+			    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_furniture"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			<TextView
+			    android:id="@+id/kitchen_check_in_furniture_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/furniture_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_furniture_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/furniture_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_furniture_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_furniture_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_furniture_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_check_in_furniture_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_furniture_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- furniture  layout ends  -->
+			
+			<!-- Curtains blinds soft furnishing starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_curtains_or_blinds_or_soft_furnishing"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/soft_furnishing_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/soft_furnishing_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_curtains_or_blinds_or_soft_furnishing_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Curtains blinds soft furnishing layout ends  -->
+			
+			<!-- sink or plug dustbin starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_sink_or_plug_or_dustbin"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_sink_or_plug_or_dustbin_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/sink_plug_dustbin_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_sink_or_plug_or_dustbin_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/sink_plug_dustbin_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_sink_or_plug_or_dustbin_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_sink_or_plug_or_dustbin_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_sink_or_plug_or_dustbin_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_check_in_sink_or_plug_or_dustbin_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_sink_or_plug_or_dustbin_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- sink or plug dustbin furnishing layout ends  -->
+			
+			<!-- water pressure layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_water_pressure"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_water_pressure_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/water_pressure_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_water_pressure_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/water_pressure_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_water_pressure_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_water_pressure_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_water_pressure_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_check_in_water_pressure_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_water_pressure_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- water pressure layout layout ends  -->
+			<!-- mis layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_check_in_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_check_in_miscellaneous_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/miscellaneous_title"
+		     	   android:layout_below= "@+id/kitchen_check_in_miscellaneous_textView"
+			       android:layout_alignLeft="@+id/kitchen_check_in_miscellaneous_textView"
+			       android:layout_toLeftOf="@+id/kitchen_check_in_miscellaneous_imageView" 
+			       android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_check_in_miscellaneous_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_check_in_miscellaneous_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- mis layout layout ends  -->
+			
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			
+			<TextView
+			    android:id="@+id/kitchen_check_in_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_check_in_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_check_in_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/kitchen_check_in_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_check_in_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_check_in_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_check_in_follow_up_textView"
+		     	android:layout_below= "@+id/kitchen_check_in_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Follow up  layout ends  -->
+			
+			<!-- Final comments  layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_check_in_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_check_in_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_check_in_final_comments_textView"
+		     	android:layout_below= "@+id/kitchen_check_in_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			
+			<!-- kitchen checkin layout ends here -->
+			
+			
+			
+			<!-- kitchen pre-departure layout starts -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_pre_departure_title"
+		     	android:textSize="20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			   <!-- flooring starts -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_flooring"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_flooring_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/flooring_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/kitchen_pre_departure_flooring_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/flooring_title"
+			       android:layout_below= "@+id/kitchen_pre_departure_flooring_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_flooring_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_flooring_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/kitchen_pre_departure_flooring_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_flooring_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- flooring end -->
+		<!-- countertops and cabinets layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_countertops_or_cabinets"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_countertops_or_cabinets_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/countertops_or_cabinets_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/kitchen_pre_departure_countertops_or_cabinets_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/countertops_or_cabinets_title"
+			       android:layout_below= "@+id/kitchen_pre_departure_countertops_or_cabinets_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_countertops_or_cabinets_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_countertops_or_cabinets_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/kitchen_pre_departure_countertops_or_cabinets_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_countertops_or_cabinets_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- countertops and cabinets layout ends  -->
+		<!-- paint and paperwall layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kichen_pre_departure_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kichen_pre_departure_paint_or_paperwall_or_ceiling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			<EditText
+			       android:id="@+id/kitchen_pre_departure_paint_or_paperwall_or_ceiling_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/paint_paper_walls_celling_title"
+		     	   android:layout_below= "@+id/kichen_pre_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_alignLeft="@+id/kichen_pre_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_paint_or_paperwall_or_ceiling_imageView" android:visibility="gone"/>
+			<ImageView  
+			   android:id="@+id/kitchen_pre_departure_paint_or_paperwall_or_ceiling_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_paint_or_paperwall_or_ceiling_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- paperwall or celling layout ends  -->
+		<!-- skirting boards and radiator layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" 
+	    	 >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_skirting_boards_or_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/skirting_boards_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_skirting_boards_or_radiator_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/skirting_boards_radiator_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_skirting_boards_or_radiator_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_skirting_boards_or_radiator_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_skirting_boards_or_radiator_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_skirting_boards_or_radiator_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_skirting_boards_or_radiator_editText"
+			     android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!--skirting boards and radiator layout ends  -->
+		<!-- Doors locks keys handles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_doors_or_locks_or_keys_or_handles_shades"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_shades_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/doors_windows_keys_locks_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_shades_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_shades_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_doors_or_locks_or_keys_or_handles_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- Doors locks keys handles layout ends  -->
+		<!-- windows locks keys layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/windows_keys_locks_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   
+			    
+			    
+			  
+			   android:id="@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_windows_or_locks_or_keys_or_handles_editText"
+			  
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- windows locks keys layout ends  -->
+			
+			<!-- lights or bulb or shades  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			
+		    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+		    
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/light_bulb_shades_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/light_bulb_shades_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_lighting_or_bulbs_or_sheds_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- lights or bulb or shades  layout ends  -->
+		<!-- oven and grill  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_oven_or_hob_or_grill"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_oven_or_hob_or_grill_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/oven_hob_grill_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_oven_or_hob_or_grill_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/oven_hob_grill_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_oven_or_hob_or_grill_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_oven_or_hob_or_grill_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_oven_or_hob_or_grill_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			   
+			   android:id="@+id/kitchen_pre_departure_oven_or_hob_or_grill_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_oven_or_hob_or_grill_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- oven and grill layout ends  -->
+			
+			<!-- dishwasher  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_dishwasher"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_dishwasher_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/dishwasher_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+				   android:id="@+id/kitchen_pre_departure_dishwasher_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/dishwasher_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_dishwasher_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_dishwasher_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_dishwasher_imageView" 
+			       android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_dishwasher_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_dishwasher_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- dishwasher  layout ends  -->
+			<!-- Microwave layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_microwave"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_microwave_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/microwave_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_microwave_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/microwave_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_microwave_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_microwave_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_microwave_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_microwave_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_microwave_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Microwave layout ends  -->
+			
+			<!-- Extractor fan and light layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_extractor_or_fan_and_light"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_extractor_or_fan_and_light_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/extractor_or_fan_light_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_extractor_or_fan_and_light_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/extractor_or_fan_light_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_extractor_or_fan_and_light_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_extractor_or_fan_and_light_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_extractor_or_fan_and_light_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_extractor_or_fan_and_light_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_extractor_or_fan_and_light_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Extractor fan and light  layout ends  -->
+			
+			<!-- Fridge or freezer layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_fridge_or_freezer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_fridge_or_freezer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/fridge_or_freezer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText	     	
+		     	   android:id="@+id/kitchen_pre_departure_fridge_or_freezer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/fridge_or_freezer_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_fridge_or_freezer_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_fridge_or_freezer_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_fridge_or_freezer_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			    
+			    android:id="@+id/kitchen_pre_departure_fridge_or_freezer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_fridge_or_freezer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Fridge or freezer  layout ends  -->
+			
+			<!-- washing machine or dryer layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_washing_machine_or_dryer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_washing_machine_or_dryer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/washing_machine_dryer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_washing_machine_or_dryer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/washing_machine_dryer_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_washing_machine_or_dryer_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_washing_machine_or_dryer_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_washing_machine_or_dryer_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_pre_departure_washing_machine_or_dryer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_washing_machine_or_dryer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- washing machine or dryer layout ends  -->
+			
+			<!-- instruction manal layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_instruction_manuals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_instruction_manuals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/instruction_manual_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_instruction_manuals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/instruction_manual_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_instruction_manuals_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_instruction_manuals_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_instruction_manuals_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_pre_departure_instruction_manuals_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_instruction_manuals_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Instruction manual  layout ends  -->
+			
+			
+			<!-- Furniture layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_furniture"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_furniture_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/furniture_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_furniture_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/furniture_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_furniture_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_furniture_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_furniture_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_pre_departure_furniture_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_furniture_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- furniture  layout ends  -->
+			
+			<!-- Curtains blinds soft furnishing starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/soft_furnishing_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/soft_furnishing_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_curtains_or_blinds_or_soft_furnishing_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Curtains blinds soft furnishing layout ends  -->
+			
+			<!-- sink or plug dustbin starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_sink_or_plug_or_dustbin"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/sink_plug_dustbin_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/sink_plug_dustbin_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_imageView" 
+			       android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_sink_or_plug_or_dustbin_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- sink or plug dustbin furnishing layout ends  -->
+			
+			<!-- water pressure layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_water_pressure"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_water_pressure_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/water_pressure_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_water_pressure_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/water_pressure_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_water_pressure_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_water_pressure_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_water_pressure_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_pre_departure_water_pressure_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_water_pressure_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- water pressure layout layout ends  -->
+			
+			<!-- mis layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_pre_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_pre_departure_miscellaneous_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/miscellaneous_title"
+		     	   android:layout_below= "@+id/kitchen_pre_departure_miscellaneous_textView"
+			       android:layout_alignLeft="@+id/kitchen_pre_departure_miscellaneous_textView"
+			       android:layout_toLeftOf="@+id/kitchen_pre_departure_miscellaneous_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_pre_departure_miscellaneous_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_pre_departure_miscellaneous_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- mis layout layout ends  -->
+			
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			
+			
+			<TextView          
+			    android:id="@+id/kitchen_pre_departure_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_pre_departure_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_pre_departure_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/kitchen_pre_departure_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_pre_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_pre_departure_follow_up_textView"
+		     	android:layout_below= "@+id/kitchen_pre_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Follow up  layout ends  -->
+			
+			<!-- Final comments  layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_pre_departure_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_pre_departure_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_pre_departure_final_comments_textView"
+		     	android:layout_below= "@+id/kitchen_pre_departure_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			<!-- kitchen pre-departure layout ends -->
+			
+			
+			<!-- kitchen departure layout forma starts -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_departure_title"
+		     	android:textSize="20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"/>
+			   <!-- flooring starts -->
+		 <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_flooring"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_flooring_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/flooring_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/kitchen_departure_flooring_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/flooring_title"
+			       android:layout_below= "@+id/kitchen_departure_flooring_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_flooring_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_flooring_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/kitchen_departure_flooring_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_flooring_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- flooring end -->
+		<!-- countertops and cabinets layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_countertops_or_cabinets"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_departure_countertops_or_cabinets_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/countertops_or_cabinets_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/kitchen_departure_countertops_or_cabinets_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/countertops_or_cabinets_title"
+			       android:layout_below= "@+id/kitchen_departure_countertops_or_cabinets_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_countertops_or_cabinets_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_countertops_or_cabinets_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/kitchen_departure_countertops_or_cabinets_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_countertops_or_cabinets_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- countertops and cabinets layout ends  -->
+		<!-- paint and paperwall layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kichen_departure_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kichen_departure_paint_or_paperwall_or_ceiling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			<EditText
+			       android:id="@+id/kitchen_departure_paint_or_paperwall_or_ceiling_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/paint_paper_walls_celling_title"
+		     	   android:layout_below= "@+id/kichen_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_alignLeft="@+id/kichen_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_paint_or_paperwall_or_ceiling_imageView" 
+			       android:visibility="gone"/>
+			<ImageView  
+			   android:id="@+id/kitchen_departure_paint_or_paperwall_or_ceiling_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_paint_or_paperwall_or_ceiling_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- paperwall or celling layout ends  -->
+		<!-- skirting boards and radiator layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_skirting_boards_or_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/skirting_boards_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_skirting_boards_or_radiator_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/skirting_boards_radiator_title"
+		     	   android:layout_below= "@+id/kitchen_departure_skirting_boards_or_radiator_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_skirting_boards_or_radiator_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_skirting_boards_or_radiator_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_skirting_boards_or_radiator_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_skirting_boards_or_radiator_editText"
+			     android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!--skirting boards and radiator layout ends  -->
+		<!-- Doors locks keys handles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"   >
+			<TextView
+			    android:id="@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_shades_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_doors_or_locks_or_keys_or_handles_shades"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/doors_windows_keys_locks_title"
+		     	   android:layout_below= "@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_shades_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_shades_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_doors_or_locks_or_keys_or_handles_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- Doors locks keys handles layout ends  -->
+		<!-- windows locks keys layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>				
+			<EditText
+		     	   android:id="@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/windows_keys_locks_title"
+		     	   android:layout_below= "@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   
+			    
+			    
+			  
+			   android:id="@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_windows_or_locks_or_keys_or_handles_editText"
+			  
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- windows locks keys layout ends  -->
+			
+			<!-- lights or bulb or shades  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_lighting_or_bulbs_or_sheds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/light_bulb_shades_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_lighting_or_bulbs_or_sheds_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/light_bulb_shades_title"
+		     	   android:layout_below= "@+id/kitchen_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_lighting_or_bulbs_or_sheds_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_lighting_or_bulbs_or_sheds_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_lighting_or_bulbs_or_sheds_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- lights or bulb or shades  layout ends  -->
+		<!-- oven and grill  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_oven_or_hob_or_grill"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_oven_or_hob_or_grill_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/oven_hob_grill_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_oven_or_hob_or_grill_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/oven_hob_grill_title"
+		     	   android:layout_below= "@+id/kitchen_departure_oven_or_hob_or_grill_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_oven_or_hob_or_grill_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_oven_or_hob_or_grill_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			   
+			   android:id="@+id/kitchen_departure_oven_or_hob_or_grill_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_oven_or_hob_or_grill_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- oven and grill layout ends  -->
+			
+			<!-- dishwasher  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_dishwasher"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_dishwasher_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/dishwasher_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+				   android:id="@+id/kitchen_departure_dishwasher_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/dishwasher_title"
+		     	   android:layout_below= "@+id/kitchen_departure_dishwasher_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_dishwasher_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_dishwasher_imageView" 
+			       android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_dishwasher_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_dishwasher_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- dishwasher  layout ends  -->
+			<!-- Microwave layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_microwave"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_microwave_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/microwave_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_microwave_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/microwave_title"
+		     	   android:layout_below= "@+id/kitchen_departure_microwave_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_microwave_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_microwave_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_microwave_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_microwave_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Microwave layout ends  -->
+			
+			<!-- Extractor fan and light layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_extractor_or_fan_and_light"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_extractor_or_fan_and_light_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/extractor_or_fan_light_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_extractor_or_fan_and_light_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/extractor_or_fan_light_title"
+		     	   android:layout_below= "@+id/kitchen_departure_extractor_or_fan_and_light_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_extractor_or_fan_and_light_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_extractor_or_fan_and_light_imageView"
+			       android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_extractor_or_fan_and_light_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_extractor_or_fan_and_light_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Extractor fan and light  layout ends  -->
+			
+			<!-- Fridge or freezer layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_fridge_or_freezer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_fridge_or_freezer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/fridge_or_freezer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText	     	
+		     	   android:id="@+id/kitchen_departure_fridge_or_freezer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/fridge_or_freezer_title"
+		     	   android:layout_below= "@+id/kitchen_departure_fridge_or_freezer_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_fridge_or_freezer_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_fridge_or_freezer_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			    
+			    android:id="@+id/kitchen_departure_fridge_or_freezer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_fridge_or_freezer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Fridge or freezer  layout ends  -->
+			
+			<!-- washing machine or dryer layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_washing_machine_or_dryer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/kitchen_departure_washing_machine_or_dryer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/washing_machine_dryer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_washing_machine_or_dryer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/washing_machine_dryer_title"
+		     	   android:layout_below= "@+id/kitchen_departure_washing_machine_or_dryer_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_washing_machine_or_dryer_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_washing_machine_or_dryer_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/kitchen_departure_washing_machine_or_dryer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_washing_machine_or_dryer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- washing machine or dryer layout ends  -->
+			
+			<!-- instruction manal layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_instruction_manuals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_instruction_manuals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/instruction_manual_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_instruction_manuals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/instruction_manual_title"
+		     	   android:layout_below= "@+id/kitchen_departure_instruction_manuals_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_instruction_manuals_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_instruction_manuals_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_departure_instruction_manuals_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_instruction_manuals_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Instruction manual  layout ends  -->
+			
+			
+			<!-- Furniture layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_furniture"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_furniture_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/furniture_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_furniture_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/furniture_title"
+		     	   android:layout_below= "@+id/kitchen_departure_furniture_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_furniture_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_furniture_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_departure_furniture_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_furniture_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- furniture  layout ends  -->
+			
+			<!-- Curtains blinds soft furnishing starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_curtains_or_blinds_or_soft_furnishing"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/soft_furnishing_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	 android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/soft_furnishing_title"
+		     	   android:layout_below= "@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_curtains_or_blinds_or_soft_furnishing_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Curtains blinds soft furnishing layout ends  -->
+			
+			<!-- sink or plug dustbin starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_sink_or_plug_or_dustbin"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_sink_or_plug_or_dustbin_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/sink_plug_dustbin_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_sink_or_plug_or_dustbin_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/sink_plug_dustbin_title"
+		     	   android:layout_below= "@+id/kitchen_departure_sink_or_plug_or_dustbin_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_sink_or_plug_or_dustbin_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_sink_or_plug_or_dustbin_imageView" 
+			       android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_departure_sink_or_plug_or_dustbin_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_sink_or_plug_or_dustbin_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- sink or plug dustbin furnishing layout ends  -->
+			
+			<!-- water pressure layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_water_pressure"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_water_pressure_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/water_pressure_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_water_pressure_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/water_pressure_title"
+		     	   android:layout_below= "@+id/kitchen_departure_water_pressure_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_water_pressure_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_water_pressure_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_departure_water_pressure_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_water_pressure_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- water pressure layout layout ends  -->
+			
+			<!-- mis layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_kitchen_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/kitchen_departure_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" 
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/kitchen_departure_miscellaneous_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/miscellaneous_title"
+		     	   android:layout_below= "@+id/kitchen_departure_miscellaneous_textView"
+			       android:layout_alignLeft="@+id/kitchen_departure_miscellaneous_textView"
+			       android:layout_toLeftOf="@+id/kitchen_departure_miscellaneous_imageView"
+			        android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/kitchen_departure_miscellaneous_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/kitchen_departure_miscellaneous_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- mis layout layout ends  -->
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_departure_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_departure_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_departure_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/kitchen_departure_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_departure_follow_up_textView"
+		     	android:layout_below= "@+id/kitchen_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Follow up  layout ends  -->
+			
+			<!-- Final comments  layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/kitchen_departure_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/kitchen_departure_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/kitchen_departure_final_comments_textView"
+		     	android:layout_below= "@+id/kitchen_departure_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			<!-- kitchen departure layout form ends -->
+							
+		</LinearLayout>		
+	</ScrollView>
+			
+	<include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+</RelativeLayout>		

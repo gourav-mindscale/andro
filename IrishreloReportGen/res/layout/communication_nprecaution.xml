@@ -1,0 +1,587 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/_GRAY"
+    tools:context="irishreloreportgen.activity.main.CommunicationNPrecaution" >
+	 <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+    <RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:background="@color/_GREEN"
+       android:id="@+id/gotoutility"
+       android:layout_below="@+id/head_btn"
+       android:layout_marginBottom="@dimen/m_20dp"
+       android:paddingLeft="@dimen/m_10dp"
+       android:paddingRight="@dimen/m_10dp"
+       android:clickable="true">
+		<TextView
+		    android:layout_width="wrap_content"
+	       	android:layout_height="wrap_content"
+	       	android:text="@string/utilitylbl"
+	       	android:textSize="@dimen/m_24sp"
+	       	android:textColor="@color/_White"
+	       	android:layout_alignParentLeft="true"
+	       	android:textStyle="bold"
+	       	android:textAllCaps="true"
+	       	android:id="@+id/utilitiestxt"
+	       	android:clickable="false"/>
+		<ImageButton 
+		    android:layout_width="24dp"
+	       	android:layout_height="24dp"
+	       	android:background="@drawable/utilities_heading_icon"
+			android:layout_alignParentRight="true"
+	       	android:contentDescription="@string/utilitylbl"
+	       	android:id="@+id/utility"
+	       	android:clickable="false"/>
+    </RelativeLayout>
+     <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/gotoutility"
+	    android:layout_above="@+id/navwraper">
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="@dimen/m_10dp">
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_10dp"
+	                android:text="@string/communicat"
+	                android:textColor="@color/_Black"
+	                android:textSize="@dimen/m_24sp" />
+
+	            <EditText
+	                android:id="@+id/telephoneno"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"
+	                android:hint="@string/telephoneno"
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp" >
+
+	                <requestFocus />
+	            </EditText>
+
+	            <RelativeLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="@dimen/m_20dp" >
+
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_gravity="center_vertical"
+	                    android:text="@string/phone_handset"
+	                    android:textColor="@color/_Black"
+	                    android:textSize="16sp" />
+
+	                <RadioGroup
+	                    android:id="@+id/isheadset"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentRight="true"
+	                    android:orientation="horizontal" >
+
+	                    <RadioButton
+	                        android:id="@+id/headset_y"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="@string/yes" />
+
+	                    <RadioButton
+	                        android:id="@+id/headset_n"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:checked="true"
+	                        android:text="@string/no" />
+	                </RadioGroup>
+	            </RelativeLayout>
+
+	            <EditText
+	                android:id="@+id/noofhdset"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"
+	                android:hint="@string/noofhdset"
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp" />
+
+	            <RelativeLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="@dimen/m_20dp" >
+
+	                <TextView
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentLeft="true"
+	                    android:layout_gravity="center_vertical"
+	                    android:text="@string/phoneworking"
+	                    android:textColor="@color/_Black"
+	                    android:textSize="16sp" />
+
+	                <RadioGroup
+	                    android:id="@+id/isphwork"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentRight="true"
+	                    android:orientation="horizontal" >
+
+	                    <RadioButton
+	                        android:id="@+id/phwork_y"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="@string/yes" />
+
+	                    <RadioButton
+	                        android:id="@+id/phwork_n"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:checked="true"
+	                        android:text="@string/no" />
+	                </RadioGroup>
+	            </RelativeLayout>
+
+	            <EditText
+	                android:id="@+id/broadbandsup"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"
+	                android:hint="@string/broadbandsup"
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp" />
+
+	            <RelativeLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="@dimen/m_20dp" >
+
+	                <RadioGroup
+	                    android:id="@+id/issetupworks"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_alignParentRight="true"
+	                    android:orientation="horizontal" >
+
+	                    <RadioButton
+	                        android:id="@+id/setupwork_y"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:text="@string/yes" />
+
+	                    <RadioButton
+	                        android:id="@+id/setupwork_n"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:checked="true"
+	                        android:text="@string/no" />
+	                </RadioGroup>
+
+	                <TextView
+	                    android:id="@+id/tv_setup"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_gravity="center_vertical"
+	                    android:layout_toLeftOf="@id/issetupworks"
+	                    android:text="@string/setupwork"
+	                    android:textColor="@color/_Black"
+	                    android:textSize="16sp" />
+	            </RelativeLayout>
+	        </LinearLayout>
+		   
+		   <LinearLayout 
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content"
+		       android:orientation="vertical">
+		       <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/alarm"
+		     	android:textSize="@dimen/m_24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+		       <EditText 
+		        android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/alarmcode"
+		     	android:layout_gravity="center_vertical"
+		     	android:id="@+id/alarmcode"
+		     	android:background="@color/_White"
+	     		android:layout_marginBottom="@dimen/m_20dp"
+	     		android:padding="@dimen/m_5dp"/>
+		    <EditText 
+		        android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/alarmsupp"
+		     	android:layout_gravity="center_vertical"
+		     	android:id="@+id/alarmsupp"
+		     	android:background="@color/_White"
+	     		android:layout_marginBottom="@dimen/m_20dp"
+	     		android:padding="@dimen/m_5dp"/>
+		    
+		    <LinearLayout 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		        android:orientation="vertical"
+		     	android:layout_marginBottom="@dimen/m_20dp">
+		        <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/precat_instruct"
+		     	android:textSize="16sp"
+		     	android:textColor="@color/_Black"/>
+		        <EditText
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/name"
+		     	android:id="@+id/precat_instruct"
+		     	android:background="@color/_White"
+		     	android:padding="@dimen/m_5dp"/>
+		       </LinearLayout>	
+		       <EditText
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/smokalrm"
+		     	android:id="@+id/smokalrmno"
+		     	android:background="@color/_White"
+	     		android:layout_marginBottom="@dimen/m_20dp"
+	     		android:padding="@dimen/m_5dp"/>
+		        <EditText
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/alrmloc"
+		     	android:id="@+id/smokalrmloc"
+		     	android:background="@color/_White"
+	     		android:layout_marginBottom="@dimen/m_20dp"
+	     		android:padding="@dimen/m_5dp"/> 	
+	     		
+		        <RelativeLayout 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		     	android:layout_marginBottom="@dimen/m_20dp">
+		        <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/alrmworking"
+		     	android:textSize="16sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_alignParentLeft="true"/>
+				<RadioGroup
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_alignParentRight="true"
+					android:id="@+id/issmokalrmwork">
+					<RadioButton
+					   	android:id="@+id/smokalrm_y"
+					   	android:layout_width="wrap_content"
+					   	android:layout_height="wrap_content"
+					   	android:text="@string/yes"/>
+					<RadioButton
+					    android:id="@+id/smokalrm_n"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="@string/no"
+					    android:checked="true"/>
+				</RadioGroup>		
+		    </RelativeLayout>	
+		   </LinearLayout>
+		  
+		   <LinearLayout 
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content"
+		       android:orientation="vertical">
+		       
+		       <TextView
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/refuse"
+			     	android:textSize="@dimen/m_24sp"
+			     	android:textColor="@color/_Black"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="@dimen/m_20dp"/>
+		      
+		        <TextView
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/general"
+			     	android:textSize="16sp"
+			     	android:textColor="@color/_Black"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="@dimen/m_20dp"/>
+		       <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/collectpt"
+			     	android:id="@+id/gencollectpt"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		        <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/collectday"
+			     	android:id="@+id/gencollectday"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		       
+		       <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/refuseprovider"
+			     	android:id="@+id/genprovider"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		       <TextView
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/recycling"
+			     	android:textSize="16sp"
+			     	android:textColor="@color/_Black"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="@dimen/m_20dp"/>
+		       <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/collectpt"
+			     	android:id="@+id/reccollectpt"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		        <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/collectday"
+			     	android:id="@+id/recycollectday"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		       
+		       <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/refuseprovider"
+			     	android:id="@+id/recyprovider"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		       
+		       
+		       
+		       <TextView
+				    android:layout_width="wrap_content"
+			     	android:layout_height="wrap_content"
+			     	android:text="@string/glass"
+			     	android:textSize="16sp"
+			     	android:textColor="@color/_Black"
+			     	android:layout_gravity="center_vertical"
+			     	android:layout_marginBottom="@dimen/m_20dp"/>
+		       <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/collectpt"
+			     	android:id="@+id/glscollectpt"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		        <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/collectday"
+			     	android:id="@+id/glscollectday"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		       
+		       <EditText
+				    android:layout_width="match_parent"
+			     	android:layout_height="wrap_content"
+			     	android:textSize="18sp"
+			     	android:hint="@string/refuseprovider"
+			     	android:id="@+id/glsprovider"
+			     	android:background="@color/_White"
+			     	android:layout_marginBottom="@dimen/m_20dp"
+			     	android:padding="@dimen/m_5dp"/>
+		      <RelativeLayout 
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			     	android:layout_marginBottom="@dimen/m_20dp">
+			        <TextView
+					    android:layout_width="wrap_content"
+				     	android:layout_height="wrap_content"
+				     	android:text="@string/bintags"
+				     	android:textSize="16sp"
+				     	android:textColor="@color/_Black"
+				     	android:layout_gravity="center_vertical"
+				     	android:layout_alignParentLeft="true"/>
+			       <RadioGroup
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_alignParentRight="true"
+						android:id="@+id/isbintags">
+						<RadioButton
+						   	android:id="@+id/bintags_y"
+						   	android:layout_width="wrap_content"
+						   	android:layout_height="wrap_content"
+						   	android:text="@string/yes"/>
+						<RadioButton
+						    android:id="@+id/bintags_n"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/no"
+						    android:checked="true"/>
+					</RadioGroup>	
+				</RelativeLayout>  
+		  </LinearLayout> 
+		  <LinearLayout 
+		      android:layout_width="match_parent"
+		      android:layout_height="wrap_content"
+		      android:orientation="vertical">
+		      <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/telvsnserv"
+		     	android:textSize="@dimen/m_24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+		        <RelativeLayout 
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			     	android:layout_marginBottom="@dimen/m_20dp">
+			        <TextView
+					    android:layout_width="wrap_content"
+				     	android:layout_height="wrap_content"
+				     	android:text="@string/isdvdconn"
+				     	android:textSize="16sp"
+				     	android:textColor="@color/_Black"
+				     	android:layout_gravity="center_vertical"
+				     	android:layout_alignParentLeft="true"/>
+			       <RadioGroup
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_alignParentRight="true"
+						android:id="@+id/isdvdconn">
+						<RadioButton
+						   	android:id="@+id/dvdconn_y"
+						   	android:layout_width="wrap_content"
+						   	android:layout_height="wrap_content"
+						   	android:text="@string/yes"/>
+						<RadioButton
+						    android:id="@+id/dvdconn_n"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/no"
+						    android:checked="true" />
+					</RadioGroup>	
+				</RelativeLayout>
+				 <RelativeLayout 
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			     	android:layout_marginBottom="@dimen/m_20dp">
+			        <TextView
+					    android:layout_width="wrap_content"
+				     	android:layout_height="wrap_content"
+				     	android:text="@string/cableconn"
+				     	android:textSize="16sp"
+				     	android:textColor="@color/_Black"
+				     	android:layout_gravity="center_vertical"
+				     	android:layout_alignParentLeft="true"/>
+			       <RadioGroup
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_alignParentRight="true"
+						android:id="@+id/iscableconn">
+						<RadioButton
+						   	android:id="@+id/cableconn_y"
+						   	android:layout_width="wrap_content"
+						   	android:layout_height="wrap_content"
+						   	android:text="@string/yes"/>
+						<RadioButton
+						    android:id="@+id/cableconn_n"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/no"
+						    android:checked="true" />
+					</RadioGroup>	
+				</RelativeLayout>
+				 <RelativeLayout 
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			     	android:layout_marginBottom="@dimen/m_20dp">
+			        <TextView
+					    android:layout_width="wrap_content"
+				     	android:layout_height="wrap_content"
+				     	android:text="@string/telvsnwork"
+				     	android:textSize="16sp"
+				     	android:textColor="@color/_Black"
+				     	android:layout_gravity="center_vertical"
+				     	android:layout_alignParentLeft="true"/>
+			       <RadioGroup
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:layout_alignParentRight="true"
+						android:id="@+id/istelvsnwork">
+						<RadioButton
+						   	android:id="@+id/telvsnwork_y"
+						   	android:layout_width="wrap_content"
+						   	android:layout_height="wrap_content"
+						   	android:text="@string/yes"/>
+						<RadioButton
+						    android:id="@+id/telvsnwork_n"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/no" 
+						    android:checked="true"/>
+					</RadioGroup>	
+				</RelativeLayout>
+		  </LinearLayout>     
+		</LinearLayout>
+	</ScrollView>
+    <include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+	
+</RelativeLayout>

@@ -1,0 +1,2190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    android:background="@color/_GRAY">
+    <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/head_btn"
+	    android:layout_above="@+id/navwraper"
+	    android:id="@+id/bodywrper"
+	    >
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="@dimen/m_10dp">
+		<RelativeLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/_GREEN"
+			android:id="@+id/type_insp_sec"
+			android:layout_marginBottom="@dimen/m_36dp"
+			android:paddingLeft="@dimen/m_10dp"
+			android:paddingRight="@dimen/m_10dp">
+			<TextView
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:text="@string/interior_title"
+		      	android:textSize="@dimen/m_24sp"
+		      	android:textColor="@color/_White"
+		      	android:layout_gravity="left|center_vertical"
+		      	android:textStyle="bold"
+		      	android:textAllCaps="true"
+		      	android:onClick="btntxtonClick"/>
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:background="@drawable/interior_heading_icon"
+		      	android:layout_alignParentRight="true"
+		      	android:layout_centerVertical="true"
+		      	android:contentDescription="@string/addnew_rep"/>
+		 </RelativeLayout>
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_margin="@dimen/m_10dp">
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:background="@drawable/bullets_black"
+		     	android:layout_centerVertical="true"
+		     	android:contentDescription="@string/typeof_insplbl"
+		     	android:id="@+id/typeof_insplbl"
+		     	android:layout_marginRight="@dimen/m_10dp"/>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/bedroom4_title"
+		     	android:textSize="@dimen/m_24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_toRightOf="@+id/typeof_insplbl"/>
+			
+				
+		  </RelativeLayout>
+		 
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/interior_check_in_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+		 
+		 <!-- living room check in form starts -->
+		
+<!-- Living room check in carpets and rugs starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_flooring_or_carpet_or_rugs"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_flooring_or_carpet_or_rugs_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/flooring_carpets_rugs_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_flooring_or_carpet_or_rugs_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/flooring_carpets_rugs_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_flooring_or_carpet_or_rugs_textView"
+    android:layout_below= "@+id/interior_check_in_flooring_or_carpet_or_rugs_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_flooring_or_carpet_or_rugs_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_flooring_or_carpet_or_rugs_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_check_in_flooring_or_carpet_or_rugs_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in carpets and rugs ends here -->
+<!-- Living room check in paint paper walls celling starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_paint_or_paperwall_or_ceiling_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/paint_paper_walls_celling_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_paint_or_paperwall_or_ceiling_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/paint_paper_walls_celling_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_paint_or_paperwall_or_ceiling_textView"
+    android:layout_below= "@+id/interior_check_in_paint_or_paperwall_or_ceiling_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_paint_or_paperwall_or_ceiling_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_paint_or_paperwall_or_ceiling_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_check_in_paint_or_paperwall_or_ceiling_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in paint paper walls celling ends here -->
+<!-- Living room check in skirting board starts here -->
+ <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/m_5dp" android:layout_marginTop="@dimen/m_5dp" android:orientation="vertical">
+	 <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+     <TextView
+          android:id="@+id/interior_check_in_skirting_boards_or_radiator_textView" 
+          android:layout_width="wrap_content" android:layout_height="wrap_content" 
+          android:layout_alignParentLeft="true" android:layout_marginBottom="@dimen/m_10dp"
+           android:text="@string/skirting_boards_radiator_title" 
+           android:textColor="@color/_Black"
+            android:textSize="@dimen/m_18sp"
+             android:visibility="gone"/>
+	   <EditText
+	        android:id="@+id/interior_check_in_skirting_boards_or_radiator_editText"
+	          android:layout_width="wrap_content"
+	          	           android:layout_height="wrap_content"
+	          	            android:layout_below="@+id/interior_check_in_skirting_boards_or_radiator_textView" 
+	          	            android:layout_gravity="center_vertical" 
+	          	            android:layout_marginBottom="@dimen/m_10dp"
+	          	             android:layout_marginLeft="@dimen/m_5dp" 
+	          	             android:layout_toLeftOf="@+id/interior_check_in_skirting_boards_or_radiator_imageView"
+	          	              android:background="@color/_White"
+	          	               android:hint="@string/skirting_boards_radiator_title"
+	          	                android:onClick="onElementClick"  
+	          	                 android:padding="@dimen/m_5dp" 
+	          	                 android:textSize="@dimen/m_18sp" 
+	          	                 android:layout_alignLeft="@+id/interior_check_in_skirting_boards_or_radiator_textView"
+	          	                  android:visibility="gone"/>
+	   <ImageView android:id="@+id/interior_check_in_skirting_boards_or_radiator_imageView" 
+	       android:layout_width="wrap_content" 
+	       android:layout_height="wrap_content" 
+	       android:layout_alignBottom="@+id/interior_check_in_skirting_boards_or_radiator_editText" 
+	       android:layout_alignParentRight="true" 
+	       android:layout_marginLeft="@dimen/m_10dp" 
+	       android:contentDescription="@string/image_view_content_desc" 
+	       android:maxHeight="@dimen/m_42dp" android:maxWidth="@dimen/m_42dp" 
+	       android:onClick="onPicUpload"
+	       android:adjustViewBounds="true"
+			android:layout_centerVertical="true"
+			android:scaleType="fitCenter"	       
+	       android:src="@drawable/img_upload"
+	       android:visibility="gone"/>
+</RelativeLayout>
+<!-- Living room check in skirting board ends here -->
+<!--  Living room check in Door /locks/keys/handles starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+	   <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_doors_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/doors_locks_keys_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_doors_or_locks_or_keys_or_handles_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/doors_locks_keys_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:maxWidth="@dimen/m_42dp"  
+    android:maxHeight="@dimen/m_42dp" 
+    android:adjustViewBounds="true"
+  	android:layout_centerVertical="true"
+  	android:scaleType="fitCenter"
+    android:layout_alignLeft="@+id/interior_check_in_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_below= "@+id/interior_check_in_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_doors_or_locks_or_keys_or_handles_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_doors_or_locks_or_keys_or_handles_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_check_in_doors_or_locks_or_keys_or_handles_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Door /locks/keys/handles ends here -->
+<!-- Living room check in Windows/locks/keys/handles  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/windows_keys_locks_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_windows_or_locks_or_keys_or_handles_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/windows_keys_locks_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_below= "@+id/interior_check_in_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_windows_or_locks_or_keys_or_handles_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_windows_or_locks_or_keys_or_handles_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"
+      android:layout_alignBottom="@+id/interior_check_in_windows_or_locks_or_keys_or_handles_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!--  Living room check in Windows/locks/keys/handles  ends here  -->
+<!--  Living room check in Lighting/bulbs/shades ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_lighting_or_bulbs_or_sheds_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/light_bulb_shades_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_lighting_or_bulbs_or_sheds_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/light_bulb_shades_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_lighting_or_bulbs_or_sheds_textView"
+    android:layout_below= "@+id/interior_check_in_lighting_or_bulbs_or_sheds_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_lighting_or_bulbs_or_sheds_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_lighting_or_bulbs_or_sheds_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_check_in_lighting_or_bulbs_or_sheds_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!--  Living room check in Lighting/bulbs/shades ends here  -->
+<!-- Living room check in Soft Furnishings ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_wardrobes_or_furniture_or_headboard"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/wardrobes_or_furniture_or_headboard_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_wardrobes_or_furniture_or_headboard_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/wardrobes_or_furniture_or_headboard_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_below= "@+id/interior_check_in_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_alignLeft="@+id/interior_check_in_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_wardrobes_or_furniture_or_headboard_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_wardrobes_or_furniture_or_headboard_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_check_in_wardrobes_or_furniture_or_headboard_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Soft Furnishings ends here  -->
+<!-- Living room check in Wooden Furniture ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_bed_or_matress_or_protector"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_bed_or_matress_or_protector_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/bed_or_matress_or_protector_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_bed_or_matress_or_protector_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/bed_or_matress_or_protector_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_toLeftOf= "@+id/interior_check_in_bed_or_matress_or_protector_imageView"
+    android:layout_below= "@+id/interior_check_in_bed_or_matress_or_protector_textView"
+    android:layout_alignLeft="@+id/interior_check_in_bed_or_matress_or_protector_textView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_bed_or_matress_or_protector_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_check_in_bed_or_matress_or_protector_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Wooden Furniture ends here  -->
+<!-- Living room check in Mirror/pictures ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/bedlinen_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/bedlinen_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_imageView"
+    android:layout_below= "@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Curtains/blinds ends here  -->
+<!-- Living room check in Curtains/blinds ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_curtains_or_blinds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_curtains_or_blinds_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/curtains_blinds_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_curtains_or_blinds_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/curtains_blinds_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_curtains_or_blinds_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_curtains_or_blinds_imageView"
+    android:layout_below= "@+id/interior_check_in_curtains_or_blinds_textView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_curtains_or_blinds_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_check_in_curtains_or_blinds_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Curtains/blinds ends here  -->
+
+<!-- Living room check in Miscellaneous starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_check_in_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_check_in_miscellaneous_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/miscellaneous_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_check_in_miscellaneous_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/miscellaneous_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_miscellaneous_textView"
+    android:layout_below= "@+id/interior_check_in_miscellaneous_textView"
+    android:layout_toLeftOf= "@+id/interior_check_in_miscellaneous_imageView"
+    android:onClick="onElementClick"
+    android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_check_in_miscellaneous_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_check_in_miscellaneous_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Miscellaneous ends here -->
+
+<!-- living room check in action plan if requied  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+
+<TextView
+    android:id="@+id/interior_action_plan_if_required_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/action_plan_required_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_check_in_action_plan_if_required_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/action_plan_required_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_action_plan_if_required_textView"
+    android:layout_below= "@+id/interior_action_plan_if_required_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- living room check in action plan if requied  starts here -->
+<!-- follow up  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_check_in_follow_up_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/follow_up_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_check_in_follow_up_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/follow_up_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_follow_up_textView"
+    android:layout_below= "@+id/interior_check_in_follow_up_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- follow up ends here -->
+<!-- final comments  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_check_in_final_comments_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/final_comments_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_check_in_final_comments_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/final_comments_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_check_in_final_comments_textView"
+    android:layout_below= "@+id/interior_check_in_final_comments_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- final comments ends here -->
+<!-- check in ended here -->
+		 		
+		 <!-- living room check in form starts -->
+		 
+		 
+		 
+		 <!-- living room pre-departure form starts -->
+		 
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_pre_departure_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:layout_marginTop="@dimen/m_10dp"/>
+		 
+<!-- Living room pre-departure carpets and rugs starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_flooring_or_carpet_or_rugs"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_flooring_or_carpet_or_rugs_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/flooring_carpets_rugs_title" 
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_flooring_or_carpet_or_rugs_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/flooring_carpets_rugs_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_flooring_or_carpet_or_rugs_textView"
+    android:layout_below= "@+id/interior_pre_departure_flooring_or_carpet_or_rugs_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_flooring_or_carpet_or_rugs_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_flooring_or_carpet_or_rugs_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_pre_departure_flooring_or_carpet_or_rugs_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in carpets and rugs ends here -->
+<!-- Living room check in paint paper walls celling starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/paint_paper_walls_celling_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/paint_paper_walls_celling_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_textView"
+    android:layout_below= "@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_pre_departure_paint_or_paperwall_or_ceiling_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in paint paper walls celling ends here -->
+<!-- Living room check in skirting board starts here -->
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/m_5dp"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:orientation="vertical" >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/interior_pre_departure_skirting_boards_or_radiator_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/m_10dp"
+        android:text="@string/skirting_boards_radiator_title"
+        android:textColor="@color/_Black"
+        android:textSize="@dimen/m_18sp"  android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/interior_pre_departure_skirting_boards_or_radiator_editText"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interior_pre_departure_skirting_boards_or_radiator_textView"
+        android:layout_alignLeft="@+id/interior_pre_departure_skirting_boards_or_radiator_textView"
+        android:layout_marginBottom="@dimen/m_10dp"
+        android:layout_marginLeft="@dimen/m_5dp"
+        android:layout_toLeftOf="@+id/interior_pre_departure_skirting_boards_or_radiator_imageView"
+        android:background="@color/_White"
+        android:hint="@string/skirting_boards_radiator_title"
+        android:onClick="onElementClick"
+          android:padding="@dimen/m_5dp"
+        android:textSize="@dimen/m_18sp"   android:visibility="gone">
+
+       
+    </EditText>
+
+    <ImageView
+        android:id="@+id/interior_pre_departure_skirting_boards_or_radiator_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/interior_pre_departure_skirting_boards_or_radiator_editText"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/m_10dp"
+        android:contentDescription="@string/image_view_content_desc"
+        android:onClick="onPicUpload"
+        android:src="@drawable/img_upload"
+      android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp" 
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"    android:visibility="gone"/>
+</RelativeLayout>
+<!-- Living room check in skirting board ends here -->
+<!--  Living room check in Door /locks/keys/handles starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_doors_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/doors_locks_keys_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/doors_locks_keys_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_below= "@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_pre_departure_doors_or_locks_or_keys_or_handles_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Door /locks/keys/handles ends here -->
+<!-- Living room check in Windows/locks/keys/handles  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/windows_keys_locks_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/windows_keys_locks_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_below= "@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"
+      android:layout_alignBottom="@+id/interior_pre_departure_windows_or_locks_or_keys_or_handles_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"    android:visibility="gone"
+    />
+</RelativeLayout>
+<!--  Living room check in Windows/locks/keys/handles  ends here  -->
+<!--  Living room check in Lighting/bulbs/shades ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/light_bulb_shades_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/light_bulb_shades_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_textView"
+    android:layout_below= "@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_pre_departure_lighting_or_bulbs_or_sheds_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!--  Living room check in Lighting/bulbs/shades ends here  -->
+<!-- Living room check in Soft Furnishings ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_wardrobes_or_furniture_or_headboard"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/wardrobes_or_furniture_or_headboard_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/wardrobes_or_furniture_or_headboard_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_below= "@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_pre_departure_wardrobes_or_furniture_or_headboard_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Soft Furnishings ends here  -->
+<!-- Living room check in Wooden Furniture ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	                        
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_bed_or_matress_or_protector"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_bed_or_matress_or_protector_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/bed_or_matress_or_protector_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_bed_or_matress_or_protector_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/bed_or_matress_or_protector_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_bed_or_matress_or_protector_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_bed_or_matress_or_protector_imageView"
+    android:layout_below= "@+id/interior_pre_departure_bed_or_matress_or_protector_textView"
+    android:onClick="onElementClick" android:visibility="gone"/>
+
+<ImageView
+    android:id="@+id/interior_pre_departure_bed_or_matress_or_protector_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_pre_departure_bed_or_matress_or_protector_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Wooden Furniture ends here  -->
+<!-- Living room check in Mirror/pictures starts here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/bedlinen_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/bedlinen_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_imageView"
+    android:layout_below= "@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Mirror/pictures ends here  -->
+<!-- Living room check in Curtains/blinds starts here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_curtains_or_blinds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_curtains_or_blinds_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/curtains_blinds_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"
+    android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_curtains_or_blinds_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/curtains_blinds_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_curtains_or_blinds_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_curtains_or_blinds_imageView"
+    android:layout_below= "@+id/interior_pre_departure_curtains_or_blinds_textView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_curtains_or_blinds_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_pre_departure_curtains_or_blinds_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Curtains/blinds ends here  -->
+
+<!-- Living room check in Miscellaneous starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_pre_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_pre_departure_miscellaneous_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/miscellaneous_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_pre_departure_miscellaneous_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/miscellaneous_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_miscellaneous_textView"
+    android:layout_below= "@+id/interior_pre_departure_miscellaneous_textView"
+    android:layout_toLeftOf= "@+id/interior_pre_departure_miscellaneous_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_pre_departure_miscellaneous_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_pre_departure_miscellaneous_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Miscellaneous ends here -->
+
+<!-- living room check in action plan if requied  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_pre_departure_action_plan_if_required_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/action_plan_required_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_pre_departure_action_plan_if_required_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/action_plan_required_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_action_plan_if_required_textView"
+    android:layout_below= "@+id/interior_pre_departure_action_plan_if_required_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- living room check in action plan if requied  starts here -->
+<!-- follow up  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_pre_departure_follow_up_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/follow_up_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_pre_departure_follow_up_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/follow_up_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_follow_up_textView"
+    android:layout_below= "@+id/interior_pre_departure_follow_up_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- follow up ends here -->
+<!-- final comments  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_pre_departure_final_comments_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/final_comments_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_pre_departure_final_comments_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/final_comments_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_pre_departure_final_comments_textView"
+    android:layout_below= "@+id/interior_pre_departure_final_comments_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- final comments ends here -->
+<!-- check in ended here -->
+		 			
+		 
+		 <!-- living room pre_departure form ends -->
+		 
+		 
+		 <!-- living room departure form starts -->
+		 
+		 
+		 
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_departure_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:layout_marginTop="@dimen/m_10dp"
+		     	android:textAllCaps="true"
+		     	android:textStyle="bold"/>
+<!-- Living room check in carpets and rugs starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_flooring_or_carpet_or_rugs"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_flooring_or_carpet_or_rugs_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/flooring_carpets_rugs_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_flooring_or_carpet_or_rugs_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/flooring_carpets_rugs_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_flooring_or_carpet_or_rugs_textView"
+    android:layout_below= "@+id/interior_departure_flooring_or_carpet_or_rugs_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_flooring_or_carpet_or_rugs_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_flooring_or_carpet_or_rugs_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_departure_flooring_or_carpet_or_rugs_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in carpets and rugs ends here -->
+<!-- Living room check in paint paper walls celling starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_paint_or_paperwall_or_ceiling_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/paint_paper_walls_celling_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_paint_or_paperwall_or_ceiling_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/paint_paper_walls_celling_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_paint_or_paperwall_or_ceiling_textView"
+    android:layout_below= "@+id/interior_departure_paint_or_paperwall_or_ceiling_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_paint_or_paperwall_or_ceiling_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_paint_or_paperwall_or_ceiling_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_departure_paint_or_paperwall_or_ceiling_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in paint paper walls celling ends here -->
+<!-- Living room check in skirting board starts here -->
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/m_5dp"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:orientation="vertical" >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/interior_departure_skirting_boards_or_radiator_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/m_10dp"
+        android:text="@string/skirting_boards_radiator_title"
+        android:textColor="@color/_Black"
+        android:textSize="@dimen/m_18sp"   android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/interior_departure_skirting_boards_or_radiator_editText"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interior_departure_skirting_boards_or_radiator_textView"
+        android:layout_alignLeft="@+id/interior_departure_skirting_boards_or_radiator_textView"
+        android:layout_marginBottom="@dimen/m_10dp"
+        android:layout_marginLeft="@dimen/m_5dp"
+        android:layout_toLeftOf="@+id/interior_departure_skirting_boards_or_radiator_imageView"
+        android:background="@color/_White"
+        android:hint="@string/skirting_boards_radiator_title"
+        android:onClick="onElementClick"
+          android:padding="@dimen/m_5dp"
+        android:textSize="@dimen/m_18sp"   android:visibility="gone">
+
+       
+    </EditText>
+
+    <ImageView
+        android:id="@+id/interior_departure_skirting_boards_or_radiator_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/interior_departure_skirting_boards_or_radiator_editText"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/m_10dp"
+        android:contentDescription="@string/image_view_content_desc"
+        android:onClick="onPicUpload"
+        android:src="@drawable/img_upload"
+      android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp" 
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"   android:visibility="gone" />
+</RelativeLayout>
+<!-- Living room check in skirting board ends here -->
+<!--  Living room check in Door /locks/keys/handles starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_doors_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/doors_locks_keys_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_doors_or_locks_or_keys_or_handles_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/doors_locks_keys_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_below= "@+id/interior_departure_doors_or_locks_or_keys_or_handles_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_doors_or_locks_or_keys_or_handles_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_doors_or_locks_or_keys_or_handles_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_departure_doors_or_locks_or_keys_or_handles_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Door /locks/keys/handles ends here -->
+<!-- Living room check in Windows/locks/keys/handles  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/windows_keys_locks_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_windows_or_locks_or_keys_or_handles_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/windows_keys_locks_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_below= "@+id/interior_departure_windows_or_locks_or_keys_or_handles_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_windows_or_locks_or_keys_or_handles_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_windows_or_locks_or_keys_or_handles_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"
+      android:layout_alignBottom="@+id/interior_departure_windows_or_locks_or_keys_or_handles_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"    android:visibility="gone"
+    />
+</RelativeLayout>
+<!--  Living room check in Windows/locks/keys/handles  ends here  -->
+<!--  Living room check in Lighting/bulbs/shades ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_lighting_or_bulbs_or_sheds_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/light_bulb_shades_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_lighting_or_bulbs_or_sheds_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/light_bulb_shades_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_lighting_or_bulbs_or_sheds_textView"
+    android:layout_below= "@+id/interior_departure_lighting_or_bulbs_or_sheds_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_lighting_or_bulbs_or_sheds_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_lighting_or_bulbs_or_sheds_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+  android:layout_alignBottom="@+id/interior_departure_lighting_or_bulbs_or_sheds_editText"
+    android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!--  Living room check in Lighting/bulbs/shades ends here  -->
+<!-- Living room check in Soft Furnishings ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_wardrobes_or_furniture_or_headboard"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/wardrobes_or_furniture_or_headboard_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_wardrobes_or_furniture_or_headboard_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/wardrobes_or_furniture_or_headboard_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_below= "@+id/interior_departure_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_alignLeft="@+id/interior_departure_wardrobes_or_furniture_or_headboard_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_wardrobes_or_furniture_or_headboard_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+
+<ImageView
+    android:id="@+id/interior_departure_wardrobes_or_furniture_or_headboard_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_departure_wardrobes_or_furniture_or_headboard_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Soft Furnishings ends here  -->
+<!-- Living room check in Wooden Furniture ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_bed_or_matress_or_protector"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_bed_or_matress_or_protector_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/bed_or_matress_or_protector_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_bed_or_matress_or_protector_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/bed_or_matress_or_protector_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_bed_or_matress_or_protector_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_bed_or_matress_or_protector_imageView"
+    android:layout_below= "@+id/interior_departure_bed_or_matress_or_protector_textView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_bed_or_matress_or_protector_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_departure_bed_or_matress_or_protector_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Wooden Furniture ends here  -->
+<!-- Living room check in Mirror/pictures ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/bedlinen_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/bedlinen_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_imageView"
+    android:layout_below= "@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_textView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_departure_bedlinens_or_duvets_or_pillows_or_blankets_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Curtains/blinds ends here  -->
+<!-- Living room check in Curtains/blinds ends here  -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_curtains_or_blinds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_curtains_or_blinds_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/curtains_blinds_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_curtains_or_blinds_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/curtains_blinds_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_toLeftOf= "@+id/interior_departure_curtains_or_blinds_imageView"
+    android:layout_alignLeft="@+id/interior_departure_curtains_or_blinds_textView"
+    android:layout_below= "@+id/interior_departure_curtains_or_blinds_textView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_curtains_or_blinds_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_departure_curtains_or_blinds_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Curtains/blinds ends here  -->
+
+<!-- Living room check in Miscellaneous starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_bedroom4_interior_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+<TextView
+    android:id="@+id/interior_departure_miscellaneous_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/miscellaneous_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"  android:visibility="gone"/>
+<EditText
+    android:id="@+id/interior_departure_miscellaneous_editText"
+     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/miscellaneous_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_miscellaneous_textView"
+    android:layout_below= "@+id/interior_departure_miscellaneous_textView"
+    android:layout_toLeftOf= "@+id/interior_departure_miscellaneous_imageView"
+    android:onClick="onElementClick"  android:visibility="gone"/>
+<ImageView
+    android:id="@+id/interior_departure_miscellaneous_imageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/img_upload" 
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:contentDescription="@string/image_view_content_desc"
+  android:layout_alignParentRight="true"
+  android:onClick="onPicUpload"
+    android:maxWidth="@dimen/m_42dp"  
+      android:maxHeight="@dimen/m_42dp"  
+      android:layout_alignBottom="@+id/interior_departure_miscellaneous_editText"
+        android:adjustViewBounds="true"
+  android:layout_centerVertical="true"
+  android:scaleType="fitCenter"
+  android:visibility="gone"
+    />
+</RelativeLayout>
+<!-- Living room check in Miscellaneous ends here -->
+
+<!-- living room check in action plan if requied  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_departure_action_plan_if_required_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/action_plan_required_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_departure_action_plan_if_required_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/action_plan_required_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_action_plan_if_required_textView"
+    android:layout_below= "@+id/interior_departure_action_plan_if_required_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- living room check in action plan if requied  starts here -->
+<!-- follow up  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_departure_follow_up_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/follow_up_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_departure_follow_up_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/follow_up_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_5dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_follow_up_textView"
+    android:layout_below= "@+id/interior_departure_follow_up_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- follow up ends here -->
+<!-- final comments  starts here -->
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/m_5dp"
+    android:layout_marginBottom="@dimen/m_5dp"  >
+<TextView
+    android:id="@+id/interior_departure_final_comments_textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/final_comments_title"
+    android:textSize="@dimen/m_18sp"
+    android:textColor="@color/_Black"
+    android:layout_alignParentLeft="true"
+    android:layout_marginBottom="@dimen/m_10dp"/>
+<EditText
+    android:id="@+id/interior_departure_final_comments_editText"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/m_18sp"
+    android:hint="@string/final_comments_title"
+    android:layout_marginBottom="@dimen/m_10dp"
+      android:padding="@dimen/m_5dp"
+    android:layout_marginLeft="@dimen/m_10dp"
+    android:background="@color/_White"
+    android:layout_alignLeft="@+id/interior_departure_final_comments_textView"
+    android:layout_below= "@+id/interior_departure_final_comments_textView"
+    android:onClick="onElementClick"/>
+</RelativeLayout>
+<!-- final comments ends here -->
+<!-- check in ended here -->
+		 
+		 
+		 
+		 
+		 <!-- living room pre_departure form ends -->
+		 			
+					
+		</LinearLayout>		
+	</ScrollView>
+			
+	<include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+</RelativeLayout>			

@@ -1,0 +1,2023 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    android:background="@color/_GRAY">
+    <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/head_btn"
+	    android:layout_above="@+id/navwraper"
+	    android:id="@+id/bodywrper">
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="10dp">
+		<RelativeLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/_GREEN"
+			android:id="@+id/type_insp_sec"
+			android:layout_marginBottom="36dp"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp">
+			<TextView
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:text="@string/exterior_title"
+		      	android:textSize="24sp"
+		      	android:textColor="@color/_White"
+		      	android:layout_gravity="left|center_vertical"
+		      	android:textStyle="bold"
+		      	android:textAllCaps="true"
+		      	android:onClick="btntxtonClick"/>
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:background="@drawable/interior_heading_icon"
+		      	android:layout_alignParentRight="true"
+		      	android:layout_centerVertical="true"
+		      	android:contentDescription="@string/addnew_rep"/>
+		 </RelativeLayout>
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_margin="10dp">
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:background="@drawable/bullets_black"
+		     	android:layout_centerVertical="true"
+		     	android:contentDescription="@string/typeof_insplbl"
+		     	android:id="@+id/typeof_insplbl1"
+		     	android:layout_marginRight="10dp"/>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_title"
+		     	android:textSize="24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_toRightOf="@+id/typeof_insplbl1"/>
+			
+				
+		  </RelativeLayout>
+		 
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_check_in_title"
+		     	android:textSize="20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"/>
+		 
+		 <!-- Patio/deck/balcony layout starts  -->
+		  <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical" 
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" 
+	    	android:layout_gravity="center_vertical"
+	    	>
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_checking_patioDeckBalcony"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/ground_checking_patioDeckBalcony"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_patio_deck_balcony_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_marginBottom="10dp"
+		     	android:layout_alignParentLeft="true"
+		     	android:visibility="gone"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/ground_checking_patioDeckBalconys"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@color/_White"
+			    android:ems="10"
+			    android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+			    android:hint="@string/exterior_patio_deck_balcony_title"
+			    android:onClick="onElementClick" 
+			    android:layout_below= "@+id/ground_checking_patioDeckBalcony"
+			    android:layout_alignLeft="@+id/ground_checking_patioDeckBalcony"
+			    android:layout_toLeftOf="@+id/ground_checking_patioDeckBalcony_imageView"
+			    	     	android:visibility="gone"
+			    />
+
+			<ImageView
+			    android:id="@+id/ground_checking_patioDeckBalcony_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_checking_patioDeckBalconys"
+			    	     	android:visibility="gone"
+			    />
+		</RelativeLayout>
+		<!-- Patio/deck/balcony layout ends  -->
+		<!-- Garden Shed, side gate & Locks layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_shadeGateLock"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_shadeGateLock"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_shade_gate_locks_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	
+		     	/>
+			<EditText
+			    android:id="@+id/ground_shadeGateLock_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_shade_gate_locks_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_shadeGateLock"
+		     	android:layout_below= "@+id/ground_shadeGateLock"
+		     	android:layout_toLeftOf= "@+id/ground_shadeGateLock_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_shadeGateLock_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_shadeGateLock_editText"
+			    android:onClick="onPicUpload"
+			    	     	android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- Garden Shed, side gate & Locks layout ends  -->
+		<!-- Grass/shrubs/trees layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_grassShrubTree"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_grassShrubTree_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/ground_grassShrubTree_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			<EditText
+			   android:id="@+id/ground_grassShrubTree_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_grassShrubTree_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_grassShrubTree_textView"
+		     	android:layout_below= "@+id/ground_grassShrubTree_textView"
+		     	android:layout_toLeftOf= "@+id/ground_grassShrubTree_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/ground_grassShrubTree_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_grassShrubTree_editText"
+			    android:onClick="onPicUpload"
+			   	     	android:visibility="gone" />
+		</RelativeLayout>
+		<!-- Grass/shrubs/trees layout ends  -->
+		<!-- Fences/walls/driveway layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_fencesWallDrive"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_fencesWallDrive_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_fencesWallDrive_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_fencesWallDrive_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_fencesWallDrive_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft= "@+id/ground_fencesWallDrive_textView"
+		     	android:layout_below= "@+id/ground_fencesWallDrive_textView"
+		     	android:layout_toLeftOf= "@+id/ground_fencesWallDrive_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_fencesWallDrive_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_fencesWallDrive_editText"
+			    android:onClick="onPicUpload"
+			   	     	android:visibility="gone" />
+			
+		</RelativeLayout>
+		<!-- Fences/walls/driveway layout ends  -->
+		<!-- Walks/paintwork layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_walksPaint"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_walksPaint_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_walksPaint_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_walksPaint_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_walksPaint_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_below= "@+id/ground_walksPaint_textView"
+		     	android:layout_alignLeft="@+id/ground_walksPaint_textView"
+		     	android:layout_toLeftOf= "@+id/ground_walksPaint_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_walksPaint_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_walksPaint_editText"
+			    android:onClick="onPicUpload"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+		<!-- Walks/paintwork layout ends  -->
+		<!-- Roof/slates/gutters layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/ground_roofSlateGutter_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_roofSlateGutter_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_roofSlateGutter"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<EditText
+			    android:id="@+id/ground_roofSlateGutter_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_roofSlateGutter_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_roofSlateGutter_textView"
+		     	android:layout_below= "@+id/ground_roofSlateGutter_textView"
+		     	android:layout_toLeftOf= "@+id/ground_roofSlateGutter_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_roofSlateGutter_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_roofSlateGutter_editText"
+			    android:onClick="onPicUpload"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- Roof/slates/gutters layout ends  -->
+			
+			<!-- Doorbell/lights/porch  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_doorbellLightsPorch"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_doorbellLightsPorch_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_doorbellLightsPorch_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_doorbellLightsPorch_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_doorbellLightsPorch_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_doorbellLightsPorch_textView"
+		     	android:layout_below= "@+id/ground_doorbellLightsPorch_textView"
+		     	android:layout_toLeftOf= "@+id/ground_doorbellLightsPorch_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_doorbellLightsPorch_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_doorbellLightsPorch_editText"
+			    android:onClick="onPicUpload"
+			    	     	android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- Doorbell/lights/porch layout ends  -->
+		<!-- Clothes line  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="10dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_clothesLine"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_clothesLine_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_clothesLine_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_clothesLine_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_clothesLine_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_clothesLine_textView"
+		     	android:layout_below= "@+id/ground_clothesLine_textView"
+		     	android:layout_toLeftOf= "@+id/ground_clothesLine_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_clothesLine_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/ground_clothesLine_editText"
+			    	     	android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- Clothes line layout ends  -->
+			
+			<!-- Refuse Bins  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="10dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_refuseBins"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_refuseBins_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_refuseBins_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_refuseBins_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_refuseBins_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_refuseBins_textView"
+		     	android:layout_below= "@+id/ground_refuseBins_textView"
+		     	android:layout_toLeftOf= "@+id/ground_refuseBins_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_refuseBins_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/ground_refuseBins_editText"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- Refuse Bins  layout ends  -->
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="10dp"  >
+			
+			<TextView
+			    android:id="@+id/ground_check_in_action_plan_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_check_in_action_plan_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_check_in_action_plan_textView"
+		     	android:layout_below= "@+id/ground_check_in_action_plan_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="10dp"  >
+			<TextView
+			    android:id="@+id/ground_check_in_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_check_in_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_check_in_follow_up_textView"
+		     	android:layout_below= "@+id/ground_check_in_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Final comments  layout ends  -->
+			
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="10dp"  >
+			<TextView
+			    android:id="@+id/ground_check_in_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_check_in_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_check_in_final_comments_textView"
+		     	android:layout_below= "@+id/ground_check_in_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			<!-- pre departure starts -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_pre_departure_title"
+		     	android:textSize="20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginTop="20dp"
+		     	android:layout_marginBottom="10dp"/>
+			
+		
+			<!-- Patio/deck/balcony layout starts  -->
+		  <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical" 
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" 
+	    	>
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_patioDeckBalcony"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_patioDeckBalcony"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_patio_deck_balcony_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_marginBottom="10dp"
+		     	android:layout_alignParentLeft="true"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/pre_departure_patio_deck_balcony"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@color/_White"
+			    android:ems="10"
+			    android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+			    android:hint="@string/exterior_patio_deck_balcony_title"
+			    android:onClick="onElementClick" 
+			    android:layout_alignLeft="@+id/ground_pre_departure_patioDeckBalcony"
+			    android:layout_below= "@+id/ground_pre_departure_patioDeckBalcony"
+			    android:layout_toLeftOf="@+id/ground_pre_departure_patioDeckBalcony_imageView"
+			  	     	android:visibility="gone"  />
+
+			<ImageView
+			    android:id="@+id/ground_pre_departure_patioDeckBalcony_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/pre_departure_patio_deck_balcony"
+			 	     	android:visibility="gone"   />
+		</RelativeLayout>
+		<!-- Patio/deck/balcony layout ends  -->
+		<!-- shade,gate,lock layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_shadeGateLocks"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_shadeGateLocks_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_shade_gate_locks_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	     	android:visibility="gone"	
+		     	/>
+			<EditText
+			    android:id="@+id/ground_pre_departure_shadeGateLocks_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_shade_gate_locks_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_shadeGateLocks_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_shadeGateLocks_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_shadeGateLocks_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_shadeGateLocks_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_pre_departure_shadeGateLocks_editText"
+			    android:onClick="onPicUpload"
+			   	     	android:visibility="gone" />
+		</RelativeLayout>
+		<!-- shade,gate,lock layout ends  -->
+		<!-- gruss,shrub,tree layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_grussShrubTree"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/ground_pre_departure_grussShrubTree_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/ground_grassShrubTree_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	     	android:visibility="gone"	
+		     	/>
+			<EditText
+			    android:id="@+id/ground_pre_departure_grussShrubTree_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@+string/ground_grassShrubTree_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+			    android:layout_alignLeft="@+id/ground_pre_departure_grussShrubTree_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_grussShrubTree_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_grussShrubTree_imageView"
+		     	android:background="@color/_White"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_grussShrubTree_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_pre_departure_grussShrubTree_editText"
+			    	     	android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- gruss,shrub,tree layout ends  -->
+		<!-- wall,Fence,driveway layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_fenceWallDrive"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_fenceWallDrive_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_fencesWallDrive_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_fenceWallDrive_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_fencesWallDrive_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_fenceWallDrive_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_fenceWallDrive_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_fenceWallDrive_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_fenceWallDrive_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="5dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_pre_departure_fenceWallDrive_editText"
+			    	     	android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!-- wall and fence layout ends  -->
+		<!-- Walks/paintwork layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_walksPaint"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_walksPaint_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_walksPaint_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_walksPaint_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_walksPaint_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_walksPaint_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_walksPaint_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_walksPaint_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_walksPaint_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/ground_pre_departure_walksPaint_editText"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+		<!-- walks/paints layout ends  -->
+		<!-- Roof/slates/gutters layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_roofSlateGutter"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_roofSlateGutter_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_roofSlateGutter_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_roofSlateGutter_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_roofSlateGutter_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_roofSlateGutter_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_roofSlateGutter_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_roofSlateGutter_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_roofSlateGutter_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_pre_departure_roofSlateGutter_editText"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- Roof/slates/gutters layout ends  -->
+			
+			<!-- Doorbell/lights/porch  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_doorLightPorch"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_doorLightPorch_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_doorbellLightsPorch_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_doorLightPorch_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_doorbellLightsPorch_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_doorLightPorch_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_doorLightPorch_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_doorLightPorch_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_doorLightPorch_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="5dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_pre_departure_doorLightPorch_editText"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- Doorbell/lights/porch layout ends  -->
+		<!-- Clothes line  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_cloth"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_cloth_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_clothesLine_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_cloth_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_clothesLine_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_cloth_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_cloth_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_cloth_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_cloth_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/ground_pre_departure_cloth_editText"
+			 	     	android:visibility="gone"   />
+			</RelativeLayout>
+			<!-- doors/locks/keys layout ends  -->
+			
+			<!-- Refuse Bins layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_pre_departure_refuseBin"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_refuseBin_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_refuseBins_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_refuseBin_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_refuseBins_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_refuseBin_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_refuseBin_textView"
+		     	android:layout_toLeftOf= "@+id/ground_pre_departure_refuseBin_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_pre_departure_refuseBin_imageView"
+			  android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_pre_departure_refuseBin_editText"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- Refuse Bins  layout ends  -->
+					<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<TextView
+			    android:id="@+id/ground_pre_departure_action_plan_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_action_plan_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_action_plan_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_action_plan_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/ground_pre_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_follow_up_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Final comments  layout ends  -->
+			
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/ground_pre_departure_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_pre_departure_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="10dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_pre_departure_comments_textView"
+		     	android:layout_below= "@+id/ground_pre_departure_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			<!-- pre departure ends -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_departure_title"
+		     	android:textSize="20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	/>
+			<!-- Departure starts -->
+			
+			<!-- Patio/deck/balcony layout starts  -->
+		  <RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical" 
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" 
+	    	>
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_patioDeckBalconys"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_patioDeckBalcony"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_patio_deck_balcony_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_marginBottom="10dp"
+		     	android:layout_alignParentLeft="true"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_patioDeckBalconys"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@color/_White"
+			    android:ems="10"
+			    android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+			    android:hint="@string/exterior_patio_deck_balcony_title"
+			    android:onClick="onElementClick" 
+			    android:layout_alignLeft="@+id/ground_departure_patioDeckBalcony"
+			    android:layout_below= "@+id/ground_departure_patioDeckBalcony"
+			    android:layout_toLeftOf="@+id/ground_departure_patioDeckBalcony_imageView"
+			    	     	android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/ground_departure_patioDeckBalcony_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignBottom="@+id/ground_departure_patioDeckBalconys"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    	     	android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- patio layout ends  -->
+		<!-- shade layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_shadeGateLock"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_shadeGateLock_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_shade_gate_locks_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			<EditText
+			    android:id="@+id/ground_departure_shadeGateLock_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/exterior_shade_gate_locks_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_shadeGateLock_textView"
+		     	android:layout_below= "@+id/ground_departure_shadeGateLock_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_shadeGateLock_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_shadeGateLock_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignBottom="@+id/ground_departure_shadeGateLock_editText"
+			    android:onClick="onPicUpload"
+			  	     	android:visibility="gone"  />
+		</RelativeLayout>
+		<!-- shade layout ends  -->
+		<!-- grass layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_grassShrubTree"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_grassShrubTree_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/ground_grassShrubTree_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			<EditText
+			    android:id="@+id/ground_departure_grassShrubTree_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@+string/ground_grassShrubTree_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+			    android:layout_alignLeft="@+id/ground_departure_grassShrubTree_textView"
+		     	android:layout_below= "@+id/ground_departure_grassShrubTree_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_grassShrubTree_imageView"
+		     	android:background="@color/_White"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_grassShrubTree_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_departure_grassShrubTree_editText"
+			    	     	android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- grass layout ends  -->
+		<!-- wall  layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp" 
+	    	 >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_fenceWallDrive"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/ground_departure_fenceWallDrive_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_fencesWallDrive_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_fenceWallDrive_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_fencesWallDrive_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_fenceWallDrive_textView"
+		     	android:layout_below= "@+id/ground_departure_fenceWallDrive_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_fenceWallDrive_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_fenceWallDrive_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_departure_fenceWallDrive_editText"
+			   	     	android:visibility="gone" />
+			
+		</RelativeLayout>
+		<!-- wall layout ends  -->
+		<!-- walk layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"   >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_walkPaint"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_walkPaint_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_walksPaint_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_walkPaint_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_walksPaint_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_walkPaint_textView"
+		     	android:layout_below= "@+id/ground_departure_walkPaint_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_walkPaint_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_walkPaint_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/ground_departure_walkPaint_imageView"
+			    	     	android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- walk layout ends  -->
+		<!-- roof layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_roofSlateGutter"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_roofSlateGutter_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_roofSlateGutter_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_roofSlateGutter_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_roofSlateGutter_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_roofSlateGutter_textView"
+		     	android:layout_below= "@+id/ground_departure_roofSlateGutter_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_roofSlateGutter_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_roofSlateGutter_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_departure_roofSlateGutter_imageView"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- roof layout ends  -->
+			
+			<!-- Doorbell  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_doorLightPorch"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_doorLightPorch_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_doorbellLightsPorch_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_doorLightPorch_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_doorbellLightsPorch_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_doorLightPorch_textView"
+		     	android:layout_below= "@+id/ground_departure_doorLightPorch_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_doorLightPorch_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_doorLightPorch_imageView"
+			   android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_departure_doorLightPorch_editText"
+			    	     	android:visibility="gone"/>
+			</RelativeLayout>
+			<!--doorbell layout ends  -->
+		<!-- Clothes  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_clothes"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_clothes_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_clothesLine_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_clothes_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_clothesLine_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_clothes_textView"
+		     	android:layout_below= "@+id/ground_departure_clothes_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_clothes_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_clothes_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/ground_departure_clothes_editText"
+			   	     	android:visibility="gone" />
+			</RelativeLayout>
+			<!-- cloth layout ends  -->
+			
+			<!-- Bins  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_ground_departure_refuseBins"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/ground_departure_refuseBins_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/ground_refuseBins_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     		     	android:visibility="gone"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_refuseBins_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/ground_refuseBins_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_refuseBins_textView"
+		     	android:layout_below= "@+id/ground_departure_refuseBins_textView"
+		     	android:layout_toLeftOf= "@+id/ground_departure_refuseBins_imageView"
+		     	android:onClick="onElementClick"	     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/ground_departure_refuseBins_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:adjustViewBounds="true"  
+				android:maxWidth="42dp"  
+				android:maxHeight="42dp"  
+				android:scaleType="fitCenter"
+			    android:layout_marginLeft="10dp"
+			    android:src="@drawable/img_upload" 
+			    android:contentDescription="@string/image_view_content_desc"
+			    android:layout_alignParentRight="true"
+			    android:onClick="onPicUpload"
+			    android:layout_alignBottom="@+id/ground_departure_refuseBins_editText"
+			  	     	android:visibility="gone"  />
+			</RelativeLayout>
+			<!-- bins layout ends  -->
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			
+			<TextView
+			    android:id="@+id/ground_departure_action_plan_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_action_plan_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_action_plan_textView"
+		     	android:layout_below= "@+id/ground_departure_action_plan_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/ground_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="5dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_follow_up_textView"
+		     	android:layout_below= "@+id/ground_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--   Follow up layout ends  -->
+			
+			<!-- Final comments layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="5dp"
+	    	android:layout_marginBottom="5dp"  >
+			<TextView
+			    android:id="@+id/ground_departure_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/ground_departure_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="10dp"
+		     	android:padding="5dp"
+			    android:layout_marginLeft="5dp"
+			    android:layout_marginRight="5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/ground_departure_comments_textView"
+		     	android:layout_below= "@+id/ground_departure_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			<!-- departure ends -->		
+		</LinearLayout>		
+	</ScrollView>
+	
+	
+	<include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+</RelativeLayout>

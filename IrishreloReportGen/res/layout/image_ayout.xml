@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+    
+    <ImageView  
+        android:id="@+id/iv_image1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_upload"
+        android:tag=""
+        />
+     <ImageView  
+        android:id="@+id/iv_image2"
+      android:layout_width="100dp"
+        android:layout_height="100dp"
+       android:tag=""
+        android:src="@drawable/img_upload"
+         android:layout_alignParentRight="true"
+         
+        
+        />
+     <ImageView  
+        android:id="@+id/iv_image3"
+       android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/iv_image1"
+        android:src="@drawable/img_upload"
+        android:layout_marginTop="50dp"
+        android:tag=""
+        />
+     <ImageView  
+        android:id="@+id/iv_image4"
+       android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/iv_image2"
+        android:src="@drawable/img_upload"
+         android:layout_alignParentRight="true"
+          android:layout_marginTop="50dp"
+          android:tag=""
+        />
+      <Button 
+         android:id="@+id/btn_cancel_imageLaout"
+         android:layout_width="100dp"
+         android:layout_height="wrap_content"
+         android:text="@string/_cancel"         
+         android:layout_alignParentRight="true"
+          android:layout_alignParentBottom="true"
+       
+         />
+
+      <Button
+          android:id="@+id/btn_save_imageLaout"
+          android:layout_width="100dp"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/btn_cancel_imageLaout"
+          android:layout_alignBottom="@+id/btn_cancel_imageLaout"
+          android:layout_alignLeft="@+id/iv_image3"
+          android:text="@string/_save" />
+
+</RelativeLayout>

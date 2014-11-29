@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="m_0dp">0dp</dimen>
+    <dimen name="m_100dp">100dp</dimen>
+    <dimen name="m_10dp">10dp</dimen>
+    <dimen name="m_120dp">120dp</dimen>
+    <dimen name="m_150dp">150dp</dimen>
+    <dimen name="m_15dp">15dp</dimen>
+    <dimen name="m_60dp">60dp</dimen>
+    <dimen name="m_70dp">70dp</dimen>
+    <dimen name="m_80dp">80dp</dimen>
+    <dimen name="m_90dp">90dp</dimen>
+    <dimen name="m_26dp">26dp</dimen>
+    <dimen name="m_22dp">22dp</dimen>
+    <dimen name="m_135dp">135dp</dimen>
+     <dimen name="m_600dp">600dp</dimen>
+      <dimen name="m_24dp">24dp</dimen>
+      <dimen name="ems_10">10dp</dimen>
+<dimen name="m_28sp">28sp</dimen>
+    <dimen name="m_200dp">200dp</dimen>
+    <dimen name="m_20dp">20dp</dimen>
+    <dimen name="m_25dp">25dp</dimen>
+    <dimen name="m_250dp">250dp</dimen>
+    <dimen name="m_300dp">300dp</dimen>
+    <dimen name="m_30dp">30dp</dimen>
+    <dimen name="m_350dp">350dp</dimen>
+    <dimen name="m_400dp">400dp</dimen>
+    <dimen name="m_40dp">40dp</dimen>
+    <dimen name="m_450dp">450dp</dimen>
+    <dimen name="m_500dp">500dp</dimen>
+    <dimen name="m_50dp">50dp</dimen>
+    <dimen name="m_5dp">5dp</dimen>
+    <dimen name="m_270dp">270dp</dimen>
+    <dimen name="m_130dp">130dp</dimen>
+    <dimen name="m_275dp">275dp</dimen>
+    <dimen name="m_18dp">18dp</dimen>
+    <dimen name="et_Padding_height_10dp">10dp</dimen>
+      <dimen name="m_36dp">36dp</dimen>
+       <dimen name="m_42dp">42dp</dimen>
+       <dimen name="m_24sp">24sp</dimen>
+       <dimen name="m_20sp">20sp</dimen>
+         <dimen name="m_18sp">18sp</dimen>
+           <dimen name="m_16sp">16sp</dimen>
+            <dimen name="m_12sp">12sp</dimen>
+             <dimen name="m_14sp">14sp</dimen>
+              <dimen name="m_7dp">7dp</dimen>
+        <dimen name="m_160dp">160dp</dimen>
+       
+      
+   
+
+</resources>

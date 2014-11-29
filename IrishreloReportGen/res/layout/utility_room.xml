@@ -1,0 +1,2719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    android:background="@color/_GRAY">
+    <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/head_btn"
+	    android:layout_above="@+id/navwraper"
+	    android:id="@+id/bodywrper"
+	    >
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="@dimen/m_10dp">
+		<RelativeLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/_GREEN"
+			android:id="@+id/type_insp_sec"
+			android:layout_marginBottom="36dp"
+			android:paddingLeft="@dimen/m_10dp"
+			android:paddingRight="@dimen/m_10dp">
+			<TextView
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:text="@string/interior_title"
+		      	android:textSize="24sp"
+		      	android:textColor="@color/_White"
+		      	android:layout_gravity="left|center_vertical"
+		      	android:textStyle="bold"
+		      	android:textAllCaps="true"/>
+			<!-- 
+		      	android:onClick="btntxtonClick"
+		     -->
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:background="@drawable/interior_heading_icon"
+		      	android:layout_alignParentRight="true"
+		      	android:layout_centerVertical="true"
+		      	android:contentDescription="@string/addnew_rep"/>
+		 </RelativeLayout>
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_margin="@dimen/m_10dp">
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:background="@drawable/bullets_black"
+		     	android:layout_centerVertical="true"
+		     	android:contentDescription="@string/typeof_insplbl"
+		     	android:id="@+id/typeof_insplbl"
+		     	android:layout_marginRight="@dimen/m_10dp"/>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/utility_room_title"
+		     	android:textSize="24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_toRightOf="@+id/typeof_insplbl"/>
+			
+				
+		  </RelativeLayout>
+		 
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/interior_check_in_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+		 
+		 
+		 <!-- utility check in form starts -->
+		 <!-- flooring tiles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_flooring_or_tiles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			<TextView
+			    android:id="@+id/utility_check_in_flooring_or_tiles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/flooring_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/utility_check_in_flooring_or_tiles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/flooring_title"
+			       android:layout_below= "@+id/utility_check_in_flooring_or_tiles_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_flooring_or_tiles_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_flooring_or_tiles_imageView"
+			       android:visibility="gone"
+			        />
+
+			<ImageView
+			   android:id="@+id/utility_check_in_flooring_or_tiles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_flooring_or_tiles_editText"
+		       android:visibility="gone"
+			    />
+		</RelativeLayout>
+		<!-- flooring tiles layout ends  -->
+		<!-- wall tiles grouting seals layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_walltiles_or_grouting_or_seals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			<TextView
+			    android:id="@+id/utility_check_in_walltiles_or_grouting_or_seals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/walls_tiles_grouting_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/utility_check_in_walltiles_or_grouting_or_seals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/walls_tiles_grouting_title"
+			       android:layout_below= "@+id/utility_check_in_walltiles_or_grouting_or_seals_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_walltiles_or_grouting_or_seals_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_walltiles_or_grouting_or_seals_imageView"
+			       android:visibility="gone"
+			        />
+
+			<ImageView
+			    android:id="@+id/utility_check_in_walltiles_or_grouting_or_seals_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_walltiles_or_grouting_or_seals_editText"
+		       android:visibility="gone"
+			    />
+		</RelativeLayout>
+		<!-- wall tiles grouting seals layout ends  -->
+		<!-- Paint and paper wall layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_paint_or_paperwall_or_ceiling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			<EditText
+			       android:id="@+id/utility_check_in_paint_or_paperwall_or_ceiling_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/paint_paper_walls_celling_title"
+		     	   android:layout_below= "@+id/utility_check_in_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_paint_or_paperwall_or_ceiling_imageView"
+			       android:visibility="gone"/>
+			<ImageView  
+			   android:id="@+id/utility_check_in_paint_or_paperwall_or_ceiling_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_paint_or_paperwall_or_ceiling_editText"
+		       android:visibility="gone"
+			    />
+		</RelativeLayout>
+		<!-- Paint and paper wall layout ends  -->
+		<!-- Skirting boards or radiator layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_skirting_boards_or_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/skirting_boards_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_skirting_boards_or_radiator_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/skirting_boards_radiator_title"
+		     	   android:layout_below= "@+id/utility_check_in_skirting_boards_or_radiator_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_skirting_boards_or_radiator_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_skirting_boards_or_radiator_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_check_in_skirting_boards_or_radiator_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_skirting_boards_or_radiator_editText"
+			     android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!-- Skirting boards or radiator layout ends  -->
+		<!-- doors locks keys handles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/utility_check_in_doors_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_doors_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/doors_windows_keys_locks_title"
+		     	   android:layout_below= "@+id/utility_check_in_doors_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_doors_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_doors_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_check_in_doors_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_doors_or_locks_or_keys_or_handles_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- doors locks keys handles layout ends  -->
+		<!-- windows locks keys handles layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_windows_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_windows_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/windows_keys_locks_title"
+		     	   android:layout_below= "@+id/utility_check_in_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_windows_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   
+			    
+			    
+			  
+			   android:id="@+id/utility_check_in_windows_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_windows_or_locks_or_keys_or_handles_editText"
+			  
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- windows locks keys handles layout ends  -->
+			
+			<!-- light bulb shades  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_lighting_or_bulbs_or_sheds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/light_bulb_shades_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_lighting_or_bulbs_or_sheds_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/light_bulb_shades_title"
+		     	   android:layout_below= "@+id/utility_check_in_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_lighting_or_bulbs_or_sheds_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_check_in_lighting_or_bulbs_or_sheds_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_lighting_or_bulbs_or_sheds_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- light bulb or shades layout ends  -->
+		<!-- sink tap stopper layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_sink_or_tap_stopper"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_sink_or_tap_stopper_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/sink_tap_stopper_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_sink_or_tap_stopper_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/sink_tap_stopper_title"
+		     	   android:layout_below= "@+id/utility_check_in_sink_or_tap_stopper_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_sink_or_tap_stopper_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_sink_or_tap_stopper_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			   
+			   android:id="@+id/utility_check_in_sink_or_tap_stopper_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_sink_or_tap_stopper_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- sink tap stopper layout ends  -->
+			
+			<!--washing machine dryer  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_washing_machine_or_dryer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_washing_machine_or_dryer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/washing_machine_dryer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+				   android:id="@+id/utility_check_in_washing_machine_or_dryer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/washing_machine_dryer_title"
+		     	   android:layout_below= "@+id/utility_check_in_washing_machine_or_dryer_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_washing_machine_or_dryer_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_washing_machine_or_dryer_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_check_in_washing_machine_or_dryer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_washing_machine_or_dryer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- washing machine dryer  layout ends  -->
+			<!-- Instruction manual layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_instruction_manuals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_instruction_manuals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/instruction_manual_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_instruction_manuals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/instruction_manual_title"
+		     	   android:layout_below= "@+id/utility_check_in_instruction_manuals_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_instruction_manuals_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_instruction_manuals_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_check_in_instruction_manuals_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_instruction_manuals_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Instruction manual layout ends  -->
+			
+			<!-- Cabinet shelves layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_cabinet_or_shelves"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>		   
+			
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_cabinet_or_shelves_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cabinet_shalves_mirror_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_cabinet_or_shelves_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/cabinet_shalves_mirror_title"
+		     	   android:layout_below= "@+id/utility_check_in_cabinet_or_shelves_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_cabinet_or_shelves_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_cabinet_or_shelves_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_check_in_cabinet_or_shelves_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_cabinet_or_shelves_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Cabinet shelves  layout ends  -->
+			
+			<!-- Water pressure layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_water_pressure"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_water_pressure_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/water_pressure_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText	     	
+		     	   android:id="@+id/utility_check_in_water_pressure_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/water_pressure_title"
+		     	   android:layout_below= "@+id/utility_check_in_water_pressure_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_water_pressure_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_water_pressure_imageView"
+			       android:visibility="gone"
+		     	/>
+			<ImageView
+			    
+			    
+			    android:id="@+id/utility_check_in_water_pressure_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_water_pressure_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Water pressure  layout ends  -->
+			
+			
+			
+			<!-- Miscellaneous layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_check_in_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_check_in_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_check_in_miscellaneous_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/miscellaneous_title"
+		     	   android:layout_below= "@+id/utility_check_in_miscellaneous_textView"
+			       android:layout_alignLeft="@+id/utility_check_in_miscellaneous_textView"
+			       android:layout_toLeftOf="@+id/utility_check_in_miscellaneous_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/utility_check_in_miscellaneous_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_check_in_miscellaneous_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Miscellaneous  layout ends  -->
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_check_in_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_check_in_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_check_in_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/utility_check_in_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_check_in_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_check_in_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_check_in_follow_up_textView"
+		     	android:layout_below= "@+id/utility_check_in_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Follow up  layout ends  -->
+			
+			<!-- Final comments  layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_check_in_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_check_in_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_check_in_final_comments_textView"
+		     	android:layout_below= "@+id/utility_check_in_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->	
+			
+			<!-- utility check in form ends -->		
+			
+			<!-- utility pre-departure starts -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_pre_departure_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			
+			<!-- flooring tiles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_flooring_or_tile"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_flooring_or_tiles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/flooring_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/utility_pre_departure_flooring_or_tiles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/flooring_title"
+			       android:layout_below= "@+id/utility_pre_departure_flooring_or_tiles_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_flooring_or_tiles_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_flooring_or_tiles_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/utility_pre_departure_flooring_or_tiles_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_flooring_or_tiles_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- flooring tiles layout ends  -->
+		<!-- wall tiles grouting seals layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_walltiles_or_grouting_or_seals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/walls_tiles_grouting_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/utility_pre_departure_walltiles_or_grouting_or_seals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/walls_tiles_grouting_title"
+			       android:layout_below= "@+id/utility_pre_departure_walltiles_or_grouting_or_seals_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_walltiles_or_grouting_or_seals_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_walltiles_or_grouting_or_seals_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/utility_pre_departure_walltiles_or_grouting_or_seals_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_walltiles_or_grouting_or_seals_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- wall tiles grouting seals layout ends  -->
+		<!-- Paint and paper wall layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			<EditText
+			       android:id="@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/paint_paper_walls_celling_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_imageView" android:visibility="gone"/>
+			<ImageView  
+			   android:id="@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_paint_or_paperwall_or_ceiling_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- Paint and paper wall layout ends  -->
+		<!-- Skirting boards or radiator layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_skirting_boards_or_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/skirting_boards_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_skirting_boards_or_radiator_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/skirting_boards_radiator_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_skirting_boards_or_radiator_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_skirting_boards_or_radiator_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_skirting_boards_or_radiator_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_pre_departure_skirting_boards_or_radiator_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_skirting_boards_or_radiator_editText"
+			     android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!-- Skirting boards or radiator layout ends  -->
+		<!-- doors locks keys handles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/doors_windows_keys_locks_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_doors_or_locks_or_keys_or_handles_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- doors locks keys handles layout ends  -->
+		<!-- windows locks keys handles layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/windows_keys_locks_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   
+			    
+			    
+			  
+			   android:id="@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_windows_or_locks_or_keys_or_handles_editText"
+			  
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- windows locks keys handles layout ends  -->
+			
+			<!-- light bulb shades  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/light_bulb_shades_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/light_bulb_shades_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_lighting_or_bulbs_or_sheds_editText"
+		       android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- light bulb or shades layout ends  -->
+		<!-- sink tap stopper layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_sink_or_tap_stopper"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_sink_or_tap_stopper_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/sink_tap_stopper_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_sink_or_tap_stopper_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/sink_tap_stopper_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_sink_or_tap_stopper_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_sink_or_tap_stopper_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_sink_or_tap_stopper_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			   
+			   android:id="@+id/utility_pre_departure_sink_or_tap_stopper_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_sink_or_tap_stopper_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- sink tap stopper layout ends  -->
+			
+			<!--washing machine dryer  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_washing_machine_or_dryer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_washing_machine_or_dryer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/washing_machine_dryer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+				   android:id="@+id/utility_pre_departure_washing_machine_or_dryer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/washing_machine_dryer_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_washing_machine_or_dryer_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_washing_machine_or_dryer_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_washing_machine_or_dryer_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_pre_departure_washing_machine_or_dryer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_washing_machine_or_dryer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- washing machine dryer  layout ends  -->
+			<!-- Instruction manual layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_instruction_manuals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_instruction_manuals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/instruction_manual_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_instruction_manuals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/instruction_manual_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_instruction_manuals_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_instruction_manuals_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_instruction_manuals_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_pre_departure_instruction_manuals_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_instruction_manuals_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Instruction manual layout ends  -->
+			
+			<!-- Cabinet shelves layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_cabinet_or_shelves"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_cabinet_or_shelves_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cabinet_shalves_mirror_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_cabinet_or_shelves_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/cabinet_shalves_mirror_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_cabinet_or_shelves_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_cabinet_or_shelves_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_cabinet_or_shelves_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_pre_departure_cabinet_or_shelves_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_cabinet_or_shelves_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Cabinet shelves  layout ends  -->
+			
+			<!-- Water pressure layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_water_pressure"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_water_pressure_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/water_pressure_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText	     	
+		     	   android:id="@+id/utility_pre_departure_water_pressure_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/water_pressure_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_water_pressure_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_water_pressure_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_water_pressure_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			    
+			    android:id="@+id/utility_pre_departure_water_pressure_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_water_pressure_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Water pressure  layout ends  -->
+			
+			
+			
+			<!-- Miscellaneous layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_pre_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_pre_departure_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_pre_departure_miscellaneous_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/miscellaneous_title"
+		     	   android:layout_below= "@+id/utility_pre_departure_miscellaneous_textView"
+			       android:layout_alignLeft="@+id/utility_pre_departure_miscellaneous_textView"
+			       android:layout_toLeftOf="@+id/utility_pre_departure_miscellaneous_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/utility_pre_departure_miscellaneous_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_pre_departure_miscellaneous_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Miscellaneous  layout ends  -->
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_pre_departure_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_pre_departure_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_pre_departure_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/utility_pre_departure_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_pre_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_pre_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_pre_departure_follow_up_textView"
+		     	android:layout_below= "@+id/utility_pre_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Follow up  layout ends  -->
+			
+			<!-- Final comments  layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_pre_departure_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_pre_departure_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_pre_departure_final_comments_textView"
+		     	android:layout_below= "@+id/utility_pre_departure_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+			
+			<!-- utility pre-departure ends -->
+			
+			
+			<!-- utitlity departure layout starts -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_departure_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:textAllCaps="true"
+		     	android:textStyle="bold"/>	
+				<!-- flooring tiles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_flooring_or_tiles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_flooring_or_tiles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/flooring_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/utility_departure_flooring_or_tiles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/flooring_title"
+			       android:layout_below= "@+id/utility_departure_flooring_or_tiles_textView"
+			       android:layout_alignLeft="@+id/utility_departure_flooring_or_tiles_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_flooring_or_tiles_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/utility_departure_flooring_or_tiles_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_flooring_or_tiles_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- flooring tiles layout ends  -->
+		<!-- wall tiles grouting seals layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_walltiles_or_grouting_or_seals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			<TextView
+			    android:id="@+id/utility_departure_walltiles_or_grouting_or_seals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/walls_tiles_grouting_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+
+			<EditText
+			       android:id="@+id/utility_departure_walltiles_or_grouting_or_seals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+			       android:hint="@string/walls_tiles_grouting_title"
+			       android:layout_below= "@+id/utility_departure_walltiles_or_grouting_or_seals_textView"
+			       android:layout_alignLeft="@+id/utility_departure_walltiles_or_grouting_or_seals_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_walltiles_or_grouting_or_seals_imageView"
+			         android:visibility="gone"/>
+
+			<ImageView
+			    android:id="@+id/utility_departure_walltiles_or_grouting_or_seals_imageView"
+			    android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_walltiles_or_grouting_or_seals_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- wall tiles grouting seals layout ends  -->
+		<!-- Paint and paper wall layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_paint_or_paperwall_or_ceiling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_paint_or_paperwall_or_ceiling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@+string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			<EditText
+			       android:id="@+id/utility_departure_paint_or_paperwall_or_ceiling_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/paint_paper_walls_celling_title"
+		     	   android:layout_below= "@+id/utility_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_alignLeft="@+id/utility_departure_paint_or_paperwall_or_ceiling_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_paint_or_paperwall_or_ceiling_imageView" android:visibility="gone"/>
+			<ImageView  
+			   android:id="@+id/utility_departure_paint_or_paperwall_or_ceiling_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_paint_or_paperwall_or_ceiling_editText"
+			     android:visibility="gone"/>
+		</RelativeLayout>
+		<!-- Paint and paper wall layout ends  -->
+		<!-- Skirting boards or radiator layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp" 
+	    	 >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_skirting_boards_or_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_skirting_boards_or_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/skirting_boards_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_skirting_boards_or_radiator_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/skirting_boards_radiator_title"
+		     	   android:layout_below= "@+id/utility_departure_skirting_boards_or_radiator_textView"
+			       android:layout_alignLeft="@+id/utility_departure_skirting_boards_or_radiator_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_skirting_boards_or_radiator_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_departure_skirting_boards_or_radiator_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_skirting_boards_or_radiator_editText"
+			     android:visibility="gone"/>
+			
+		</RelativeLayout>
+		<!-- Skirting boards or radiator layout ends  -->
+		<!-- doors locks keys handles layout starts  -->
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"   >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView            
+			    android:id="@+id/utility_departure_doors_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_doors_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/doors_windows_keys_locks_title"
+		     	   android:layout_below= "@+id/utility_departure_doors_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/utility_departure_doors_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_doors_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_departure_doors_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_doors_or_locks_or_keys_or_handles_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+		<!-- doors locks keys handles layout ends  -->
+		<!-- windows locks keys handles layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_windows_or_locks_or_keys_or_handles_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_windows_or_locks_or_keys_or_handles_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/windows_keys_locks_title"
+		     	   android:layout_below= "@+id/utility_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_alignLeft="@+id/utility_departure_windows_or_locks_or_keys_or_handles_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_windows_or_locks_or_keys_or_handles_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   
+			    
+			    
+			  
+			   android:id="@+id/utility_departure_windows_or_locks_or_keys_or_handles_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_windows_or_locks_or_keys_or_handles_editText"
+			  
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- windows locks keys handles layout ends  -->
+			
+			<!-- light bulb shades  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_lighting_or_bulbs_or_sheds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_lighting_or_bulbs_or_sheds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/light_bulb_shades_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_lighting_or_bulbs_or_sheds_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/light_bulb_shades_title"
+		     	   android:layout_below= "@+id/utility_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_alignLeft="@+id/utility_departure_lighting_or_bulbs_or_sheds_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_lighting_or_bulbs_or_sheds_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_departure_lighting_or_bulbs_or_sheds_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_lighting_or_bulbs_or_sheds_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- light bulb or shades layout ends  -->
+		<!-- sink tap stopper layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+		     android:layout_width="match_parent"
+       		 android:id="@+id/textPicLayout_utility_departure_sink_or_tap_stopper"
+		     android:layout_height="wrap_content"/>
+		    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_sink_or_tap_stopper_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/sink_tap_stopper_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_sink_or_tap_stopper_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/sink_tap_stopper_title"
+		     	   android:layout_below= "@+id/utility_departure_sink_or_tap_stopper_textView"
+			       android:layout_alignLeft="@+id/utility_departure_sink_or_tap_stopper_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_sink_or_tap_stopper_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			   
+			   android:id="@+id/utility_departure_sink_or_tap_stopper_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_sink_or_tap_stopper_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- sink tap stopper layout ends  -->
+			
+			<!--washing machine dryer  layout starts  -->	
+		<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_washing_machine_or_dryer"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+		    
+						<TextView
+			    android:id="@+id/utility_departure_washing_machine_or_dryer_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/washing_machine_dryer_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+				   android:id="@+id/utility_departure_washing_machine_or_dryer_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/washing_machine_dryer_title"
+		     	   android:layout_below= "@+id/utility_departure_washing_machine_or_dryer_textView"
+			       android:layout_alignLeft="@+id/utility_departure_washing_machine_or_dryer_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_washing_machine_or_dryer_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_departure_washing_machine_or_dryer_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_washing_machine_or_dryer_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- washing machine dryer  layout ends  -->
+			<!-- Instruction manual layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_instruction_manuals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_instruction_manuals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/instruction_manual_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_instruction_manuals_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/instruction_manual_title"
+		     	   android:layout_below= "@+id/utility_departure_instruction_manuals_textView"
+			       android:layout_alignLeft="@+id/utility_departure_instruction_manuals_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_instruction_manuals_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_departure_instruction_manuals_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_instruction_manuals_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Instruction manual layout ends  -->
+			
+			<!-- Cabinet shelves layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_cabinet_or_shelves"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_cabinet_or_shelves_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cabinet_shalves_mirror_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_cabinet_or_shelves_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/cabinet_shalves_mirror_title"
+		     	   android:layout_below= "@+id/utility_departure_cabinet_or_shelves_textView"
+			       android:layout_alignLeft="@+id/utility_departure_cabinet_or_shelves_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_cabinet_or_shelves_imageView" android:visibility="gone"/>
+			<ImageView
+			   android:id="@+id/utility_departure_cabinet_or_shelves_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_cabinet_or_shelves_editText"
+		       android:visibility="gone"
+			    />
+			</RelativeLayout>
+			
+			<!-- Cabinet shelves  layout ends  -->
+			
+			<!-- Water pressure layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_water_pressure"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_water_pressure_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/water_pressure_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText	     	
+		     	   android:id="@+id/utility_departure_water_pressure_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/water_pressure_title"
+		     	   android:layout_below= "@+id/utility_departure_water_pressure_textView"
+			       android:layout_alignLeft="@+id/utility_departure_water_pressure_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_water_pressure_imageView"
+		     	 android:visibility="gone"/>
+			<ImageView
+			    
+			    
+			    android:id="@+id/utility_departure_water_pressure_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_water_pressure_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Water pressure  layout ends  -->
+			
+			
+			
+			<!-- Miscellaneous layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_utility_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			
+			
+			<TextView
+			    android:id="@+id/utility_departure_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp" android:visibility="gone"/>
+			
+			<EditText
+		     	   android:id="@+id/utility_departure_miscellaneous_editText"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:background="@color/_White"
+			       android:ems="10"
+			       android:padding="@dimen/m_5dp"
+			       android:layout_marginLeft="@dimen/m_10dp"
+			       android:layout_marginRight="@dimen/m_5dp"
+		     	   android:hint="@+string/miscellaneous_title"
+		     	   android:layout_below= "@+id/utility_departure_miscellaneous_textView"
+			       android:layout_alignLeft="@+id/utility_departure_miscellaneous_textView"
+			       android:layout_toLeftOf="@+id/utility_departure_miscellaneous_imageView" android:visibility="gone"/>
+			<ImageView
+			   
+			   
+			   android:id="@+id/utility_departure_miscellaneous_imageView"
+			   android:layout_width="wrap_content"
+		       android:layout_height="wrap_content"
+		       android:adjustViewBounds="true"  
+		       android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:scaleType="fitCenter"
+		       android:layout_marginLeft="@dimen/m_10dp"
+			   android:src="@drawable/img_upload" 
+			   android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+		       android:onClick="onPicUpload"
+		       android:layout_centerVertical="true"
+		       android:layout_alignBottom="@+id/utility_departure_miscellaneous_editText"
+			     android:visibility="gone"/>
+			</RelativeLayout>
+			
+			<!-- Miscellaneous  layout ends  -->
+			<!-- Action plan if required layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_departure_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_departure_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_departure_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/utility_departure_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if required  layout ends  -->
+			<!-- Follow up layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_departure_follow_up_textView"
+		     	android:layout_below= "@+id/utility_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Follow up  layout ends  -->
+			
+			<!-- Final comments  layout starts  -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_10dp"  >
+			<TextView
+			    android:id="@+id/utility_departure_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	
+		     	/>
+			
+			<EditText
+			    android:id="@+id/utility_departure_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+			    android:layout_marginRight="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/utility_departure_final_comments_textView"
+		     	android:layout_below= "@+id/utility_departure_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!--  Final comments layout ends  -->
+				
+			<!-- utility departure layout ends -->
+							
+		</LinearLayout>		
+	</ScrollView>
+			
+	<include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+</RelativeLayout>		

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">irishrelo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="reprt_add">Add new report</string>
+    <string name="list_reprt">View reports</string>
+    <string name="exit_reprt">Exit reports</string>
+    <string name="clsdev">Clear Reports</string>
+    <string name="title_activity_add_report">AddReport</string>
+    <string name="title_activity_list_reports">ListReports</string>
+    <string name="save">Save &#10004;</string>
+    <string name="addnew_rep">Add new report</string>
+    <string name="typeof_insplbl">Type of inspection</string>
+    <string name="tenantlbl">Tenant</string>
+    <string name="occupierlbl">Occupier</string>
+    <string name="addresslbl">Address</string>
+    <string name="propdtllbl">Property Detail</string>
+     <string name="_save">Save</string>
+      <string name="_cancel">Cancel</string>
+
+    <string-array name="prptytypeitm">
+        <item>Property Type</item>
+        <item>House</item>
+        <item>Apartment</item>
+    </string-array>
+
+    <string name="numbedrm">No. of Bedroom</string>
+
+    <string-array name="frunitm">
+        <item>Is Furnished</item>
+        <item>Furnished</item>
+        <item>Unfurnished</item>
+    </string-array>
+
+    <string name="dtinsp">Date Inspected</string>
+    <string name="checkindt">Check-In Date</string>
+    <string name="predeptdt">Pre-Departure Date</string>
+    <string name="deptdt">Departure Date</string>
+    <string name="next">Next    &gt;</string>
+    <string name="prev">&lt;    Prev</string>
+    <string name="utilitylbl">Utilities</string>
+    <string name="interiorlbl">Interior</string>
+    <string name="exteriorlbl">Exterior</string>
+    <string name="title_activity_report_basic_details">ReportBasicDetails</string>
+    <string name="title_activity_common_go_to">CommonGoToActivity</string>
+    <string name="itemtitle">Tenant title</string>
+    <string name="itemdt">14-06-2014</string>
+    <string name="editlbl">EDIT</string>
+    <string name="esblbl">ESB</string>
+    <string name="datelbl">Date</string>
+    <string name="timelbl">Time</string>
+    <string name="meterno">Meter Number</string>
+    <string name="morningread">Morning Rading</string>
+    <string name="nightread">Night Rading</string>
+    <string name="gaslbl">Gas</string>
+    <string name="oillbl">Oil</string>
+    <string name="tankloclbl">Tank Location</string>
+    <string name="quantitylbl">Quantity</string>
+    <string name="checkinlbl">Check In</string>
+    <string name="departurelbl">Departure</string>
+    <string name="interior_title">INTERIOR</string>
+     <string name="interior_room1_title">Room One</string>
+      <string name="interior_room2_title">Room Two</string>
+       <string name="interior_room3_title">Room Three</string>
+        <string name="interior_room4_title">Room Four</string>
+         <string name="interior_room5_title">Room Five</string>
+    <string name="interior_check_in_title">Check In</string>
+    <string name="hall_and_landing_title">Hall/Landing</string>
+    <string name="interior_carpets_and_rugs_title">Carpets/rugs</string>
+    <string name="interior_wooden_floors_title">Wooden Floors</string>
+    <string name="image_view_content_desc">some image view descrition</string>
+    <string name="banisters_stairway_title">Banisters/Stairway</string>
+    <string name="wall_celling_title">Walls/Celling</string>
+    <string name="light_bulb_shades_title">Lighting/bulbs/shades</string>
+    <string name="handle_door_finish_title">Handles/doorfinish</string>
+    <string name="skirting_boards_radiator_title">Skirting boards/Radiator</string>
+    <string name="doors_locks_keys_title">Doors/locks/keys/handles</string>
+    <string name="table_chair_coatstand_mirror_title">Table/Chair/CoatStand/Mirror</string>
+    <string name="phone_headset_title">Phone Handset</string>
+    <string name="phone_directory_title">Phone Directories</string>
+    <string name="miscellaneous_title">Miscellaneous</string>
+    <string name="action_plan_required_title">Action plan if required</string>
+    <string name="follow_up_title">Follow up</string>
+    <string name="final_comments_title">Final Comments</string>
+    <string name="hello">Hello World, CaptureSignatureActivity!</string>
+    <string name="signature_app_name">CaptureSignature</string>
+    <string name="external_dir">GetSignature</string>
+    <string name="title_activity_camera">Click a pic</string>
+    <string name="gotosign">Get My Signature</string>
+    
+    
+    <!-- communication and precations -->
+    <string name="communicat">Communication</string>
+    <string name="telephoneno">Telephone No</string>
+    <string name="phone_handset">Phone Handset</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="noofhdset">Number of hendsets</string>
+    <string name="phoneworking">Phone Working</string>
+    <string name="broadbandsup">Broadband Supplier</string>
+    <string name="setupwork">Is Broadband set-up and working ? </string>   
+    <string name="alarm">Alarm</string>       
+    <string name="alarmcode">Alarm Code</string>
+    <string name="alarmsupp">Supplier</string>
+    <string name="precat_instruct">Landlord/Agent to explain workings of domestic appliances, heating and alarm</string>
+    <string name="name">Name</string>
+    <string name="smokalrm">Smoke Alarm(s) Nos</string>
+    <string name="alrmloc">Locations</string>
+    <string name="alrmworking">Smoke Alarm Working</string>
+    <string name="refuse">Refuse</string>
+    <string name="collectpt">Collection Point</string>
+    <string name="collectday">Collection Day</string>
+    <string name="refuseprovider">Provider</string>
+    <string name="general">General</string>
+    <string name="recycling">Recycling</string>
+    <string name="glass">Glass</string>
+    <string name="bintags">Bin Tags</string>
+    <string name="telvsnserv">Television Service</string>
+    <string name="telvsnwork">Is TV in working order ?</string> 
+    <string name="isdvdconn">Is DVD connected to TV ?</string>
+    <string name="cableconn">Is Sky or other Cable service connected ?</string>                                                                        
+    <!-- communication and precations -->
+    
+    <!-- interior clockroom -->
+  
+    <string name="floor_covering_title">Floor Covering</string>
+    <string name="tiles_grouting_seals_title">Tiles/grouting/seals</string>
+    <string name="paint_paper_walls_celling_title">Paint/paper-walls/celling</string>
+    <string name="doors_windows_keys_locks_title">Door/windows/keys/locks</string>
+    <string name="windows_keys_locks_title">Windows/keys/locks/handles</string>
+    <string name="toilet_flush_sink_title">Toilet/flush/sink/taps/stopper</string>
+    <string name="toilet_brush_roll_holder_title">Toilet Brush/Toilet roll holder</string>
+    <string name="towel_rail_title">Towel rail</string>
+    <string name="cabinet_shalves_mirror_title">Cabinet/Shalves/mirror</string>
+    <string name="extractorfan_radiator_title">Extractor fan/radiator</string>
+    <string name="curtains_blinds_title">Curtains/blinds</string>
+    <!-- interior clockroom -->
+    
+    <!-- interior living -->
+    <string name="flooring_carpets_rugs_title">Flooring/Carpets/Rugs</string>
+    <string name="soft_furnishing_title">Soft furnishing</string>
+    <string name="wooden_furnishing_title">Wooden furnishing</string>
+    <!-- interior living -->
+    
+   <!-- Exterior -->
+    <string name="exterior_title">Exterior</string>
+    <string name="ground_title">Grounds</string>
+    <string name="exterior_check_in_title">Check In</string>
+    <string name="exterior_pre_departure_title">Pre-Departure</string>
+    <string name="exterior_patio_deck_balcony_title">Patio/deck/balcony</string>
+    <string name="exterior_shade_gate_locks_title">Garden Shed, side gate &amp; Locks</string>
+    <string name="ground_grassShrubTree_title">Grass/shrubs/trees</string>
+    <string name="ground_fencesWallDrive_title">Fences/walls/driveway</string>
+    <string name="ground_walksPaint_title">Walks/paintwork</string>
+    <string name="ground_roofSlateGutter_title">Roof/slates/gutters</string>
+    <string name="ground_doorbellLightsPorch_title">Doorbell/lights/porch</string>
+   <string name="ground_clothesLine_title">Clothes line</string>
+   <string name="ground_refuseBins_title">Refuse Bins</string>
+   
+   <string name="mprn_electricity_title">MPRN (Electricity)</string>
+   <string name="mprn_electricity_code">MPRN (Electricity) Code</string>
+    <string name="mprn_electricity_supplier_code">MPRN (Electricity) Supplier Code</string>
+      <string name="mprn_electricity_supplier_name">MPRN (Electricity) Supplier Name</string>
+  
+    <string name="gprn_gas_title">GPRN (Gas)</string>
+   <string name="gprn_gas_code">GPRN (Gas) Code</string>
+    <string name="gprn_gas_supplier_code">GPRN (Gas) Supplier Code</string>    
+    <string name="gprn_gas_supplier_name">GPRN (Gas) Supplier Name</string>
+    
+   <string name="exterior_departure_title">Departure</string>
+   <string name="if_applicable_title">If Applicable</string>
+   <string name="exterior_gate_entrance_title">Zapper: Entrance for gate</string>
+   <string name="quantiy_title">Quantity</string>
+   <string name="exterior_checkin_swipe_card_title">Entrance Swipe Card</string>
+   <string name="exterior_checkin_entrance_key_title">Entrance Key</string>
+   <string name="exterior_checkin_letter_box_key_title">Letter Box Key</string>
+   <string name="exterior_checkin_lift_swipe_card_title">Lift Swipe Card</string>
+   <string name="exterior_checkin_pedestrian_access_code_title">Pedestrian access code</string>
+   <string name="apartment_parking_title">Apartment Parking</string>
+   <string name="exterior_zapper_title">Zapper</string>
+   <string name="exterior_checkin_keys_title">Keys</string>
+   <string name="exterior_checkin_parking_code_title">Parking Code</string>
+   <string name="exterior_checkin_parking_space_title">Parking Space Number if Applicable?</string>
+   <string name="Signed_by">Signed by:</string>
+   <string name="check_in_complete">Check-in completed</string>
+   <string name="exterior_occupier_title">Occupier</string>
+   <string name="exterior_landlord_title">Landlord</string>
+   <string name="exterior_irs_title">Irish Relocations Services</string>
+   <string name="date">Date</string>
+   <string name="pre_departure_complete">Pre-departure check completed</string>
+   <string name="departure_complete">Departure check-out completed</string>
+   <string  name="finish_title">Finish</string>
+    <!-- Exterior -->
+    
+    <!-- Interior -->
+	<string name="lighting_fixture_title">Light fixtures/bulbs/shades</string>
+    <string name="cloakroom_title">Downstairs WC/Cloakroom</string>
+    <string name="dinning_room_photos_title">Dinning Room </string>
+    <string name="kitchen_title">Kitchen </string>
+    <string name="utility_room_title">Utility Room </string>
+    <string name="master_bed_room_title">Master Bedroom </string>
+    <string name="en_suite_bathroom_title">En Suite Bathroom </string>
+    <string name="en_suite_one_title">En Suite One </string>
+    <string name="en_suite_two_title">En Suite Two </string>
+    <string name="en_suite_three_title">En Suite Three </string>
+    <string name="en_suite_four_title">En Suite Four </string>
+    <string name="en_suite_five_title">En Suite Five </string>
+    <string name="bedroom2_title">Bedroom 2 </string>
+    <string name="main_bathroom_title">Main Bathrrom </string>
+    <string name="bedroom3_title">Bedroom 3 </string>
+    <string name="bedroom4_title">Bedroom 4 </string>
+     <string name="bedroom5_title">Bedroom 5 </string>
+    <string name="wooden_furniture_title">Wooden Furniture</string>
+    <string name="interior_tv_socket_title">T.V socket</string>
+    <string name="interior_phone_socket_title">Phone socket</string>
+    <string name="interior_living_room_title">Living room</string>
+    <!-- Interior -->
+     <!-- interior clockroom -->
+    <string name="mirror_picture_title">Mirrors/Picture</string>
+    <!-- interior living
+    <string name="flooring_carpets_rugs_title">Flooring/Carpets/Rugs</string>
+    <string name="soft_furnishing_title">Soft furnishing</string>
+    interior living -->
+  
+    
+    <!-- master bedroom -->
+    <string  name="wardrobes_or_furniture_or_headboard_title">Wardrobes/furniture/headboard</string>
+    <string name="bed_or_matress_or_protector_title">Bed/mattress/protector</string>
+    <string name="bedlinen_title">Bedlinen/duvet/pillows/blankets</string>
+    <string name="sink_tap_stopper_title">Sink/Tap</string>
+    <string name="walls_tiles_grouting_title">Wall tiles/grouting</string>
+    <string name="shower_curtain_or_shower_door_or_tray_title">Shower curtain/shower door/tray</string>
+    <string name="bath_tap_stopper_title">Bath, taps, stopper</string>
+    <string name="toilet_brush_title">Toilet brush/toilet roll holder</string>
+    <string name="extractor_fan_title">Extractor fan</string>
+    <string name="towel_rail_radiator_title">Towel Rail/radiator</string>
+    <!-- master bedroom -->
+ 	<!-- kitchen -->
+    <string name="flooring_title">Flooring</string>
+    <string name="countertops_or_cabinets_title">CounterTops/ Cabinets</string>
+    <string name="oven_hob_grill_title">Oven/hob/grill</string>
+    <string name="dishwasher_title">Dishwasher</string>
+    <string name="microwave_title">Microwave</string>
+    <string name="extractor_or_fan_light_title">Extractor/ fan and light</string>
+    <string name="fridge_or_freezer_title">Fridge or freezer</string>
+    <string name="instruction_manual_title">Instruction manual</string>
+    <string name="furniture_title">Furnitures</string>
+    <string name="sink_plug_dustbin_title">Sink/plug/dustbin</string>
+    <string name="water_pressure_title">Water Pressure</string>
+    <string  name="washing_machine_dryer_title">Washing machine/dryer</string>
+    <!-- kitchen -->
+    <!-- comments -->
+    <string name="comment">Comment</string>
+    <string name="complete">Complete</string>
+	    <!-- camera text -->
+    <string name="cancel">Back</string>
+    <string name="clear">Clear</string>
+    <string name="savesisn">Save</string>
+    <!-- camera text -->
+    
+     <string name="exitlist">Exit</string>
+     <string name="sendemail">Mail Data</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/bg_popup"
+        android:id="@+id/popuoimg"
+        android:contentDescription="Showimg"/>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+    <Button
+        android:text="Browse File"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/browse_file"
+        android:layout_marginRight="@dimen/m_5dp"/>
+    <Button
+        android:text="Click a pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:layout_marginRight="@dimen/m_5dp"
+        android:id="@+id/click_pic"/>  
+   <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/back"/>
+   </LinearLayout>
+</RelativeLayout>
+   

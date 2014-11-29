@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/_GRAY">
+     >
+     <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+      
+           <RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:background="@color/_GREEN"
+       android:id="@+id/gotoutility"
+       android:layout_below="@+id/head_btn"
+       android:layout_marginBottom="@dimen/m_20dp"
+       android:paddingLeft="@dimen/m_10dp"
+       android:paddingRight="@dimen/m_10dp"
+       android:clickable="true"
+       >
+       
+		<TextView
+		    android:layout_width="wrap_content"
+	       	android:layout_height="wrap_content"
+	       	android:text="@string/utilitylbl"
+	       	android:textSize="@dimen/m_24sp"
+	       	android:textColor="@color/_White"
+	       	android:layout_alignParentLeft="true"
+	       	android:textStyle="bold"
+	       	android:textAllCaps="true"
+	       	android:id="@+id/utilitiestxt"
+	       	android:clickable="false"
+	       	/>
+		<ImageButton 
+		    android:layout_width="24dp"
+	       	android:layout_height="24dp"
+	       	android:background="@drawable/utilities_heading_icon"
+			android:layout_alignParentRight="true"
+	       	android:contentDescription="@string/utilitylbl"
+	       	android:id="@+id/utility"
+	       	android:clickable="false"/>
+    </RelativeLayout>
+    
+    <ScrollView
+          android:layout_above="@+id/navwraper"
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/gotoutility"
+	  
+	   >   
+	   <LinearLayout
+	        android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="@dimen/m_10dp" >
+       
+         
+    <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_10dp"
+	                android:text="@string/mprn_electricity_title"
+	                android:textColor="@color/_Black"
+	                android:textSize="@dimen/m_24sp" />
+   
+    <EditText 
+         android:id="@+id/et_MPRN_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mprn_electricity_code"
+        android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"	               
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp"
+	                
+        
+        />
+    
+    <EditText 
+         android:id="@+id/et_MPRN_supplier_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mprn_electricity_supplier_code"
+       android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"	               
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp"
+        
+        />
+    
+     <EditText 
+         android:id="@+id/et_MPRN_supplier_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mprn_electricity_supplier_name"
+       android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"	               
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp"
+        
+        />
+    
+     <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_10dp"
+	                android:text="@string/gprn_gas_title"
+	                android:textColor="@color/_Black"
+	                android:textSize="@dimen/m_24sp" />
+      <EditText 
+         android:id="@+id/et_GPRN_Code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/gprn_gas_code"
+       android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"	               
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp"
+        
+        />
+    
+    <EditText 
+         android:id="@+id/et_GPRN_supplier_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/gprn_gas_supplier_code"     
+	        	     android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"	               
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp"
+        />
+    <EditText 
+         android:id="@+id/et_GPRN_supplier_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/gprn_gas_supplier_name"     
+	        	     android:layout_gravity="center_vertical"
+	                android:layout_marginBottom="@dimen/m_20dp"
+	                android:background="@color/_White"	               
+	                android:padding="@dimen/m_5dp"
+	                android:textSize="18sp"
+        />
+   
+    </LinearLayout>
+   </ScrollView>
+   
+     <include layout="@layout/footer"         
+	    android:id="@+id/navwraper"/>
+    
+ 
+</RelativeLayout>

@@ -1,0 +1,2570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    android:background="@color/_GRAY">
+     <irishreloreportgen.activity.main.Header
+       android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/_White"
+        android:id="@+id/head_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@+id/head_btn"
+	    android:layout_above="@+id/navwraper"
+	    android:id="@+id/bodywrper"
+	    >
+        <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="@dimen/m_10dp">
+	   <RelativeLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="@color/_GREEN"
+			android:id="@+id/type_insp_sec"
+			android:layout_marginBottom="@dimen/m_36dp"
+			android:paddingLeft="@dimen/m_10dp"
+			android:paddingRight="@dimen/m_10dp">
+			<TextView
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:text="@string/interior_title"
+		      	android:textSize="@dimen/m_24sp"
+		      	android:textColor="@color/_White"
+		      	android:layout_gravity="left|center_vertical"
+		      	android:textStyle="bold"
+		      	android:textAllCaps="true"
+		      	android:onClick="btntxtonClick"/>
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		      	android:layout_height="wrap_content"
+		      	android:background="@drawable/interior_heading_icon"
+		      	android:layout_alignParentRight="true"
+		      	android:layout_centerVertical="true"
+		      	android:contentDescription="@string/addnew_rep"/>
+		 </RelativeLayout>
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_margin="@dimen/m_10dp">
+			<ImageButton 
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:background="@drawable/bullets_black"
+		     	android:layout_centerVertical="true"
+		     	android:contentDescription="@string/typeof_insplbl"
+		     	android:id="@+id/typeof_insplbl"
+		     	android:layout_marginRight="@dimen/m_10dp"/>
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cloakroom_title"
+		     	android:textSize="@dimen/m_24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_toRightOf="@+id/typeof_insplbl"/>
+			
+				
+		  </RelativeLayout>
+		 <!-- Checkin start -->
+		 <TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/interior_check_in_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			<!-- floor covering starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_floor_covering"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_floor_covering_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/floor_covering_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_floor_covering_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/floor_covering_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_floor_covering_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_floor_covering_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_floor_covering_imageView"		     	
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_floor_covering_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_floor_covering_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- floor covering ends here -->
+			
+			<!-- tiles grouting seals starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_tiles_grouting_seals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			    
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_tiles_grouting_seals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/tiles_grouting_seals_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_tiles_grouting_seals_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/tiles_grouting_seals_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_tiles_grouting_seals_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_tiles_grouting_seals_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_tiles_grouting_seals_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_tiles_grouting_seals_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp" 
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_tiles_grouting_seals_editText"
+			    android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- tiles grouting seals ends here -->
+			
+			<!-- paint/ paper walls starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_paint_paper_walls_celling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_paint_paper_walls_celling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_paint_paper_walls_celling_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/paint_paper_walls_celling_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_paint_paper_walls_celling_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_paint_paper_walls_celling_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_paint_paper_walls_celling_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_paint_paper_walls_celling_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_paint_paper_walls_celling_editText" 
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"/>
+			
+			</RelativeLayout>
+			<!-- paint/ paper walls  seals ends here -->
+			
+			<!-- Doors/windows/keys/locks starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_doors_windows_keys_locks"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_doors_windows_keys_locks_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_doors_windows_keys_locks_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/doors_windows_keys_locks_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_doors_windows_keys_locks_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_doors_windows_keys_locks_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_doors_windows_keys_locks_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_doors_windows_keys_locks_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_doors_windows_keys_locks_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Doors/windows/keys/locks  ends here -->
+			
+			
+			
+			<!-- Lightfixtures/bulbs/shades starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_lightfixture_bulbs_shades"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/lighting_fixture_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/lighting_fixture_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_lightfixture_bulbs_shades_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Lightfixtures/bulbs/shades  ends here -->
+			
+			<!-- Toilet/flush/sink/taps/stopper starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_toilet_flush_sink"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_toilet_flush_sink_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/toilet_flush_sink_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_toilet_flush_sink_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/toilet_flush_sink_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_toilet_flush_sink_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_toilet_flush_sink_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_toilet_flush_sink_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_toilet_flush_sink_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:layout_alignBottom="@+id/downstairs_WC_check_in_toilet_flush_sink_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Toilet/flush/sink/taps/stopper ends here -->
+			
+			<!-- Toilet brush/toilet roll holder starts here -->
+<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_checkin_toilet_brush_roll_holder"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_checkin_toilet_brush_roll_holder_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/toilet_brush_roll_holder_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_checkin_toilet_brush_roll_holder_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/toilet_brush_roll_holder_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_checkin_toilet_brush_roll_holder_textView"
+		     	android:layout_below= "@+id/downstairs_WC_checkin_toilet_brush_roll_holder_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_checkin_toilet_brush_roll_holder_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_checkin_toilet_brush_roll_holder_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_checkin_toilet_brush_roll_holder_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			
+
+			
+			<!-- Toilet brush/toilet roll holder ends here -->
+			
+			<!-- Towel rail starts here -->
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginBottom="@dimen/m_5dp"
+			    android:layout_marginTop="@dimen/m_5dp"
+			    android:orientation="vertical" >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_towel_rail"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+
+			    <TextView
+			        android:id="@+id/downstairs_WC_check_in_towel_rail_textView"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentLeft="true"
+			        android:layout_marginBottom="@dimen/m_10dp"
+			        android:text="@string/towel_rail_title"
+			        android:textColor="@color/_Black"
+			        android:textSize="@dimen/m_18sp" 
+			        android:visibility="gone"/>
+
+			    <EditText
+			        android:id="@+id/downstairs_WC_check_in_towel_rail_editText"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/downstairs_WC_check_in_towel_rail_textView"
+			        android:layout_marginBottom="@dimen/m_10dp"
+			        android:layout_marginLeft="@dimen/m_5dp"
+			        android:layout_alignLeft="@+id/downstairs_WC_check_in_towel_rail_textView"
+			        android:layout_toLeftOf="@+id/downstairs_WC_check_in_towel_rail_imageView"
+			        android:background="@color/_White"
+			        android:hint="@string/towel_rail_title"
+			        android:onClick="onElementClick"
+			        android:padding="@dimen/m_5dp"
+			        android:textSize="@dimen/m_18sp" 
+			        android:visibility="gone"/>
+			    
+
+			    <ImageView
+			        android:id="@+id/downstairs_WC_check_in_towel_rail_imageView"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignBottom="@+id/downstairs_WC_check_in_towel_rail_editText"
+			        android:layout_alignParentRight="true"
+			        android:layout_marginLeft="@dimen/m_10dp"
+			        android:contentDescription="@string/image_view_content_desc"
+			        android:onClick="onPicUpload"
+			        android:src="@drawable/img_upload"
+			      android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter" 
+			   android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- Towel rail ends here -->
+			
+			<!-- Cabinet/shelves/mirror starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			    <customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_cabinet_shalves_mirror"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			    
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_cabinet_shalves_mirror_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cabinet_shalves_mirror_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_cabinet_shalves_mirror_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/cabinet_shalves_mirror_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_cabinet_shalves_mirror_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_cabinet_shalves_mirror_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_cabinet_shalves_mirror_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_cabinet_shalves_mirror_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_cabinet_shalves_mirror_editText"
+			    android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- Cabinet/shelves/mirror here -->
+			
+			<!-- Extractor fan/radiator starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_extractorfan_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_extractorfan_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/extractorfan_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_extractorfan_radiator_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/extractorfan_radiator_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_extractorfan_radiator_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_extractorfan_radiator_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_extractorfan_radiator_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_extractorfan_radiator_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_check_in_extractorfan_radiator_editText"  
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter" 
+			   android:visibility="gone"/>
+			</RelativeLayout>
+			<!-- Extractor fan/radiator here -->
+			
+			<!-- Curtains/blinds starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_curtains_blinds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_curtains_blinds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/curtains_blinds_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_curtains_blinds_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/curtains_blinds_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_curtains_blinds_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_curtains_blinds_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_curtains_blinds_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_curtains_blinds_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_check_in_curtains_blinds_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Curtains/blinds here -->
+			
+			<!-- Miscellaneous starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_check_in_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_miscellaneous_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/miscellaneous_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_miscellaneous_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_miscellaneous_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_check_in_miscellaneous_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_check_in_miscellaneous_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:layout_alignBottom="@+id/downstairs_WC_check_in_miscellaneous_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Miscellaneous ends here -->
+			
+			<!-- Action plan if requuired  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"
+		     	/>
+			
+			</RelativeLayout>
+			<!-- Action plan if requuired ends here -->
+			
+			<!-- follow up  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_follow_up_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- follow up ends here -->
+			
+			<!-- final comments  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_check_in_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_check_in_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_10dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_check_in_final_comments_textView"
+		     	android:layout_below= "@+id/downstairs_WC_check_in_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- final comments ends here -->
+			<!-- check in ended here -->
+			
+			<!-- pre departue starts here -->
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_pre_departure_title"
+		     	android:textSize="@dimen/m_20sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:layout_marginTop="@dimen/m_10dp"/>
+			<!-- floor covering starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_floor_covering"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_floor_covering_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/floor_covering_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_floor_covering_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/floor_covering_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_floor_covering_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_floor_covering_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_floor_covering_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_floor_covering_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		        android:layout_alignBottom="@+id/downstairs_WC_pre_departure_floor_covering_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone" />
+			</RelativeLayout>
+			<!-- floor covering ends here -->
+			
+			<!-- tiles grouting seals starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_tiles_grouting_seals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_tiles_grouting_seals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/tiles_grouting_seals_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_tiles_grouting_seals_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/tiles_grouting_seals_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_tiles_grouting_seals_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_tiles_grouting_seals_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_tiles_grouting_seals_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_tiles_grouting_seals_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_pre_departure_tiles_grouting_seals_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- tiles grouting seals ends here -->
+			
+			<!-- paint/ paper walls starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_paint_paper_walls_celling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/paint_paper_walls_celling_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/downstairs_WC_pre_departure_paint_paper_walls_celling_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- paint/ paper walls  seals ends here -->
+			
+			<!-- Doors/windows/keys/locks starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_doors_windows_keys_locks"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/doors_windows_keys_locks_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_pre_departure_doors_windows_keys_locks_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Doors/windows/keys/locks  ends here -->
+			
+			
+			
+			<!-- Lightfixtures/bulbs/shades starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_lightfixture_bulbs_shades"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/lighting_fixture_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/lighting_fixture_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:layout_alignBottom="@+id/downstairs_WC_pre_departure_lightfixture_bulbs_shades_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Lightfixtures/bulbs/shades  ends here -->
+			
+			<!-- Toilet/flush/sink/taps/stopper starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_toilet_flush_sink"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_toilet_flush_sink_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/toilet_flush_sink_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_toilet_flush_sink_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/toilet_flush_sink_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_toilet_flush_sink_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_toilet_flush_sink_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_toilet_flush_sink_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_toilet_flush_sink_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_pre_departure_toilet_flush_sink_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Toilet/flush/sink/taps/stopper ends here -->
+			
+			<!-- Toilet brush/toilet roll holder starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_toilet_brush_roll_holder"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/toilet_brush_roll_holder_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/toilet_brush_roll_holder_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_pre_departure_toilet_brush_roll_holder_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Toilet brush/toilet roll holder ends here -->
+			
+			<!-- Towel rail starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_towel_rail"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_towel_rail_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/towel_rail_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_towel_rail_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/towel_rail_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_towel_rail_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_towel_rail_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_towel_rail_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_towel_rail_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+			   android:layout_alignBottom="@+id/downstairs_WC_pre_departure_towel_rail_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Towel rail ends here -->
+			
+			<!-- Cabinet/shelves/mirror starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_cabinet_shalves_mirror"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cabinet_shalves_mirror_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/cabinet_shalves_mirror_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp" 
+		       android:layout_alignBottom="@+id/downstairs_WC_pre_departure_cabinet_shalves_mirror_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter" 
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Cabinet/shelves/mirror here -->
+			
+			<!-- Extractor fan/radiator starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_extractorfan_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_extractorfan_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/extractorfan_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_extractorfan_radiator_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/extractorfan_radiator_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_extractorfan_radiator_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_extractorfan_radiator_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_extractorfan_radiator_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_extractorfan_radiator_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:layout_alignBottom="@+id/downstairs_WC_pre_departure_extractorfan_radiator_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Extractor fan/radiator here -->
+			
+			<!-- Curtains/blinds starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_curtains_blinds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_curtains_blinds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/curtains_blinds_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_curtains_blinds_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/curtains_blinds_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_curtains_blinds_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_curtains_blinds_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_curtains_blinds_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    
+			    android:id="@+id/downstairs_WC_pre_departure_curtains_blinds_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			     android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:layout_alignBottom="@+id/downstairs_WC_pre_departure_curtains_blinds_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Curtains/blinds here -->
+			
+			<!-- Miscellaneous starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_pre_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_miscellaneous_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/miscellaneous_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_miscellaneous_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_miscellaneous_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_pre_departure_miscellaneous_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_pre_departure_miscellaneous_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"  
+		       android:layout_alignBottom="@+id/downstairs_WC_pre_departure_miscellaneous_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Miscellaneous ends here -->
+			
+			<!-- Action plan if requuired  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- Action plan if requuired ends here -->
+			
+			<!-- follow up  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_follow_up_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- follow up ends here -->
+			
+			<!-- final comments  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_pre_departure_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_pre_departure_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_pre_departure_final_comments_textView"
+		     	android:layout_below= "@+id/downstairs_WC_pre_departure_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- final comments ends here -->
+			<!-- pre departure ends here -->
+			
+			<!-- departue starts here -->
+			
+			<TextView
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/exterior_departure_title"
+		     	android:textSize="@dimen/m_24sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_gravity="center_vertical"
+		     	android:textStyle="bold"
+		     	android:textAllCaps="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:layout_marginTop="@dimen/m_10dp"/>
+			<!-- floor covering starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_floor_covering"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_floor_covering_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/floor_covering_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_floor_covering_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/floor_covering_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_floor_covering_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_floor_covering_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_floor_covering_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_floor_covering_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			     android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp" 
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:layout_alignBottom="@+id/downstairs_WC_departure_floor_covering_editText"
+			   android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- floor covering ends here -->
+			
+			<!-- tiles grouting seals starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_tiles_grouting_seals"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_tiles_grouting_seals_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/tiles_grouting_seals_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_tiles_grouting_seals_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/tiles_grouting_seals_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_tiles_grouting_seals_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_tiles_grouting_seals_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_tiles_grouting_seals_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_tiles_grouting_seals_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp" 
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_tiles_grouting_seals_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- tiles grouting seals ends here -->
+			
+			<!-- paint/ paper walls starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_paint_paper_walls_celling"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_paint_paper_walls_celling_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/paint_paper_walls_celling_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_paint_paper_walls_celling_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/paint_paper_walls_celling_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_paint_paper_walls_celling_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_paint_paper_walls_celling_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_paint_paper_walls_celling_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_paint_paper_walls_celling_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_paint_paper_walls_celling_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter" 
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- paint/ paper walls  seals ends here -->
+			
+			<!-- Doors/windows/keys/locks starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_doors_windows_keys_locks"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_doors_windows_keys_locks_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/doors_windows_keys_locks_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_doors_windows_keys_locks_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/doors_windows_keys_locks_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_doors_windows_keys_locks_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_doors_windows_keys_locks_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_doors_windows_keys_locks_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_doors_windows_keys_locks_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			    android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_doors_windows_keys_locks_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Doors/windows/keys/locks  ends here -->
+			
+			
+			
+			<!-- Lightfixtures/bulbs/shades starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_lightfixture_bulbs_shades_"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_lightfixture_bulbs_shades_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/lighting_fixture_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_lightfixture_bulbs_shades_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/lighting_fixture_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_lightfixture_bulbs_shades_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_lightfixture_bulbs_shades_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_lightfixture_bulbs_shades_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>					
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_lightfixture_bulbs_shades_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_lightfixture_bulbs_shades_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Lightfixtures/bulbs/shades  ends here -->
+			
+			<!-- Toilet/flush/sink/taps/stopper starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_toilet_flush_sink"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_toilet_flush_sink_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/toilet_flush_sink_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_toilet_flush_sink_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/toilet_flush_sink_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_toilet_flush_sink_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_toilet_flush_sink_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_toilet_flush_sink_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_toilet_flush_sink_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			     android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		        android:layout_alignBottom="@+id/downstairs_WC_departure_toilet_flush_sink_editText"
+		        android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Toilet/flush/sink/taps/stopper ends here -->
+			
+			<!-- Toilet brush/toilet roll holder starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_toilet_brush_roll_holder_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/toilet_brush_roll_holder_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_toilet_brush_roll_holder_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/toilet_brush_roll_holder_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_toilet_brush_roll_holder_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_toilet_brush_roll_holder_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_toilet_brush_roll_holder_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_toilet_brush_roll_holder_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_toilet_brush_roll_holder_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Toilet brush/toilet roll holder ends here -->
+			
+			<!-- Towel rail starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_towel_rail"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_towel_rail_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/towel_rail_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_towel_rail_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/towel_rail_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_towel_rail_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_towel_rail_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_towel_rail_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_towel_rail_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_towel_rail_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Towel rail ends here -->
+			
+			<!-- Cabinet/shelves/mirror starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_cabinet_shalves_mirror"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_cabinet_shalves_mirror_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/cabinet_shalves_mirror_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_cabinet_shalves_mirror_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/cabinet_shalves_mirror_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_cabinet_shalves_mirror_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_cabinet_shalves_mirror_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_cabinet_shalves_mirror_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_cabinet_shalves_mirror_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_cabinet_shalves_mirror_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Cabinet/shelves/mirror here -->
+			
+			<!-- Extractor fan/radiator starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_extractorfan_radiator"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_extractorfan_radiator_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/extractorfan_radiator_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_extractorfan_radiator_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/extractorfan_radiator_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_extractorfan_radiator_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_extractorfan_radiator_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_extractorfan_radiator_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_extractorfan_radiator_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_extractorfan_radiator_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Extractor fan/radiator here -->
+			
+			<!-- Curtains/blinds starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_curtains_blinds"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_curtains_blinds_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/curtains_blinds_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_curtains_blinds_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/curtains_blinds_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_curtains_blinds_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_curtains_blinds_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_curtains_blinds_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_curtains_blinds_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_curtains_blinds_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Curtains/blinds here -->
+			
+			<!-- Miscellaneous starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<customview.TextPicLayout	
+       		 android:id="@+id/textPicLayout_downstairs_WC_departure_miscellaneous"
+		     android:layout_width="match_parent"
+		     android:layout_height="wrap_content"/>
+			
+			
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_miscellaneous_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/miscellaneous_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:visibility="gone"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_miscellaneous_editText"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/miscellaneous_title"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_miscellaneous_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_miscellaneous_textView"
+		     	android:layout_toLeftOf= "@+id/downstairs_WC_departure_miscellaneous_imageView"
+		     	android:onClick="onElementClick"
+		     	android:visibility="gone"/>
+			<ImageView
+			    android:id="@+id/downstairs_WC_departure_miscellaneous_imageView"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:src="@drawable/img_upload" 
+			    android:layout_marginLeft="@dimen/m_10dp"
+			    android:contentDescription="@string/image_view_content_desc"
+			   android:layout_alignParentRight="true"
+			   android:onClick="onPicUpload"
+			   android:maxWidth="@dimen/m_42dp"  
+		       android:maxHeight="@dimen/m_42dp"
+		       android:layout_alignBottom="@+id/downstairs_WC_departure_miscellaneous_editText"
+		       android:adjustViewBounds="true"
+			   android:layout_centerVertical="true"
+			   android:scaleType="fitCenter"
+			   android:visibility="gone"
+			    />
+			</RelativeLayout>
+			<!-- Miscellaneous ends here -->
+			
+			<!-- Action plan if requuired  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_action_plan_if_required_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/action_plan_required_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_action_plan_if_required_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/action_plan_required_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_action_plan_if_required_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_action_plan_if_required_textView"
+		     	android:onClick="onElementClick"
+		     	/>
+			
+			</RelativeLayout>
+			<!-- Action plan if requuired ends here -->
+			
+			<!-- follow up  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_follow_up_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/follow_up_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_follow_up_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/follow_up_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_follow_up_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_follow_up_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- follow up ends here -->
+			
+			<!-- final comments  starts here -->
+			<RelativeLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_marginTop="@dimen/m_5dp"
+	    	android:layout_marginBottom="@dimen/m_5dp"  >
+			<TextView
+			    android:id="@+id/downstairs_WC_departure_final_comments_textView"
+			    android:layout_width="wrap_content"
+		     	android:layout_height="wrap_content"
+		     	android:text="@string/final_comments_title"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:textColor="@color/_Black"
+		     	android:layout_alignParentLeft="true"
+		     	android:layout_marginBottom="@dimen/m_10dp"/>
+			
+			<EditText
+			    android:id="@+id/downstairs_WC_departure_final_comments_editText"
+			    android:layout_width="match_parent"
+		     	android:layout_height="wrap_content"
+		     	android:textSize="@dimen/m_18sp"
+		     	android:hint="@string/final_comments_title"
+		     	android:layout_gravity="center_vertical"
+		     	android:layout_marginBottom="@dimen/m_10dp"
+		     	android:padding="@dimen/m_5dp"
+			    android:layout_marginLeft="@dimen/m_5dp"
+		     	android:background="@color/_White"
+		     	android:layout_alignLeft="@+id/downstairs_WC_departure_final_comments_textView"
+		     	android:layout_below= "@+id/downstairs_WC_departure_final_comments_textView"
+		     	android:onClick="onElementClick"/>
+			
+			</RelativeLayout>
+			<!-- final comments ends here -->
+			<!-- departure ends here -->
+			
+			<!-- Downstairs WC/Cloakroom form started here -->
+	    </LinearLayout>
+    </ScrollView>
+			
+	<include layout="@layout/footer"
+	    android:id="@+id/navwraper"/>
+</RelativeLayout>		

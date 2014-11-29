@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+     <item
+        android:id="@+id/action_home"
+        android:orderInCategory="100"
+        android:title="Home"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_utility"
+        android:orderInCategory="100"
+        android:title="Utility"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_interior"
+        android:orderInCategory="100"
+        android:title="Interior"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_exterior"
+        android:orderInCategory="100"
+        android:title="Exterior"
+        app:showAsAction="never"/>
+     <item
+        android:id="@+id/action_commgoto"
+        android:orderInCategory="100"
+        android:title="Exit"
+        app:showAsAction="never"/>
+
+</menu>
