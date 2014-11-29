@@ -1831,71 +1831,19 @@ public class Interior extends ActionBarActivity implements OnClickListener {
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_skirting_boards_radiator)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_skirting_boards_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_skirting_boards_radiator)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
 					
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_skirting_boards_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_skirting_boards_radiator)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
 					
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_skirting_boards_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_skirting_boards_radiator)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img")),R.id.
-					 * hall_landing_check_in_skirting_boards_radiator_imageView
-					 * );
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_skirting_boards_radiator)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img")),R.id.
-					 * hall_landing_pre_departure_skirting_boards_radiator_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_skirting_boards_radiator)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img")),R.id.
-					 * hall_landing_departure_skirting_boards_radiator_imageView
-					 * );
-					 */
+				
 
 					cursor.moveToNext();
 					continue;
@@ -1903,89 +1851,24 @@ public class Interior extends ActionBarActivity implements OnClickListener {
 
 				if (cursor.getString(cursor.getColumnIndex("inspect_type"))
 						.equals("doors_or_locks_or_keys_or_handles")) {
-					/*
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_check_in_doors_locks_keys_editText
-					 * )).setText(
-					 * cursor.getString(cursor.getColumnIndex("checkin_comm")));
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_pre_departure_doors_locks_keys_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("predepart_comm"
-					 * ))); ((EditText)findViewById(R.id.
-					 * hall_landing_departure_doors_locks_keys_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("depart_comm")));
-					 */
+					
 
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_doors_locks_keys)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_doors_locks_keys)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_doors_locks_keys)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
 					
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_doors_locks_keys)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_doors_locks_keys)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
 					
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_doors_locks_keys)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_doors_locks_keys)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img"
-					 * )),R.id.hall_landing_check_in_doors_locks_keys_imageView
-					 * );
-					 */
 
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_doors_locks_keys)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img"
-					 * )),R.id.hall_landing_pre_departure_doors_locks_keys_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_doors_locks_keys)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img"
-					 * )),R.id.hall_landing_departure_doors_locks_keys_imageView
-					 * );
-					 */
 					cursor.moveToNext();
 					continue;
 				}
@@ -2009,153 +1892,37 @@ public class Interior extends ActionBarActivity implements OnClickListener {
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
 					
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_window_locks_keys_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_window_locks_keys_handles)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_window_locks_keys_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_window_locks_keys_handles)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_window_locks_keys_handles)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img")),R.id.
-					 * hall_landing_check_in_window_locks_keys_handles_imageView
-					 * );
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_window_locks_keys_handles)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img")),R.id.
-					 * hall_landing_pre_departure_window_locks_keys_handles_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_window_locks_keys_handles)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img")),R.id.
-					 * hall_landing_departure_window_locks_keys_handles_imageView
-					 * );
-					 */
-
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_window_locks_keys_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
+					
 					cursor.moveToNext();
 					continue;
 				}
 
 				if (cursor.getString(cursor.getColumnIndex("inspect_type"))
 						.equals("table_or_chair_coatstand_mirror")) {
-					/*
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_check_in_table_chair_coatstand_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("checkin_comm"
-					 * ))); ((EditText)findViewById(R.id.
-					 * hall_landing_pre_departure_table_chair_coatstand_editText
-					 * )).setText(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_comm"))); ((EditText)findViewById(R.id.
-					 * hall_landing_departure_table_chair_coatstand_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("depart_comm")));
-					 */
+					
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_table_chair_coatstand)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_table_chair_coatstand)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_table_chair_coatstand)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_table_chair_coatstand)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_table_chair_coatstand)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_table_chair_coatstand)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_table_chair_coatstand)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img"
-					 * )),R.id.hall_landing_check_in_table_chair_coatstand_imageView
-					 * );
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_table_chair_coatstand)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img")),R.id.
-					 * hall_landing_pre_departure_table_chair_coatstand_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_table_chair_coatstand)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img")),R.id.
-					 * hall_landing_departure_table_chair_coatstand_imageView);
-					 */
+					
 
 					cursor.moveToNext();
 					continue;
@@ -2163,343 +1930,86 @@ public class Interior extends ActionBarActivity implements OnClickListener {
 
 				if (cursor.getString(cursor.getColumnIndex("inspect_type"))
 						.equals("phone_handset")) {
-					/*
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_check_in_phon_headset_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("checkin_comm")));
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_pre_departure_phon_headset_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("predepart_comm"
-					 * ))); ((EditText)findViewById(R.id.
-					 * hall_landing_departure_phon_headset_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("depart_comm")));
-					 */
+					
 
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_phone_headset)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_phone_headset)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_phone_headset)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_phone_headset)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_phone_headset)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_phone_headset)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_phone_headset)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img"
-					 * )),R.id.hall_landing_check_in_phone_headset_imageView);
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_phone_headset)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img"
-					 * )),R.id.hall_landing_pre_departure_phon_headset_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_phone_headset)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img"
-					 * )),R.id.hall_landing_departure_phone_headset_imageView);
-					 */
+					
 					cursor.moveToNext();
 					continue;
 				}
 
 				if (cursor.getString(cursor.getColumnIndex("inspect_type"))
 						.equals("phone_directories")) {
-					/*
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_check_in_phon_directory_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("checkin_comm")));
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_pre_departure_phon_directory_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("predepart_comm"
-					 * ))); ((EditText)findViewById(R.id.
-					 * hall_landing_departure_phon_directory_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("depart_comm")));
-					 */
-
+					
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_phone_directory)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_phone_directory)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_phone_directory)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_phone_directory)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_phone_directory)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_phone_directory)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_phone_directory)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img"
-					 * )),R.id.hall_landing_check_in_phone_directory_imageView);
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_phone_directory)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img"
-					 * )),R.id.hall_landing_pre_departure_phone_directory_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_phone_directory)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img"
-					 * )),R.id.hall_landing_departure_phone_directory_imageView
-					 * );
-					 */
-
+					
 					cursor.moveToNext();
 					continue;
 				}
 
 				if (cursor.getString(cursor.getColumnIndex("inspect_type"))
 						.equals("curtains_or_blinds")) {
-					/*
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_check_in_curtains_blinds_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("checkin_comm")));
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_pre_departure_curtains_blinds_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("predepart_comm"
-					 * ))); ((EditText)findViewById(R.id.
-					 * hall_landing_departure_curtains_blinds_editText
-					 * )).setText(
-					 * cursor.getString(cursor.getColumnIndex("depart_comm")));
-					 */
-
+					
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_curtains_blinds)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_curtains_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_curtains_blinds)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_curtains_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_curtains_blinds)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_curtains_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_curtains_blinds)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img"
-					 * )),R.id.hall_landing_check_in_curtains_blinds_imageView);
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_curtains_blinds)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img"
-					 * )),R.id.hall_landing_pre_departure_curtains_blinds_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_curtains_blinds)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img"
-					 * )),R.id.hall_landing_departure_curtains_blinds_imageView
-					 * );
-					 */
+					
 					cursor.moveToNext();
 					continue;
 				}
 
 				if (cursor.getString(cursor.getColumnIndex("inspect_type"))
 						.equals("miscellaneous")) {
-					/*
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_check_in_miscellaneous_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("checkin_comm")));
-					 * ((EditText)findViewById(R.id.
-					 * hall_landing_pre_departure_miscellaneous_editText
-					 * )).setText
-					 * (cursor.getString(cursor.getColumnIndex("predepart_comm"
-					 * ))); ((EditText)findViewById(R.id.
-					 * hall_landing_departure_miscellaneous_editText
-					 * )).setText(cursor
-					 * .getString(cursor.getColumnIndex("depart_comm")));
-					 */
+					
 
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_miscellaneous)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("checkin_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_miscellaneous)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("predepart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
 					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_miscellaneous)).et_text1
 							.setText(cursor.getString(cursor
 									.getColumnIndex("depart_comm")));
-					((TextPicLayout) findViewById(R.id.)).mButton.setTag(cursor.getString(cursor.getColumnIndex("")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 
-					String path = cursor.getString(cursor
-							.getColumnIndex("checkin_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_miscellaneous)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "checkin_img"
-					 * )),R.id.hall_landing_check_in_miscellaneous_imageView);
-					 */
-
-					path = cursor.getString(cursor
-							.getColumnIndex("predepart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_pre_departure_miscellaneous)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "predepart_img"
-					 * )),R.id.hall_landing_pre_departure_miscellaneous_imageView
-					 * );
-					 */
-
-					path = cursor
-							.getString(cursor.getColumnIndex("depart_img"));
-					if (path != null) {
-						String[] arr = path.split("\\},\\{");
-						for (int i = 0; i < arr.length; i++) {
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(
-									arr[i],
-									((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_departure_miscellaneous)).imgArr[i]);
-						}
-					}
-					/*
-					 * showImageInIV(cursor.getString(cursor.getColumnIndex(
-					 * "depart_img"
-					 * )),R.id.hall_landing_departure_miscellaneous_imageView);
-					 */
+					
 					cursor.moveToNext();
 					continue;
 				}
