@@ -512,12 +512,14 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_utility_departur
 		finish();
 	}
 	void gotoNext(View v)
+
 	{
 		saveData(((Button) findViewById(R.id.savephase)));
 		startActivity(new Intent(this,InteriorMasterBedroom.class));
 		finish();
 	}
-	public void saveData(View v){
+	
+public void saveData(View v){
 		
 		long Success = -1;
 		Log.v("editJobId",editJobId+"");
@@ -533,58 +535,32 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_utility_departur
        try {
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).mButton.getTag().toString());
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 			}
-			try {
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).iv_pic4.getTag().toString();
-				
-				contentValues.put("checkin_img",imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).mButton.getTag().toString());
 			} catch (Exception e) {                                                  
 				// TODO: handle exception
 				Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 			} 
-			try {
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img",imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 			}
-			try {
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img", imagePath);
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+			
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'flooring_or_tiles'", null);
 			Log.v("updated for", "flooring_or_tiles"+Success);		
 			
@@ -597,64 +573,37 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_utility_departur
 
 
 //walltiles_or_grouting_or_seals
+			contentValues = new ContentValues();
   
 try {
 	
 	contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).et_text1.getText().toString() );
+	contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).mButton.getTag().toString());
 	Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).et_text1.getText().toString());
 	
 } catch (Exception e) {
 	// TODO: handle exception
 	Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 }
-try {
-	
-	String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).iv_pic1.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).iv_pic2.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).iv_pic3.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).iv_pic4.getTag().toString();
-	contentValues.put("checkin_img",imagePath);
-} catch (Exception e) {
-	// TODO: handle exception
-	Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-}
+
 try {
 	contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).et_text1.getText().toString() );
+	contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).mButton.getTag().toString());
 } catch (Exception e) {                                                  
 	// TODO: handle exception
 	Log.v("for", "textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals_editText");
 
 } 
-try {
-	
-	String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).iv_pic1.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).iv_pic2.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).iv_pic3.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).iv_pic4.getTag().toString();
-	contentValues.put("predepart_img", imagePath);
 
-} catch (Exception e) {
-	// TODO: handle exception
-	Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-}
 try {
 	contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).et_text1.getText().toString());
+	contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).mButton.getTag().toString());
 } catch (Exception e) {
 	// TODO: handle exception
 	Log.v("for", "textPicLayout_utility_departure_walltiles_or_grouting_or_seals_editText");
 
 }
-try {
-	
-	String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).iv_pic1.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).iv_pic2.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).iv_pic3.getTag().toString()
-			+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).iv_pic4.getTag().toString();
-	contentValues.put("depart_img", imagePath);
 
-} catch (Exception e) {
-	Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-}
 Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'walltiles_or_grouting_or_seals'", null);
 Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);		
 
@@ -662,126 +611,74 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 
 
 
-			//paint_or_paperwall_or_ceiling  
+	//paint_or_paperwall_or_ceiling  
+contentValues = new ContentValues();
+
 			try {
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).mButton.getTag().toString());
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).iv_pic4.getTag().toString();
-				contentValues.put("checkin_img", imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).mButton.getTag().toString());
 			} catch (Exception e) {                                                  
 				// TODO: handle exception
 				Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 			} 
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img",imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img",imagePath);
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+			
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'paint_or_paperwall_or_ceiling'", null);
 			Log.v("updated for", "paint_or_paperwall_or_ceiling"+Success);		
 			
 			
 //skirting_boards_or_radiator  
+			contentValues = new ContentValues();
+			
 			try {
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).mButton.getTag().toString());
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).iv_pic4.getTag().toString();
-				contentValues.put("checkin_img", imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 			} 
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img", imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img", imagePath);
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+			
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'skirting_boards_or_radiator'", null);
 			Log.v("updated for", "skirting_boards_or_radiator"+Success);		
 			
@@ -789,48 +686,32 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 			  
 			
 //doors_or_locks_or_keys_or_handles  
+			contentValues = new ContentValues();
+			
 			try { 
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 				Log.v("for", "textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles_shades=joy "+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles_shadesException");
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-				contentValues.put("checkin_img",imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 				Log.v("for", "textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles_JOy"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString()); 
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles_shadesEXception");
 
 			} 
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img", imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editTextJoy "+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString());
 
 			} catch (Exception e){                                                
@@ -838,18 +719,7 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editTextEXCEPTION");
 
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img", imagePath);
-
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+			
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'doors_or_locks_or_keys_or_handles'", null);
 			Log.v("updated for", "doors_or_locks_or_keys_or_handles"+Success);
 			
@@ -860,126 +730,73 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 			
 			
 	//windows_or_locks_or_keys_or_handles  
+			contentValues = new ContentValues();
+			
 			try {
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 			}
-			try {
-				
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-				contentValues.put("checkin_img", imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 			} 
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img", imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img", imagePath);
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+			
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'windows_or_locks_or_keys_or_handles'", null);
 			Log.v("updated for", "windows_or_locks_or_keys_or_handles"+Success);		
 			
 			
-			//lighting_or_bulbs_or_sheds  
+//lighting_or_bulbs_or_sheds  
+			contentValues = new ContentValues();
+			
 			try {
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).mButton.getTag().toString());
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).iv_pic4.getTag().toString();
-				contentValues.put("checkin_img",imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 			} 
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img", imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img", imagePath);
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+		
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'lighting_or_bulbs_or_sheds'", null);
 			Log.v("updated for", "lighting_or_bulbs_or_sheds"+Success);		
 		
@@ -988,63 +805,37 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 			
 			
 // sink_or_tap_stopper 
+			contentValues = new ContentValues();
+			
 			try {
 				
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).mButton.getTag().toString());
 				Log.v("for", "textPicLayout_utility_check_in_sink_or_tap_stopper="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).et_text1.getText().toString());
 				
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).iv_pic4.getTag().toString();
-				contentValues.put("checkin_img",imagePath);
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).et_text1.getText().toString() );
+				contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "");
 
 			} 
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).iv_pic4.getTag().toString();
-				contentValues.put("predepart_img",imagePath);
-
-			} catch (Exception e) {
-				// TODO: handle exception
-				Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-			}
+			
 			try {
 				contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).et_text1.getText().toString());
+				contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).mButton.getTag().toString());
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.v("for", "");
 
 			}
-			try {
-				
-				String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).iv_pic1.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).iv_pic2.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).iv_pic3.getTag().toString()
-						+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).iv_pic4.getTag().toString();
-				contentValues.put("depart_img",imagePath);
-
-			} catch (Exception e) {
-				Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-			}
+			
 			Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'sink_or_tap_stopper'", null);
 			Log.v("updated for", "sink_or_tap_stopper"+Success);		
 		
@@ -1053,60 +844,37 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 			
 			
 		// washing_machine_or_dryer 
+			contentValues = new ContentValues();
+			
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img",imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'washing_machine_or_dryer'", null);
 					Log.v("updated for", "washing_machine_or_dryer"+Success);		
 				
@@ -1115,60 +883,37 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 				//instruction_manuals  
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'instruction_manuals'", null);
 					Log.v("updated for", "instruction_manuals"+Success);		
 				
@@ -1176,62 +921,37 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 // cabinet_or_shelves  
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					} 
+					
 					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
-					try {
-						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).et_text1.getText().toString());
+						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					}
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'cabinet_or_shelves'", null);
 					Log.v("updated for", "cabinet_or_shelves"+Success);		
 				
@@ -1239,63 +959,38 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 	//  water_pressure
+					contentValues = new ContentValues();
+					
+					contentValues=new ContentValues();
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					} 
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					}
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'water_pressure'", null);
 					Log.v("updated for", "water_pressure"+Success);		
 				
@@ -1303,63 +998,37 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 	//  miscellaneous
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					} 
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "");
 
 					}
-					try {
-						
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("UTILITY_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'miscellaneous'", null);
 					Log.v("updated for", "miscellaneous"+Success);		
 				
@@ -1465,6 +1134,8 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 		
 	}
 	
+	
+	
 	void renderData()
 	{
 		Cursor cursor = SelectDb.getPhaseByData(db, "UTILITY_ROOM", editJobId, false, true, false);
@@ -1484,44 +1155,10 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_flooring_or_tiles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_flooring_or_tile)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_flooring_or_tiles)).imgArr[i]);
-						}						
-					}
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
 					cursor.moveToNext();
 					continue;
 				}
@@ -1536,43 +1173,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).imgArr[i]);
-						}						
-					}
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_walltiles_or_grouting_or_seals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_walltiles_or_grouting_or_seals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_walltiles_or_grouting_or_seals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1591,41 +1194,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_paint_or_paperwall_or_ceiling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_paint_or_paperwall_or_ceiling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_paint_or_paperwall_or_ceiling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1643,43 +1214,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).imgArr[i]);
-						}						
-					}
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_skirting_boards_or_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_skirting_boards_or_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_skirting_boards_or_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1700,38 +1237,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_doors_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
 					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
@@ -1753,41 +1261,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_windows_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_windows_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_windows_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1806,41 +1282,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_lighting_or_bulbs_or_sheds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_lighting_or_bulbs_or_sheds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_lighting_or_bulbs_or_sheds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1857,42 +1301,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).imgArr[i]);
-						}						
-					}
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_sink_or_tap_stopper)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_sink_or_tap_stopper)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_sink_or_tap_stopper)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1908,42 +1319,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_washing_machine_or_dryer)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_washing_machine_or_dryer)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_washing_machine_or_dryer)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1961,43 +1339,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).imgArr[i]);
-						}						
-					}
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_instruction_manuals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_instruction_manuals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_instruction_manuals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2012,43 +1356,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).imgArr[i]);
-						}						
-					}
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_cabinet_or_shelves)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_cabinet_or_shelves)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_cabinet_or_shelves)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2063,44 +1373,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_water_pressure)).imgArr[i]);
-						}						
-					}
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_water_pressure)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_water_pressure)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_water_pressure)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2114,44 +1389,9 @@ Log.v("updated for", "walltiles_or_grouting_or_seals"+Success);
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_check_in_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_pre_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_utility_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}

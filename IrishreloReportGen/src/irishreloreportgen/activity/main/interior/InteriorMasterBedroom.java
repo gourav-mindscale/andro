@@ -559,58 +559,32 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 		       try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_checkIn_flooring_or_carpet_or_rugsEXCEPTION");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).mButton.getTag().toString());
 					} catch (Exception e) {                                                  
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img",imagePath);
-								
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'flooring_or_carpet_or_rugs'", null);
 					Log.v("updated for", "flooring_or_carpet_or_rugs"+Success);		
 					
@@ -625,120 +599,73 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 
 
 
-					//paint_or_paperwall_or_ceiling  
+	//paint_or_paperwall_or_ceiling 
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceilingEXception");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img",imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).mButton.getTag().toString());
 					} catch (Exception e) {                                                  
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img",imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'paint_or_paperwall_or_ceiling'", null);
 					Log.v("updated for", "paint_or_paperwall_or_ceiling"+Success);		
 					
 					
 		//skirting_boards_or_radiator  
+					contentValues=new ContentValues();
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'skirting_boards_or_radiator'", null);
 					Log.v("updated for", "skirting_boards_or_radiator"+Success);		
 					
@@ -746,46 +673,32 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					  
 					
 		//doors_or_locks_or_keys_or_handles  
+					contentValues = new ContentValues();
+					
 					try { 
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles=joy "+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_utility_check_in_doors_or_locks_or_keys_or_handles_shadesException");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img",imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles_JOy"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString()); 
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_utility_pre_departure_doors_or_locks_or_keys_or_handles_shadesEXception");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_utility_departure_wooden_floor_editTextJoy "+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).et_text1.getText().toString());
 
 					} catch (Exception e){                                                
@@ -793,17 +706,7 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 						Log.v("for", "textPicLayout_utility_departure_wooden_floor_editTextEXCEPTION");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'doors_or_locks_or_keys_or_handles'", null);
 					Log.v("updated for", "doors_or_locks_or_keys_or_handles"+Success);
 					
@@ -813,120 +716,74 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					
 					
 					
-			//windows_or_locks_or_keys_or_handles  
+	//windows_or_locks_or_keys_or_handles  
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img",imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'windows_or_locks_or_keys_or_handles'", null);
 					Log.v("updated for", "windows_or_locks_or_keys_or_handles"+Success);		
 					
 					
-					//lighting_or_bulbs_or_sheds  
+//lighting_or_bulbs_or_sheds
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).mButton.getTag().toString());
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "hall_landing_pre_departure_wooden_floor_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'lighting_or_bulbs_or_sheds'", null);
 					Log.v("updated for", "lighting_or_bulbs_or_sheds"+Success);		
 			
@@ -936,299 +793,185 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					
 					
 	//  wardrobes_or_furniture_or_headboard
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img",imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img",imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'wardrobes_or_furniture_or_headboard'", null);
 					Log.v("updated for", "wardrobes_or_furniture_or_headboard"+Success);		
 					
 			
 			
 					
-				// bed_or_matress_or_protector 
+// bed_or_matress_or_protector
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img",imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'bed_or_matress_or_protector'", null);
 					Log.v("updated for", "bed_or_matress_or_protector"+Success);		
 					
-				//  bedlinens_or_duvets_or_pillows_or_blankets
+//  bedlinens_or_duvets_or_pillows_or_blankets
+					contentValues = new ContentValues();
+					
 					try {
 						
 				contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).et_text1.getText().toString() );
+				contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'bedlinens_or_duvets_or_pillows_or_blankets'", null);
 					Log.v("updated for", "bedlinens_or_duvets_or_pillows_or_blankets"+Success);		
 					
 		
 					
 		// curtains_or_blinds 
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img", imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_utility_departure_wooden_floor_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img",imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'curtains_or_blinds'", null);
 					Log.v("updated for", "curtains_or_blinds"+Success);		
 			
 					
 					
-				//  miscellaneous
+		//  miscellaneous
+					contentValues = new ContentValues();
+					
 					try {
 						
 						contentValues.put("checkin_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).et_text1.getText().toString() );
+						contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).mButton.getTag().toString());
 						Log.v("for", "textPicLayout_master_bedroom_interior_check_in_miscellaneous="+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).et_text1.getText().toString());
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "Checkin_flooring_or_carpet_or_rugs");
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).iv_pic4.getTag().toString();
-						contentValues.put("checkin_img",imagePath);
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "textPicLayout_hall_landing_check__wooden_floor_imageView");
-					}
+					
+					
 					try {
 						contentValues.put("predepart_comm",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).et_text1.getText().toString() );
+						contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_miscellaneous_editText");
 
 					} 
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).iv_pic4.getTag().toString();
-						contentValues.put("predepart_img", imagePath);
-
-					} catch (Exception e) {
-						// TODO: handle exception
-						Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-					}
+					
 					try {
 						contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).et_text1.getText().toString());
+						contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).mButton.getTag().toString());
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.v("for", "textPicLayout_master_bedroom_interior_pre_departure_miscellaneous_editText");
 
 					}
-					try {
-						String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).iv_pic1.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).iv_pic2.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).iv_pic3.getTag().toString()
-								+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).iv_pic4.getTag().toString();
-						contentValues.put("depart_img", imagePath);
-
-					} catch (Exception e) {
-						Log.v("for", "textPicLayout_utility_departure_wooden_floor_imageView");
-					}
+					
 					Success = db.MyDB().update("MASTER_BED_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'miscellaneous'", null);
 					Log.v("updated for", "miscellaneous"+Success);		
 					
@@ -1468,6 +1211,9 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	
+	
 	
 	void renderData()
 	{
@@ -1491,41 +1237,10 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).imgArr[i]);
-						}						
-					}
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_flooring_or_carpet_or_rugs)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_flooring_or_carpet_or_rugs)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_flooring_or_carpet_or_rugs)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
 					cursor.moveToNext();
 					continue;
 				}
@@ -1545,41 +1260,9 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_paint_or_paperwall_or_ceiling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_paint_or_paperwall_or_ceiling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_paint_or_paperwall_or_ceiling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1597,42 +1280,9 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_skirting_boards_or_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_skirting_boards_or_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_skirting_boards_or_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1652,42 +1302,9 @@ mTextPicLayout = (TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_i
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_doors_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_doors_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_doors_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1704,41 +1321,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_windows_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_windows_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_windows_or_locks_or_keys_or_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1755,42 +1340,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_lighting_or_bulbs_or_sheds)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_lighting_or_bulbs_or_sheds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_lighting_or_bulbs_or_sheds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_lighting_or_bulbs_or_sheds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1810,42 +1362,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_wardrobes_or_furniture_or_headboard)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_wardrobes_or_furniture_or_headboard)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_wardrobes_or_furniture_or_headboard)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1861,42 +1380,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bed_or_matress_or_protector)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bed_or_matress_or_protector)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bed_or_matress_or_protector)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					cursor.moveToNext();
 					continue;
@@ -1914,42 +1400,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_bedlinens_or_duvets_or_pillows_or_blankets)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_bedlinens_or_duvets_or_pillows_or_blankets)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_bedlinens_or_duvets_or_pillows_or_blankets)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -1965,42 +1418,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_curtains_or_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_curtains_or_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_curtains_or_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2015,42 +1435,9 @@ f				((EditText)findViewById(R.id.downstairs_WC_departure_floor_covering_editTex
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_check_in_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_pre_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_master_bedroom_interior_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}

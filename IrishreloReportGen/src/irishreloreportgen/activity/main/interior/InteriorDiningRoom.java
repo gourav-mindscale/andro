@@ -1234,7 +1234,7 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 			
 			
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).et_text1.getText().toString());
-			
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).mButton.getTag().toString());
 			Log.v("for", "Checkin_flooring_or_carpet_or_rugs=JOy "+((TextPicLayout)findViewById(R.id.textPicLayout_living_room_check_in_flooring_or_carpet_or_rugs)).et_text1.getText().toString());
 
 		}
@@ -1242,54 +1242,24 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		{
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_check_in_carpetRugsExceptionJOy"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).et_text1.getText().toString());
 		}
-		try {
-			
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "textPicLayout_dinning_room_hall_landing_check_in_interior_carpets_and_rugs_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "check_in_carpetRugs");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_interior_carpets_and_rugs_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).et_text1.getText().toString());
-
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).mButton.getTag().toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "hall_landing_pre_departure");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_interior_carpets_and_rugs_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'flooring_or_carpet_or_rugs'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);                                                       
 		
@@ -1299,58 +1269,35 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).et_text1.getText().toString());
+			
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "check_in_wooden_floor"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img",imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_wooden_floor_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).et_text1.getText().toString());
+			
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).mButton.getTag().toString());
 
 			
 		} catch (Exception e) {
 			Log.v("for", "hall_landing_pre_departure_wooden_floor");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_wooden_floor_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).et_text1.getText().toString());
+			
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).mButton.getTag().toString());
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_wooden_floor");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_wooden_floor_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'paint_or_paperwall_or_ceiling'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1359,58 +1306,35 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).et_text1.getText().toString());
+			
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_skirting_boards_radiator_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).et_text1.getText().toString());
+			
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).mButton.getTag().toString());
 
 			
 		} catch (Exception e) {
 			Log.v("for", "hall_landing_pre_departure_skirting_boards_radiator");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_skirting_boards_radiator_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).et_text1.getText().toString());
+			
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).mButton.getTag().toString());
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_skirting_boards_radiator_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'skirting_boards_or_radiator'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1420,58 +1344,33 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).et_text1.getText().toString());
+			
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "hall_landing_check_in_doors_locks_keys"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_doors_locks_keys_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "hall_landing_pre_departure_doors_locks_keys");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_doors_locks_keys_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).et_text1.getText().toString());
+			
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).mButton.getTag().toString());
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_doors_locks_keys_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'doors_or_locks_or_keys_or_handles'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1480,58 +1379,31 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "hall_landing_check_in_window_locks_keys_handles"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_window_locks_keys_handles_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_window_locks_keys_handles_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).et_text1.getText().toString());
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).mButton.getTag().toString());
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_window_locks_keys_handles_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'windows_or_locks_or_keys_or_handles'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1540,58 +1412,30 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "hall_landing_check_in_lighting_bulbs_shades"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img",imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_lighting_bulbs_shades_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_lighting_bulbs_shades_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).et_text1.getText().toString());
-
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).mButton.getTag().toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_lighting_bulbs_shades_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'lighting_or_bulbs_or_sheds'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1600,58 +1444,30 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "hall_landing_check_in_handles_doors_fininsh"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_handles_doors_fininsh_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_handles_doors_fininsh_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).et_text1.getText().toString());
-
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).mButton.getTag().toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_handles_doors_fininsh_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'soft_furnishing'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1661,58 +1477,29 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "hall_landing_check_in_table_chair_coatstand"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_table_chair_coatstand_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand");
 		}
 		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_table_chair_coatstand_imageView");
-		}
-		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).et_text1.getText().toString());
-
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).mButton.getTag().toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "hall_landing_departure_table_chair_coatstand");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_table_chair_coatstand_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'wooden_furnishing'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1722,58 +1509,31 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).mButton.getTag().toString());
 		}                                                                  
 		catch(Exception e)
 		{
 			Log.v("for", "hall_landing_check_in_phon_headset"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img", imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_phone_headset_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).et_text1.getText().toString());
-                                                                            
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).mButton.getTag().toString());                                                        
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_phon_headset");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_phon_headset_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).et_text1.getText().toString());
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).mButton.getTag().toString());
 			                                                              
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_departure_phon_headset");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_phone_headset_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'curtains_or_blinds'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1782,58 +1542,30 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_check_in_phon_directory"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img",imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_phone_directory_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).et_text1.getText().toString());
-
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).mButton.getTag().toString());
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_phon_directory");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",((ImageView)findViewById(R.id.hall_landing_pre_departure_phone_directory_imageView)).getTag().toString());	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_phone_directory_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).et_text1.getText().toString());
-
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).mButton.getTag().toString());
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "hall_landing_departure_phon_directory");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_phone_directory_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'mirror_or_picture'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1844,58 +1576,32 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		
 		try{
 			contentValues.put("checkin_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).et_text1.getText().toString());
+			contentValues.put("checkin_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).mButton.getTag().toString());
 		}
 		catch(Exception e)
 		{
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_check_in_miscellaneous"+ ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).et_text1.getText().toString());
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).iv_pic4.getTag().toString();
-			contentValues.put("checkin_img",imagePath);
-
-		} catch (Exception e) {
-			Log.v("for", "hall_landing_check_in_miscellaneous_imageView");
-		}
+		
 		try {
 			contentValues.put("predepart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).et_text1.getText().toString());
+			contentValues.put("predepart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).mButton.getTag().toString());
 
 			
 		} catch (Exception e) {
 			Log.v("for", "textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous");
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).iv_pic4.getTag().toString();
-			contentValues.put("predepart_img",imagePath);	
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_pre_departure_miscellaneous_imageView");
-		}
+		
 		try {
 			contentValues.put("depart_comm", ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).et_text1.getText().toString());
+			contentValues.put("depart_img",((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).mButton.getTag().toString());
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			Log.v("for", "hall_landing_departure_miscellaneous");
 
 		}
-		try {
-			String imagePath = ((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).iv_pic1.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).iv_pic2.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).iv_pic3.getTag().toString()
-					+"},{"+((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).iv_pic4.getTag().toString();
-			contentValues.put("depart_img",imagePath);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			Log.v("for", "hall_landing_departure_miscellaneous_imageView");
-
-		}
+		
 		Success = db.MyDB().update("DINING_ROOM", contentValues, "jobid ="+editJobId+" AND inspect_type = 'miscellaneous'", null);
 		Log.v("updated for", "DINING_ROOM"+Success);
 		
@@ -1905,7 +1611,6 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		contentValues = new ContentValues();
 		try{
 			contentValues.put("checkin_comm", ((EditText)findViewById(R.id.hall_landing_check_in_action_plan_editText)).getText().toString());
-			
 		}
 		catch(Exception e){
 			Log.e("for", "hall_landing_check_in_action_plan");
@@ -1913,6 +1618,7 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 		contentValues.put("checkin_img", "");
 		try{
 			contentValues.put("predepart_comm", ((EditText)findViewById(R.id.hall_landing_pre_departure_action_plan_editText)).getText().toString());
+
 			
 		}catch(Exception e){
 			Log.v("for", "hall_landing_pre_departure_action_plan");
@@ -2021,43 +1727,12 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).imgArr[i]);
-						}						
-					}
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).imgArr[i]);
-						}						
-					}
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_carpetRug)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_carpetRug)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_carpetRug)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_interior_carpets_and_rugs_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_interior_carpets_and_rugs_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_interior_carpets_and_rugs_imageView);*/
 					cursor.moveToNext();
 					continue;
 				}
@@ -2068,43 +1743,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).imgArr[i]);
-						}						
-					}
-					
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_wooden_floor_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_wooden_floor_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_wooden_floor_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_wooden_floor)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_wooden_floor)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_wooden_floor)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					
 					cursor.moveToNext();
@@ -2117,44 +1758,10 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).imgArr[i]);
-						}						
-					}
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_skirting_boards_radiator_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_skirting_boards_radiator_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_skirting_boards_radiator_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_skirting_boards_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_skirting_boards_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_skirting_boards_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					cursor.moveToNext();
 					continue;
@@ -2167,44 +1774,11 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).imgArr[i]);
-						}						
-					}
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_doors_locks_keys)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_doors_locks_keys)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_doors_locks_keys)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_doors_locks_keys_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_doors_locks_keys_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_doors_locks_keys_imageView);*/
 					cursor.moveToNext();
 					continue;
 				}
@@ -2214,44 +1788,11 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("checkin_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).imgArr[i]);
-						}						
-					}
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).imgArr[i]);
-						}						
-					}
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_window_locks_keys_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_window_locks_keys_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_window_locks_keys_handles)).imgArr[i]);
-						}						
-					}
-					
-					
-					/*
-					showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_window_locks_keys_handles_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_window_locks_keys_handles_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_window_locks_keys_handles_imageView);*/
 					
 					cursor.moveToNext();
 					continue;
@@ -2264,45 +1805,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_lighting_bulbs_shades_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_lighting_bulbs_shades_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_lighting_bulbs_shades_imageView);*/
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_lighting_bulbs_shades)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_lighting_bulbs_shades)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_lighting_bulbs_shades)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2313,47 +1818,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_handles_doors_fininsh_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_handles_doors_fininsh_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_handles_doors_fininsh_imageView);
-*/					
-				
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_handles_doors_fininsh)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_handles_doors_fininsh)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_handles_doors_fininsh)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2365,45 +1832,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_table_chair_coatstand_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_table_chair_coatstand_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_table_chair_coatstand_imageView);*/
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_table_chair_coatstand)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_table_chair_coatstand)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_table_chair_coatstand)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					
 					cursor.moveToNext();
@@ -2418,46 +1849,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_phone_headset_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_phon_headset_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_phone_headset_imageView);*/
-					
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_headset)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_headset)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_headset)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2468,46 +1862,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).imgArr[i]);
-						}						
-					}
-					
-					
-				/*	
-					showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_phone_directory_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_phone_directory_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_phone_directory_imageView);
-					*/
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_phone_directory)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_phone_directory)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_phone_directory)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
@@ -2519,46 +1876,9 @@ public class InteriorDiningRoom extends ActionBarActivity implements OnClickList
 					((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.hall_landing_check_in_miscellaneous_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.hall_landing_pre_departure_miscellaneous_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.hall_landing_departure_miscellaneous_imageView);*/
-					
-					
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_check_in_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_pre_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_dinning_room_hall_landing_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}

@@ -815,12 +815,7 @@ public class Interior extends ActionBarActivity implements OnClickListener {
 							+ (((TextPicLayout) findViewById(R.id.textPicLayout_hall_landing_check_in_carpetRug)).et_text1
 									.getText().toString()));
 		} catch (Exception e) {
-			// Log.v("for", "hall_landing_check_in_carpetRugs"+
-			// ((EditText)findViewById(R.id.hall_landing_check_in_carpetRugs)).getText().toString());
 			
-
-			// Log.v("for", "hall_landing_check_in_carpetRugs Joy"+
-			// (((TextPicLayout)findViewById(R.id.textPicLayout_hall_landing_check_in_carpetRug)).et_text1.getText().toString()));
 		}
 		/**
 		 * PreDept CarpetRag

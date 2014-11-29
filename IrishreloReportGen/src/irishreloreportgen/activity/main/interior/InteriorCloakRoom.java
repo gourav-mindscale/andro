@@ -1227,41 +1227,10 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_floor_covering)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_floor_covering)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					 String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_floor_covering)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_floor_covering_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_floor_covering)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_floor_covering)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_floor_covering)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_floor_covering)).imgArr[i]);
-						}						
-					}
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_floor_covering_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_floor_covering_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_floor_covering)).imgArr[i]);
-						}						
-					}
 					cursor.moveToNext();
 					continue;
 				}
@@ -1277,41 +1246,11 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_tiles_grouting_seals)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_tiles_grouting_seals)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_tiles_grouting_seals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_tiles_grouting_seals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_tiles_grouting_seals)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_tiles_grouting_seals)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_tiles_grouting_seals_imageView);*/
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_tiles_grouting_seals)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_tiles_grouting_seals_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_tiles_grouting_seals)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_tiles_grouting_seals_imageView);*/
 					cursor.moveToNext();
 					continue;
 				}
@@ -1326,41 +1265,12 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_paint_paper_walls_celling)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_paint_paper_walls_celling)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_paint_paper_walls_celling)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_paint_paper_walls_celling_imageView);*/
 					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_paint_paper_walls_celling)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_paint_paper_walls_celling_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_paint_paper_walls_celling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_paint_paper_walls_celling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_paint_paper_walls_celling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_paint_paper_walls_celling)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_paint_paper_walls_celling_imageView);*/
+					
 					cursor.moveToNext();
 					continue;
 				}
@@ -1376,40 +1286,11 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_doors_windows_keys_locks)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_doors_windows_keys_locks)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_paint_paper_walls_celling)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_doors_windows_keys_locks)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_doors_windows_keys_locks)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_doors_windows_keys_locks)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_doors_windows_keys_locks_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_doors_windows_keys_locks)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_doors_windows_keys_locks_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_doors_windows_keys_locks)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_doors_windows_keys_locks_imageView);*/
+					
 					cursor.moveToNext();
 					continue;
 				}
@@ -1424,43 +1305,13 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_lightfixture_bulbs_shades)).et_text1.setText(cursor.getString(cursor.getColumnIndex("checkin_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_lightfixture_bulbs_shades)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_lightfixture_bulbs_shades_)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
+				
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_lightfixture_bulbs_shades)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_lightfixture_bulbs_shades_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_lightfixture_bulbs_shades)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_lightfixture_bulbs_shades)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_lightfixture_bulbs_shades_)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_lightfixture_bulbs_shades_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_lightfixture_bulbs_shades)).imgArr[i]);
-						}						
-					}
-
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.textPicLayout_downstairs_WC_departure_lightfixture_bulbs_shades_);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_lightfixture_bulbs_shades_)).imgArr[i]);
-						}						
-					}
-
+					
 					
 					cursor.moveToNext();
 					continue;
@@ -1476,39 +1327,11 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_toilet_flush_sink)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_flush_sink)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_toilet_flush_sink)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_toilet_flush_sink_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_flush_sink)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_toilet_flush_sink_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_flush_sink)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_toilet_flush_sink_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_toilet_flush_sink)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_toilet_flush_sink)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_flush_sink)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
+					
+					
 					cursor.moveToNext();
 					continue;
 				}
@@ -1523,41 +1346,11 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_checkin_toilet_brush_roll_holder)).et_text1.setText(cursor.getString(cursor.getColumnIndex("checkin_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_toilet_brush_roll_holder)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
+				
 					
-				String	path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_checkin_toilet_brush_roll_holder)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_checkin_toilet_brush_roll_holder_imageView);*/
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_toilet_brush_roll_holder)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_toilet_brush_roll_holder_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_toilet_brush_roll_holder_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_checkin_toilet_brush_roll_holder)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_toilet_brush_roll_holder)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					cursor.moveToNext();
 					continue;
@@ -1574,41 +1367,9 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_towel_rail)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_towel_rail)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-				String	path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder)).imgArr[i]);
-						}						
-					}
-				/*	showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_towel_rail_imageView);*/
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_towel_rail_imageView);*/
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_toilet_brush_roll_holder)).imgArr[i]);
-						}						
-					}
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_towel_rail_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_towel_rail)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_towel_rail)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_towel_rail)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
 					cursor.moveToNext();
 					continue;
@@ -1625,42 +1386,10 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_cabinet_shalves_mirror)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_cabinet_shalves_mirror)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_cabinet_shalves_mirror)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_cabinet_shalves_mirror)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_cabinet_shalves_mirror)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_cabinet_shalves_mirror_imageView);*/
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_cabinet_shalves_mirror)).imgArr[i]);
-						}						
-					}
-
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_cabinet_shalves_mirror_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_cabinet_shalves_mirror)).imgArr[i]);
-						}						
-					}
-
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_cabinet_shalves_mirror_imageView);*/
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_cabinet_shalves_mirror)).imgArr[i]);
-						}						
-					}
 
 					cursor.moveToNext();
 					continue;
@@ -1676,42 +1405,10 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_extractorfan_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_extractorfan_radiator)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-				String 	path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_extractorfan_radiator)).imgArr[i]);
-						}						
-					}
-
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_extractorfan_radiator)).imgArr[i]);
-						}						
-					}
-
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_extractorfan_radiator)).imgArr[i]);
-						}						
-					}
-
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_extractorfan_radiator_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_extractorfan_radiator_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_extractorfan_radiator_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_extractorfan_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_extractorfan_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_extractorfan_radiator)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
+				
 					cursor.moveToNext();
 					continue;
 				}
@@ -1727,43 +1424,14 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_curtains_blinds)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_curtains_blinds)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_curtains_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_curtains_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_curtains_blinds)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
+					
 					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_curtains_blinds_imageView);
 					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_curtains_blinds_imageView);
 					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_curtains_blinds_imageView);*/
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_curtains_blinds)).imgArr[i]);
-						}						
-					}
-
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_curtains_blinds)).imgArr[i]);
-						}						
-					}
-
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_curtains_blinds)).imgArr[i]);
-						}						
-					}
-
 					
 					
 					cursor.moveToNext();
@@ -1780,43 +1448,9 @@ public class InteriorCloakRoom extends ActionBarActivity implements OnClickListe
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("predepart_comm")));
 					((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_miscellaneous)).et_text1.setText(cursor.getString(cursor.getColumnIndex("depart_comm")));
 					
-					String path = cursor.getString(cursor.getColumnIndex("checkin_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_check_in_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("predepart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					path = cursor.getString(cursor.getColumnIndex("depart_img"));
-					if(path != null)
-					{
-						String[] arr = path.split("\\},\\{");
-						for(int i=0; i<arr.length; i++)
-						{
-							Log.v("ImageName", arr[i]);
-							showImageInIV_NEW(arr[i],((TextPicLayout)findViewById(R.id.textPicLayout_downstairs_WC_departure_miscellaneous)).imgArr[i]);
-						}						
-					}
-					
-					
-					/*showImageInIV(cursor.getString(cursor.getColumnIndex("checkin_img")),R.id.downstairs_WC_check_in_miscellaneous_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("predepart_img")),R.id.downstairs_WC_pre_departure_miscellaneous_imageView);
-					showImageInIV(cursor.getString(cursor.getColumnIndex("depart_img")),R.id.downstairs_WC_departure_miscellaneous_imageView);*/
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_check_in_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("checkin_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_pre_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("predepart_img")));
+					((TextPicLayout) findViewById(R.id.textPicLayout_downstairs_WC_departure_miscellaneous)).mButton.setTag(cursor.getString(cursor.getColumnIndex("depart_img")));
 					cursor.moveToNext();
 					continue;
 				}
